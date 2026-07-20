@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- PLACEHOLDER: all business facts below (phone, address, stats, license #) invented — confirm with client -->
+  <meta name="description" content="Roof replacement, shingle repair & 24-hour storm response in Ocala, FL. 22+ years, 1,400+ roofs, free 21-point inspections. Call (352) 555-0134." />
+  <title>Roof Replacement & Storm Repair in Ocala FL | Ridgeline Roofing</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RoofingContractor",
+    "name": "Ridgeline Roofing",
+    "description": "Residential roof replacement, repair, and storm damage restoration in Ocala, Florida.",
+    "telephone": "+1-352-555-0134",
+    "email": "hello@ridgelineroofingfl.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Ocala",
+      "addressRegion": "FL",
+      "addressCountry": "US"
+    },
+    "areaServed": ["Ocala", "Belleview", "Silver Springs", "Dunnellon", "Anthony", "The Villages"],
+    "priceRange": "$$"
+  }
+  </script>
+
+  <style>
+    /* ─── Tokens ──────────────────────────────────────────────── */
+    :root {
+      --slate-950: #131C26;   /* shingle charcoal — primary brand */
+      --slate-900: #1B2A38;
+      --slate-800: #24384A;
+      --slate-100: #E8EDF2;
+      --slate-50:  #F4F7FA;
+      --steel-600: #3E6990;   /* blueprint steel blue — secondary brand */
+      --steel-500: #4E7FA8;
+      --steel-100: #DCE8F2;
+      --orange-600: #E85D04;  /* safety orange — CTA ONLY */
+      --orange-500: #F76511;
+      --ink: #26313C;
+      --ink-soft: #51616F;
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --shadow-md: 0 6px 24px rgba(19, 28, 38, .12);
+      --shadow-lg: 0 16px 40px rgba(19, 28, 38, .18);
+      --font-display: 'Archivo', 'Arial Narrow', sans-serif;
+      --font-body: 'Source Sans 3', 'Segoe UI', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      font-size: 1.0625rem;
+      line-height: 1.65;
+      color: var(--ink);
+      background: #fff;
+    }
+    h1, h2, h3 { font-family: var(--font-display); line-height: 1.12; }
+    img { max-width: 100%; }
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid var(--steel-500);
+      outline-offset: 2px;
+    }
+    .container { max-width: 1150px; margin: 0 auto; padding: 0 1.25rem; }
+    section { padding: 4.5rem 0; }
+    .section-heading {
+      font-size: clamp(1.9rem, 4vw, 2.6rem);
+      font-weight: 800;
+      color: var(--slate-950);
+      margin-bottom: .6rem;
+    }
+    .section-kicker {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: .85rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--steel-600);
+      margin-bottom: .5rem;
+    }
+    .section-sub { color: var(--ink-soft); max-width: 60ch; margin-bottom: 2.5rem; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: .95rem 1.9rem;
+      min-height: 48px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      cursor: pointer;
+      border: 0;
+      transition: transform .18s, box-shadow .18s, background .18s;
+    }
+    .btn--cta { background: var(--orange-600); color: #fff; }
+    .btn--cta:hover { background: var(--orange-500); transform: translateY(-2px); box-shadow: 0 10px 24px rgba(232, 93, 4, .35); }
+    .btn--ghost { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.55); }
+    .btn--ghost:hover { border-color: #fff; background: rgba(255,255,255,.08); }
+
+    /* ─── Header ──────────────────────────────────────────────── */
+    header {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 50;
+      background: var(--slate-950);
+      color: #fff;
+      box-shadow: 0 2px 12px rgba(0,0,0,.25);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: .8rem 1.25rem;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 1.25rem;
+      letter-spacing: .04em;
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .logo svg { flex: none; }
+    .nav-links { display: flex; list-style: none; gap: 1.6rem; align-items: center; }
+    .nav-links a { color: var(--slate-100); text-decoration: none; font-weight: 600; font-size: .97rem; }
+    .nav-links a:hover { color: #fff; }
+    .nav-phone {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      background: var(--orange-600);
+      color: #fff;
+      font-family: var(--font-display);
+      font-weight: 700;
+      padding: .55rem 1.1rem;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .nav-phone:hover { background: var(--orange-500); }
+
+    /* ─── Hero ────────────────────────────────────────────────── */
+    .hero {
+      background:
+        repeating-linear-gradient(-35deg, rgba(255,255,255,.025) 0 22px, transparent 22px 44px),
+        linear-gradient(160deg, var(--slate-950) 0%, var(--slate-900) 55%, var(--slate-800) 100%);
+      color: #fff;
+      padding: 9rem 0 5rem;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: .8rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--steel-100);
+      background: rgba(78, 127, 168, .25);
+      border: 1px solid rgba(78, 127, 168, .5);
+      border-radius: 999px;
+      padding: .35rem .95rem;
+      margin-bottom: 1.2rem;
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 5.5vw, 3.7rem);
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+    .hero h1 em { font-style: normal; color: var(--steel-500); }
+    .hero-sub { font-size: 1.2rem; color: var(--slate-100); max-width: 48ch; margin-bottom: 1.8rem; }
+    .hero-ctas { display: flex; flex-wrap: wrap; gap: .9rem; margin-bottom: 1.6rem; }
+    .hero-trust { display: flex; flex-wrap: wrap; gap: 1.4rem; color: var(--slate-100); font-size: .95rem; font-weight: 600; }
+    .hero-trust span { display: inline-flex; align-items: center; gap: .4rem; }
+
+    /* ─── Signature element: inspection diagram ──────────────── */
+    .inspector {
+      background: #fff;
+      color: var(--ink);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      padding: 1.5rem 1.5rem 1.25rem;
+    }
+    .inspector-title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.05rem;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--slate-950);
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      margin-bottom: .35rem;
+    }
+    .inspector-hint { font-size: .88rem; color: var(--ink-soft); margin-bottom: .75rem; }
+    .roof-stage { position: relative; }
+    .roof-stage svg { display: block; width: 100%; height: auto; }
+    .hotspot {
+      position: absolute;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 0;
+      cursor: pointer;
+      background: var(--steel-600);
+      color: #fff;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: .85rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 0 5px rgba(62, 105, 144, .28);
+      transition: background .18s, box-shadow .18s;
+    }
+    .hotspot::after {
+      content: "";
+      position: absolute;
+      inset: -5px;
+      border-radius: 50%;
+      border: 2px solid var(--steel-500);
+      animation: pulse 2.2s ease-out infinite;
+    }
+    .hotspot.active { background: var(--orange-600); box-shadow: 0 0 0 5px rgba(232, 93, 4, .3); }
+    .hotspot.active::after { border-color: var(--orange-500); }
+    @keyframes pulse {
+      0%   { transform: scale(1); opacity: .9; }
+      70%  { transform: scale(1.7); opacity: 0; }
+      100% { transform: scale(1.7); opacity: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hotspot::after { animation: none; }
+      html { scroll-behavior: auto; }
+    }
+    .inspect-detail {
+      margin-top: .9rem;
+      background: var(--slate-50);
+      border-left: 4px solid var(--orange-600);
+      border-radius: var(--radius-sm);
+      padding: .85rem 1rem;
+      min-height: 96px;
+    }
+    .inspect-detail h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: .05em; color: var(--slate-950); margin-bottom: .25rem; }
+    .inspect-detail p { font-size: .95rem; color: var(--ink-soft); line-height: 1.5; }
+
+    /* ─── Stats band ──────────────────────────────────────────── */
+    .stats { background: var(--steel-600); color: #fff; padding: 2.4rem 0; }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1.5rem;
+      text-align: center;
+    }
+    .stat b { display: block; font-family: var(--font-display); font-weight: 900; font-size: 2.3rem; line-height: 1.1; }
+    .stat span { font-size: .95rem; color: var(--steel-100); font-weight: 600; }
+
+    /* ─── Services ────────────────────────────────────────────── */
+    .services { background: #fff; }
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .service-card {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-100);
+      border-radius: var(--radius-md);
+      padding: 1.8rem 1.6rem;
+      transition: transform .18s, box-shadow .18s;
+    }
+    .service-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-sm);
+      background: var(--steel-100);
+      color: var(--steel-600);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .service-card h3 { font-size: 1.25rem; font-weight: 800; color: var(--slate-950); margin-bottom: .5rem; }
+    .service-card p { color: var(--ink-soft); font-size: .98rem; }
+
+    /* ─── Process ─────────────────────────────────────────────── */
+    .process { background: var(--slate-950); color: #fff; }
+    .process .section-heading, .process .section-kicker { color: #fff; }
+    .process .section-kicker { color: var(--steel-500); }
+    .process .section-sub { color: var(--slate-100); }
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.5rem;
+    }
+    .step {
+      background: var(--slate-900);
+      border: 1px solid var(--slate-800);
+      border-radius: var(--radius-md);
+      padding: 1.6rem 1.4rem;
+    }
+    .step-num {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 2.4rem;
+      color: var(--orange-500);
+      line-height: 1;
+      margin-bottom: .7rem;
+    }
+    .step h3 { font-size: 1.15rem; font-weight: 800; margin-bottom: .4rem; }
+    .step p { color: var(--slate-100); font-size: .95rem; }
+
+    /* ─── Why us / guarantee ──────────────────────────────────── */
+    .why { background: var(--slate-50); }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2.2rem;
+    }
+    .why-item {
+      background: #fff;
+      border-radius: var(--radius-md);
+      padding: 1.5rem 1.4rem;
+      border-top: 4px solid var(--steel-600);
+      box-shadow: var(--shadow-md);
+    }
+    .why-item h3 { font-size: 1.1rem; font-weight: 800; color: var(--slate-950); margin-bottom: .4rem; }
+    .why-item p { color: var(--ink-soft); font-size: .95rem; }
+    .guarantee {
+      background: var(--slate-950);
+      color: #fff;
+      border-radius: var(--radius-lg);
+      padding: 2rem 2.2rem;
+      display: flex;
+      align-items: center;
+      gap: 1.4rem;
+      flex-wrap: wrap;
+    }
+    .guarantee-shield { flex: none; color: var(--orange-500); }
+    .guarantee b { font-family: var(--font-display); font-size: 1.3rem; display: block; margin-bottom: .2rem; }
+    .guarantee p { color: var(--slate-100); max-width: 62ch; }
+
+    /* ─── Gallery ─────────────────────────────────────────────── */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.2rem;
+    }
+    .tile {
+      aspect-ratio: 4 / 3;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: flex-end;
+      padding: 1rem;
+      color: #fff;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: .95rem;
+      letter-spacing: .03em;
+      text-shadow: 0 1px 4px rgba(0,0,0,.5);
+    }
+    /* PLACEHOLDER: swap gradient tiles for real project photos */
+    .tile-1 { background: linear-gradient(160deg, #4E7FA8, #1B2A38); }
+    .tile-2 { background: linear-gradient(160deg, #8C6A4F, #3A2D22); }
+    .tile-3 { background: linear-gradient(160deg, #6E7F8D, #232E38); }
+    .tile-4 { background: linear-gradient(160deg, #B0836A, #4B382B); }
+    .tile-5 { background: linear-gradient(160deg, #56707F, #17222B); }
+    .tile-6 { background: linear-gradient(160deg, #90A4B5, #33475A); }
+
+    /* ─── Testimonials ────────────────────────────────────────── */
+    .testimonials { background: var(--steel-100); }
+    .quote-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .quote {
+      background: #fff;
+      border-radius: var(--radius-md);
+      padding: 1.7rem 1.6rem;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      flex-direction: column;
+      gap: .9rem;
+    }
+    .quote-stars { color: var(--orange-500); letter-spacing: .18em; font-size: .95rem; }
+    .quote p { color: var(--ink); font-size: 1rem; }
+    .quote footer { font-weight: 700; color: var(--steel-600); font-size: .93rem; }
+
+    /* ─── About ───────────────────────────────────────────────── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .about p { margin-bottom: 1rem; color: var(--ink-soft); }
+    .area-chips { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: 1.2rem; }
+    .area-chips span {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-100);
+      color: var(--slate-950);
+      font-weight: 600;
+      font-size: .88rem;
+      padding: .35rem .85rem;
+      border-radius: 999px;
+    }
+    .about-visual {
+      aspect-ratio: 4 / 5;
+      border-radius: var(--radius-lg);
+      background:
+        repeating-linear-gradient(-35deg, rgba(255,255,255,.05) 0 18px, transparent 18px 36px),
+        linear-gradient(150deg, var(--steel-600), var(--slate-950));
+      display: flex;
+      align-items: flex-end;
+      padding: 1.4rem;
+      color: #fff;
+      font-family: var(--font-display);
+      font-weight: 700;
+    }
+
+    /* ─── CTA banner ──────────────────────────────────────────── */
+    .cta-banner {
+      background: var(--orange-600);
+      color: #fff;
+      text-align: center;
+      padding: 3.6rem 1.25rem;
+    }
+    .cta-banner h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 900; margin-bottom: .6rem; }
+    .cta-banner p { font-size: 1.15rem; margin-bottom: 1.6rem; opacity: .95; }
+    .cta-banner .btn { background: var(--slate-950); color: #fff; }
+    .cta-banner .btn:hover { background: var(--slate-900); transform: translateY(-2px); }
+
+    /* ─── Contact ─────────────────────────────────────────────── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 3rem;
+    }
+    .contact-info { display: flex; flex-direction: column; gap: 1.3rem; }
+    .contact-line { display: flex; gap: .8rem; align-items: flex-start; }
+    .contact-line svg { flex: none; color: var(--steel-600); margin-top: .2rem; }
+    .contact-line b { display: block; font-family: var(--font-display); font-size: .85rem; text-transform: uppercase; letter-spacing: .08em; color: var(--slate-950); }
+    .contact-line a { color: var(--ink); text-decoration: none; font-weight: 600; }
+    .contact-line a:hover { color: var(--orange-600); }
+    /* NOTE: form is non-functional in this mockup — wire to a form service at launch */
+    .contact-form { display: grid; gap: .9rem; }
+    .contact-form .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: .9rem; }
+    .contact-form label { font-weight: 700; font-size: .88rem; color: var(--slate-950); display: block; margin-bottom: .3rem; }
+    .contact-form input, .contact-form select, .contact-form textarea {
+      width: 100%;
+      font: inherit;
+      padding: .7rem .85rem;
+      border: 1.5px solid var(--slate-100);
+      border-radius: var(--radius-sm);
+      background: var(--slate-50);
+      color: var(--ink);
+    }
+    .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus {
+      outline: 3px solid var(--steel-500);
+      outline-offset: 1px;
+      border-color: var(--steel-600);
+    }
+
+    /* ─── Footer ──────────────────────────────────────────────── */
+    footer.site {
+      background: var(--slate-950);
+      color: var(--slate-100);
+      padding: 2.6rem 0;
+      font-size: .95rem;
+    }
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    footer.site a { color: var(--slate-100); text-decoration: none; }
+    footer.site a:hover { color: #fff; }
+
+    /* ─── Mobile ──────────────────────────────────────────────── */
+    @media (max-width: 780px) {
+      section { padding: 3.2rem 0; }
+      .nav-links { display: none; }
+      .hero { padding: 7.5rem 0 3.5rem; }
+      .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .about-visual { aspect-ratio: 16 / 9; }
+      .contact-form .row2 { grid-template-columns: 1fr; }
+      .stat b { font-size: 1.9rem; }
+      .guarantee { padding: 1.6rem 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="nav" aria-label="Main navigation">
+      <a class="logo" href="#home" aria-label="Ridgeline Roofing home">
+        <svg width="30" height="24" viewBox="0 0 30 24" fill="none" aria-hidden="true">
+          <path d="M2 20 L15 4 L28 20" stroke="#F76511" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M8 20 L15 11.5 L22 20" stroke="#4E7FA8" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Ridgeline<span style="color:var(--steel-500);">&nbsp;Roofing</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#process">Our Process</a></li>
+        <li><a href="#gallery">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a class="nav-phone" href="tel:3525550134">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+        (352) 555-0134 <!-- PLACEHOLDER phone -->
+      </a>
+    </nav>
+  </header>
+
+  <!-- 1 ── HERO + signature element -->
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div>
+        <span class="hero-badge">Licensed &amp; Insured · FL Cert. CCC-0000000 <!-- PLACEHOLDER license --></span>
+        <h1>A Roof Built for <em>Florida Weather.</em></h1>
+        <p class="hero-sub">Replacement, repair, and 24-hour storm response across Ocala &amp; Marion County — done right the first time, backed by a 10-year workmanship warranty.</p>
+        <div class="hero-ctas">
+          <a class="btn btn--cta" href="#contact">Get a Free Roof Inspection</a>
+          <a class="btn btn--ghost" href="tel:3525550134">Storm damage? Call now</a>
+        </div>
+        <div class="hero-trust">
+          <span>★ 4.9 Google rating</span>
+          <span>GAF-certified installers</span> <!-- PLACEHOLDER certification -->
+          <span>Insurance claims assisted</span>
+        </div>
+      </div>
+
+      <!-- Signature element: interactive 21-point inspection diagram -->
+      <div class="inspector">
+        <div class="inspector-title">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E85D04" stroke-width="2.4" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.8-3.8"/></svg>
+          What our 21-point inspection covers
+        </div>
+        <p class="inspector-hint">Tap a numbered point on the roof to see what we check — free on every estimate.</p>
+        <div class="roof-stage">
+          <svg viewBox="0 0 460 250" role="img" aria-label="Cross-section diagram of a house roof showing inspection points">
+            <rect x="0" y="228" width="460" height="8" rx="3" fill="#DCE8F2"/>
+            <rect x="105" y="128" width="250" height="102" fill="#E8EDF2"/>
+            <rect x="150" y="168" width="42" height="62" rx="3" fill="#3E6990"/>
+            <rect x="255" y="164" width="52" height="36" rx="3" fill="#fff" stroke="#B9CCDD" stroke-width="3"/>
+            <path d="M290 60 h26 v46 h-26 z" fill="#8C6A4F"/>
+            <path d="M286 54 h34 v10 h-34 z" fill="#6B4E38"/>
+            <path d="M78 132 L230 34 L382 132 Z" fill="#24384A"/>
+            <path d="M78 132 L230 34 L382 132" fill="none" stroke="#131C26" stroke-width="9" stroke-linecap="round"/>
+            <path d="M104 118 L230 37 M128 132 L230 66 M230 37 L356 118 M230 66 L332 132" stroke="#3A5168" stroke-width="2" opacity=".55" fill="none"/>
+            <rect x="66" y="128" width="122" height="9" rx="4.5" fill="#4E7FA8"/>
+            <rect x="272" y="128" width="122" height="9" rx="4.5" fill="#4E7FA8"/>
+            <rect x="380" y="132" width="9" height="70" rx="4.5" fill="#4E7FA8"/>
+          </svg>
+          <button class="hotspot" style="left:50%; top:14%;" data-point="0" aria-label="Inspection point 1: ridge line and vents">1</button>
+          <button class="hotspot" style="left:66%; top:26%;" data-point="1" aria-label="Inspection point 2: chimney and flashing">2</button>
+          <button class="hotspot" style="left:33%; top:38%;" data-point="2" aria-label="Inspection point 3: shingles and decking">3</button>
+          <button class="hotspot" style="left:84%; top:53%;" data-point="3" aria-label="Inspection point 4: gutters and downspouts">4</button>
+          <button class="hotspot" style="left:20%; top:55%;" data-point="4" aria-label="Inspection point 5: soffit, fascia and attic ventilation">5</button>
+        </div>
+        <div class="inspect-detail" id="inspect-detail" aria-live="polite">
+          <h3 id="detail-title">1 · Ridge line &amp; vents</h3>
+          <p id="detail-text">We sight the ridge for sagging and check ridge vents for storm lift — the first place Florida wind damage shows up.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 ── STATS BAND -->
+  <section class="stats" aria-label="Company statistics">
+    <div class="container stats-grid">
+      <!-- PLACEHOLDER: confirm all four numbers with client -->
+      <div class="stat"><b>22+</b><span>Years on Florida roofs</span></div>
+      <div class="stat"><b>1,400+</b><span>Roofs replaced &amp; repaired</span></div>
+      <div class="stat"><b>4.9★</b><span>Average Google rating</span></div>
+      <div class="stat"><b>24 hr</b><span>Storm response time</span></div>
+    </div>
+  </section>
+
+  <!-- 3 ── SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+      <p class="section-kicker">What we do</p>
+      <h2 class="section-heading">Every Roof. Every Repair.</h2>
+      <p class="section-sub">From a single missing shingle to a full tear-off and replacement, one licensed crew handles it start to finish.</p>
+      <div class="service-grid">
+        <div class="service-card">
+          <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 3l9 8"/><path d="M5 9.5V21h14V9.5"/></svg></div>
+          <h3>Roof Replacement</h3>
+          <p>Full tear-off and re-roof with architectural shingles rated for 130&nbsp;mph winds — most homes done in a single day.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4.8 4.8 0 0 0-6.4 6.4L3 18v3h3l5.3-5.3a4.8 4.8 0 0 0 6.4-6.4L14 13l-3-3 3.7-3.7z"/></svg></div>
+          <h3>Leak &amp; Shingle Repair</h3>
+          <p>Fast, honest repairs — we fix the leak you have instead of selling you the roof you don't need yet.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4.5 13.5H11L9.5 22 19 9.5h-6.5L13 2z"/></svg></div>
+          <h3>Storm Damage &amp; Claims</h3>
+          <p>24-hour tarping after hail or hurricanes, full documentation, and side-by-side help with your insurance claim.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 15c3-2 5 2 8 0s5 2 8 0"/><path d="M3 9c3-2 5 2 8 0s5 2 8 0"/></svg></div>
+          <h3>Metal Roofing</h3>
+          <p>Standing-seam and 5V metal systems that shrug off Florida sun and storms for 50+ years.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v4a4 4 0 0 1-4 4h-3v6"/><path d="M13 19a2 2 0 1 1-4 0"/></svg></div>
+          <h3>Gutters &amp; Soffit</h3>
+          <p>Seamless gutters, soffit, and fascia installed with your roof so water goes where it should — away.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6l7-3z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <h3>Inspections &amp; Maintenance</h3>
+          <p>Free 21-point inspections, insurance wind-mitigation reports, and annual tune-ups that add years to your roof.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 ── PROCESS -->
+  <section class="process" id="process">
+    <div class="container">
+      <p class="section-kicker">How it works</p>
+      <h2 class="section-heading">No Surprises, Start to Finish</h2>
+      <p class="section-sub">Roofing has a reputation problem. Our fix is a process you can see — photos at every stage, one point of contact, and a magnetic sweep of your yard before we leave.</p>
+      <div class="process-grid">
+        <div class="step">
+          <div class="step-num">01</div>
+          <h3>Free Inspection</h3>
+          <p>21-point roof check with photos of everything we find — no ladder-scare tactics, no invented damage.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <h3>Straight Quote</h3>
+          <p>A written, itemized price that's good for 90 days. Repair vs. replace laid out honestly, in plain English.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <h3>Build Day</h3>
+          <p>Most roofs done in one day by our own crew — never day-labor. Your landscaping gets protected before the first shingle moves.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <h3>Walkthrough &amp; Warranty</h3>
+          <p>Final inspection together, magnetic nail sweep, and your 10-year workmanship warranty in writing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 ── WHY US / GUARANTEE -->
+  <section class="why">
+    <div class="container">
+      <p class="section-kicker">Why Ridgeline</p>
+      <h2 class="section-heading">The Crew Your Neighbors Recommend</h2>
+      <p class="section-sub">Marion County has plenty of storm-chasers. Here's how you can tell we're not one of them.</p>
+      <div class="why-grid">
+        <div class="why-item">
+          <h3>Local &amp; Accountable</h3>
+          <p>Ocala-based for 22 years. Same phone number, same owner — we'll be here long after the warranty matters.</p>
+        </div>
+        <div class="why-item">
+          <h3>Our Own Crews</h3>
+          <p>No subcontracted day labor on your roof. Every installer is trained, insured, and background-checked.</p>
+        </div>
+        <div class="why-item">
+          <h3>Insurance Fluent</h3>
+          <p>We document damage the way adjusters need it and meet them on-site, so your claim gets a fair look.</p>
+        </div>
+        <div class="why-item">
+          <h3>Clean Sites, Always</h3>
+          <p>Tarped landscaping, daily cleanup, and a magnetic nail sweep before we call any job finished.</p>
+        </div>
+      </div>
+      <div class="guarantee">
+        <svg class="guarantee-shield" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l8 3.5v5.2c0 5-3.4 9.6-8 11.3-4.6-1.7-8-6.3-8-11.3V5.5L12 2z"/><path d="m8.5 12 2.5 2.5 5-5"/></svg>
+        <div>
+          <b>The Ridgeline 10-Year Workmanship Guarantee</b>
+          <p>If our installation ever leaks, we fix it free — labor and materials, no fine print. On top of manufacturer coverage up to 50 years. <!-- PLACEHOLDER: confirm warranty terms --></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 ── GALLERY -->
+  <section id="gallery">
+    <div class="container">
+      <p class="section-kicker">Recent work</p>
+      <h2 class="section-heading">Roofs We're Proud Of</h2>
+      <p class="section-sub">A few recent projects around Marion County. <!-- PLACEHOLDER: replace tiles with client photos --></p>
+      <div class="gallery-grid">
+        <div class="tile tile-1">Full replacement · SE Ocala</div>
+        <div class="tile tile-2">Architectural shingle · Belleview</div>
+        <div class="tile tile-3">Standing-seam metal · Dunnellon</div>
+        <div class="tile tile-4">Hurricane repair · Silver Springs</div>
+        <div class="tile tile-5">New construction · Anthony</div>
+        <div class="tile tile-6">Gutter &amp; soffit · The Villages</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 ── TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="container">
+      <p class="section-kicker">Reviews</p>
+      <h2 class="section-heading">What Homeowners Say</h2>
+      <p class="section-sub"><!-- PLACEHOLDER: replace with real reviews --></p>
+      <div class="quote-grid">
+        <blockquote class="quote">
+          <div class="quote-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>"Tree limb through the roof at 9 pm — they had it tarped by midnight and rebuilt within the week. Handled the whole insurance claim with us."</p>
+          <footer>— Denise R., Silver Springs Shores</footer>
+        </blockquote>
+        <blockquote class="quote">
+          <div class="quote-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>"Two other companies said full replacement. Ridgeline fixed the flashing for a few hundred bucks and told me the roof had five good years left. That's who I'll call when it's time."</p>
+          <footer>— Marcus T., SE Ocala</footer>
+        </blockquote>
+        <blockquote class="quote">
+          <div class="quote-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>"Crew showed up at 7, new roof by sunset, and I couldn't find a single nail in the yard. The photo report at the end was a nice touch."</p>
+          <footer>— Gail &amp; Peter M., Belleview</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 ── ABOUT -->
+  <section id="about">
+    <div class="container about-grid">
+      <div>
+        <p class="section-kicker">About us</p>
+        <h2 class="section-heading">Ocala's Roofers Since 2004</h2>
+        <!-- PLACEHOLDER: owner story, founding year -->
+        <p>Ridgeline Roofing started with one truck, one crew, and a simple rule: build every roof like it's going over your own family. Two decades and 1,400 roofs later, that rule hasn't changed.</p>
+        <p>We're not a storm-chasing outfit that disappears when hurricane season ends. We live here, our kids go to school here, and our reputation rides on every ridge cap we nail down in Marion County.</p>
+        <div class="area-chips" aria-label="Service areas">
+          <span>Ocala</span><span>Belleview</span><span>Silver Springs</span><span>Dunnellon</span><span>Anthony</span><span>The Villages</span>
+        </div>
+      </div>
+      <div class="about-visual">Owner photo here <!-- PLACEHOLDER --></div>
+    </div>
+  </section>
+
+  <!-- 9 ── CTA BANNER -->
+  <section class="cta-banner">
+    <h2>Storm Season Doesn't Wait. Neither Should You.</h2>
+    <p>Free 21-point inspection · written quote in 24 hours · zero pressure</p>
+    <a class="btn" href="tel:3525550134">Call (352) 555-0134</a>
+  </section>
+
+  <!-- 10 ── CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <p class="section-kicker">Get started</p>
+      <h2 class="section-heading">Request Your Free Inspection</h2>
+      <p class="section-sub">Tell us what's going on with your roof and we'll call you back the same business day.</p>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-line">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+            <div><b>Phone</b><a href="tel:3525550134">(352) 555-0134</a></div>
+          </div>
+          <div class="contact-line">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <div><b>Email</b><a href="mailto:hello@ridgelineroofingfl.com">hello@ridgelineroofingfl.com</a></div>
+          </div>
+          <div class="contact-line">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+            <div><b>Service area</b>Ocala &amp; all of Marion County, FL</div>
+          </div>
+          <div class="contact-line">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.2 14.2L11 13V7h1.5v5.3l4.5 2.7-.8 1.2z"/></svg>
+            <div><b>Hours</b>Mon–Sat 7am–6pm · 24/7 storm line</div>
+          </div>
+        </div>
+        <!-- NOTE: mockup form — not wired to a backend -->
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Demo mockup — form not connected yet.');">
+          <div class="row2">
+            <div><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required /></div>
+            <div><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required /></div>
+          </div>
+          <div><label for="f-addr">Property address</label><input id="f-addr" name="address" autocomplete="street-address" /></div>
+          <div>
+            <label for="f-need">What do you need?</label>
+            <select id="f-need" name="need">
+              <option>Free inspection / estimate</option>
+              <option>Leak or repair</option>
+              <option>Storm damage — urgent</option>
+              <option>Full replacement quote</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div><label for="f-msg">Tell us more (optional)</label><textarea id="f-msg" name="message" rows="4"></textarea></div>
+          <button class="btn btn--cta" type="submit">Send My Request</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 ── FOOTER -->
+  <footer class="site">
+    <div class="container footer-grid">
+      <div>
+        <strong style="font-family:var(--font-display); text-transform:uppercase; letter-spacing:.04em;">Ridgeline Roofing</strong><br />
+        Ocala, FL · <a href="tel:3525550134">(352) 555-0134</a> · FL Cert. CCC-0000000
+      </div>
+      <div>
+        <a href="#services">Services</a> · <a href="#gallery">Work</a> · <a href="#contact">Free inspection</a>
+      </div>
+      <div>© 2026 Ridgeline Roofing. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Signature element: inspection hotspot interactions
+    const points = [
+      { t: "1 · Ridge line & vents", d: "We sight the ridge for sagging and check ridge vents for storm lift — the first place Florida wind damage shows up." },
+      { t: "2 · Chimney & flashing", d: "Cracked flashing causes most 'mystery' leaks. We inspect every seal around chimneys, vents, and skylights." },
+      { t: "3 · Shingles & decking", d: "Lifted tabs, granule loss, and soft decking spots — we photograph everything so you see exactly what we see." },
+      { t: "4 · Gutters & downspouts", d: "Granules in the gutter mean aging shingles. We check pitch, seams, and drainage away from your foundation." },
+      { t: "5 · Soffit, fascia & attic airflow", d: "Blocked soffit vents cook a roof from underneath. We verify airflow that can add years to shingle life." }
+    ];
+    const hotspots = document.querySelectorAll(".hotspot");
+    const dTitle = document.getElementById("detail-title");
+    const dText = document.getElementById("detail-text");
+    hotspots.forEach(btn => {
+      btn.addEventListener("click", () => {
+        hotspots.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        const p = points[+btn.dataset.point];
+        dTitle.textContent = p.t;
+        dText.textContent = p.d;
+      });
+    });
+    hotspots[0].classList.add("active");
+  </script>
+</body>
+</html>

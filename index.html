@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="One-page websites for local service businesses. $300 flat build, live in about a week, $30/month covers hosting and upkeep. Call or text (813) 992-1445." />
+  <title>Site Spark — Websites for Local Businesses</title>
+
+  <!-- PLACEHOLDER: once the domain is live, add <link rel="canonical">, og:url, and an og:image (1200x630) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Site Spark — Websites for Local Businesses" />
+  <meta property="og:description" content="One-page websites built around your trade. $300 flat, live in about a week, $30/month hosting &amp; upkeep." />
+  <meta name="twitter:card" content="summary" />
+  <meta name="theme-color" content="#09090B" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2309090B'/%3E%3Cpath d='M18 3 L8 18 h5.5 L13 29 L24 12 h-6.5 L20 3 z' fill='%232563EB'/%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* Exaggerated minimalism: black/white, one accent, oversized type, hairlines, no radius */
+    :root {
+      --ink: #09090B;
+      --ink-2: #3F3F46;
+      --ink-3: #71717A;
+      --bg: #FAFAFA;
+      --panel: #FFFFFF;
+      --line: #E4E4E7;
+      --accent: #2563EB;
+      --font-display: 'Space Grotesk', 'Segoe UI', sans-serif;
+      --font-body: 'Archivo', 'Segoe UI', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--ink);
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+    ::selection { background: var(--accent); color: #fff; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 1.5rem; }
+
+    h1, h2 { font-family: var(--font-display); letter-spacing: -0.03em; line-height: 1.02; font-weight: 700; }
+    .kicker {
+      font-family: var(--font-display);
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      display: block;
+      margin-bottom: 1.2rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 1rem 1.8rem;
+      min-height: 48px;
+      background: var(--ink);
+      color: #fff;
+      text-decoration: none;
+      border: 1px solid var(--ink);
+      transition: background .2s, color .2s;
+      cursor: pointer;
+    }
+    .btn:hover { background: var(--accent); border-color: var(--accent); }
+    .btn--line { background: transparent; color: var(--ink); }
+    .btn--line:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
+    .arrow { transition: transform .2s; }
+    .btn:hover .arrow, .card:hover .arrow { transform: translateX(4px); }
+
+    /* ── Header ── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(250, 250, 250, .92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 1.1rem 1.5rem;
+    }
+    .wordmark {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.2rem;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .wordmark i { font-style: normal; color: var(--accent); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+    .nav-links a {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: .95rem;
+      color: var(--ink-2);
+      text-decoration: none;
+    }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-links .btn { background: #fff; color: var(--ink); }
+    .nav-links .btn:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+    /* ── Hero ── */
+    .hero { padding: 7.5rem 0 6rem; }
+    .hero h1 {
+      font-size: clamp(2.9rem, 8.5vw, 6.2rem);
+      max-width: 12ch;
+      margin-bottom: 2rem;
+    }
+    .hero h1 i { font-style: normal; color: var(--accent); }
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--ink-2);
+      max-width: 46ch;
+      margin-bottom: 2.4rem;
+    }
+    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .ticker {
+      margin-top: 5rem;
+      padding-top: 1.4rem;
+      border-top: 1px solid var(--line);
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      font-family: var(--font-display);
+      font-size: .92rem;
+      font-weight: 500;
+      color: var(--ink-3);
+    }
+    .ticker b { color: var(--ink); font-weight: 600; }
+
+    section { padding: 5.5rem 0; }
+    .sec-head { font-size: clamp(2rem, 5vw, 3.2rem); margin-bottom: .8rem; }
+    .sec-sub { color: var(--ink-2); max-width: 52ch; margin-bottom: 3rem; }
+
+    /* ── Work / portfolio cards ── */
+    .work { border-top: 1px solid var(--line); }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+    .card {
+      display: block;
+      text-decoration: none;
+      color: var(--ink);
+      background: var(--panel);
+      border: 1px solid var(--line);
+      transition: border-color .2s, transform .2s;
+    }
+    .card:hover { border-color: var(--ink); transform: translateY(-4px); }
+    .thumb {
+      position: relative;
+      aspect-ratio: 64 / 45;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+      background: var(--bg);
+    }
+    .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+    }
+    .badge {
+      position: absolute;
+      top: .9rem;
+      left: .9rem;
+      font-family: var(--font-display);
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      background: var(--ink);
+      color: #fff;
+      padding: .32rem .7rem;
+    }
+    .badge--live { background: var(--accent); }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.15rem 1.3rem;
+    }
+    .card-meta h3 { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; }
+    .card-meta span { display: block; font-size: .9rem; color: var(--ink-3); margin-top: .15rem; }
+    .card-meta .arrow { font-family: var(--font-display); font-size: 1.3rem; color: var(--ink); }
+    .card--empty {
+      border: 1.5px dashed var(--line);
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 3rem 2rem;
+      transition: border-color .2s, transform .2s;
+    }
+    .card--empty:hover { border-color: var(--accent); transform: translateY(-4px); }
+    .card--empty p { font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; color: var(--ink-2); }
+    .card--empty p i { font-style: normal; color: var(--accent); }
+    .card--empty span { display: block; font-family: var(--font-body); font-weight: 400; font-size: .92rem; color: var(--ink-3); margin-top: .5rem; }
+
+    /* ── Process ── */
+    .process { border-top: 1px solid var(--line); }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 0;
+      border: 1px solid var(--line);
+      background: var(--panel);
+    }
+    .pstep { padding: 2.2rem 1.8rem; border-right: 1px solid var(--line); }
+    .pstep:last-child { border-right: 0; }
+    .pstep b {
+      display: block;
+      font-family: var(--font-display);
+      font-size: .85rem;
+      font-weight: 600;
+      letter-spacing: .18em;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .pstep h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; margin-bottom: .5rem; }
+    .pstep p { color: var(--ink-2); font-size: .97rem; }
+
+    /* ── Pricing ── */
+    .pricing { border-top: 1px solid var(--line); }
+    .price-panel {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      border: 1px solid var(--ink);
+      background: var(--panel);
+    }
+    .price-left {
+      padding: 2.8rem 2.4rem;
+      border-right: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .price-big {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(3.6rem, 9vw, 5.6rem);
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+    .price-big small {
+      font-size: 1.15rem;
+      font-weight: 500;
+      letter-spacing: 0;
+      color: var(--ink-3);
+      display: block;
+      margin-top: .6rem;
+    }
+    .price-big em { font-style: normal; color: var(--accent); }
+    .price-left .btn { margin-top: 2rem; align-self: flex-start; }
+    .price-right { padding: 2.8rem 2.4rem; }
+    .price-right h3 { font-family: var(--font-display); font-size: 1.05rem; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; margin-bottom: 1.2rem; }
+    .includes { list-style: none; display: grid; gap: .75rem; }
+    .includes li { display: flex; gap: .7rem; align-items: flex-start; color: var(--ink-2); font-size: .98rem; }
+    .includes li::before { content: "→"; font-family: var(--font-display); color: var(--accent); font-weight: 600; flex: none; }
+
+    /* ── About ── */
+    .about { border-top: 1px solid var(--line); }
+    .about-inner { max-width: 62ch; }
+    .about-inner p { color: var(--ink-2); margin-bottom: 1rem; font-size: 1.08rem; }
+
+    /* ── Contact ── */
+    .contact { border-top: 1px solid var(--line); padding-bottom: 7rem; }
+    .contact h2 { font-size: clamp(2.6rem, 8vw, 5rem); margin-bottom: 2rem; }
+    .contact h2 i { font-style: normal; color: var(--accent); }
+    .contact-row { display: flex; gap: 1.2rem; align-items: center; flex-wrap: wrap; }
+    .contact-email {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 1.1rem;
+      color: var(--ink-2);
+      text-decoration: none;
+      border-bottom: 1.5px solid var(--line);
+      padding-bottom: .15rem;
+    }
+    .contact-email:hover { color: var(--accent); border-color: var(--accent); }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 1.6rem 0;
+      font-size: .9rem;
+      color: var(--ink-3);
+    }
+    footer .wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+
+    @media (max-width: 780px) {
+      section { padding: 3.8rem 0; }
+      .hero { padding: 5rem 0 4rem; }
+      .nav-links { gap: 1.2rem; }
+      .nav-links li:nth-child(2) { display: none; }
+      .price-panel { grid-template-columns: 1fr; }
+      .price-left { border-right: 0; border-bottom: 1px solid var(--line); }
+      .pstep { border-right: 0; border-bottom: 1px solid var(--line); }
+      .pstep:last-child { border-bottom: 0; }
+      .ticker { gap: 1.2rem; margin-top: 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="nav" aria-label="Main navigation">
+      <a class="wordmark" href="#top">Site Spark<i>.</i></a>
+      <ul class="nav-links">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a class="btn" style="padding:.55rem 1.1rem; min-height:0; font-size:.9rem;" href="#contact">Start your site</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap">
+        <span class="kicker">Websites for local businesses</span>
+        <h1>Built for your trade<i>.</i> Never from a template<i>.</i></h1>
+        <p>One-page websites for landscapers, roofers, cleaners, cafés — each designed around how your trade actually wins customers. One flat price. Live in about a week. No agencies, no retainers, no jargon.</p>
+        <div class="hero-ctas">
+          <a class="btn" href="#work">See the work <span class="arrow">→</span></a>
+          <a class="btn btn--line" href="#pricing">$300 flat — how?</a>
+        </div>
+        <div class="ticker">
+          <span><b>$300</b> one-time build</span>
+          <span><b>~1 week</b> to launch</span>
+          <span><b>$30/mo</b> hosting &amp; upkeep, all-in</span>
+          <span><b>0</b> templates reused</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section class="work" id="work">
+      <div class="wrap">
+        <span class="kicker">Recent work</span>
+        <h2 class="sec-head">Real sites, real businesses.</h2>
+        <p class="sec-sub">A roofer's site has to sell trust in a storm; a lawn crew's has to sell pride in the yard. Click any project to walk through the full site.</p>
+        <div class="card-grid">
+
+          <a class="card" href="portfolio/ctf-maintenance.html">
+            <div class="thumb">
+              <span class="badge badge--live">Live client</span>
+              <img src="portfolio/thumbs/ctf-maintenance.png" alt="CTF Maintenance one-page website — lawn care hero with free estimate buttons" loading="lazy" width="1280" height="900" />
+            </div>
+            <div class="card-meta">
+              <div>
+                <h3>CTF Maintenance</h3>
+                <span>Lawn care &amp; junk removal · Gainesville, FL</span>
+              </div>
+              <span class="arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+
+          <a class="card" href="portfolio/ridgeline-roofing.html">
+            <div class="thumb">
+              <span class="badge">Concept</span>
+              <img src="portfolio/thumbs/ridgeline-roofing.png" alt="Ridgeline Roofing concept website — dark hero with interactive roof inspection diagram" loading="lazy" width="1280" height="900" />
+            </div>
+            <div class="card-meta">
+              <div>
+                <h3>Ridgeline Roofing</h3>
+                <span>Roofing &amp; storm repair · Ocala, FL</span>
+              </div>
+              <span class="arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+
+          <a class="card" href="portfolio/homebird-coffee.html">
+            <div class="thumb">
+              <span class="badge">Concept</span>
+              <img src="portfolio/thumbs/homebird-coffee.png" alt="Homebird Coffee House concept website — warm cream and terracotta hero with punch card" loading="lazy" width="1280" height="900" />
+            </div>
+            <div class="card-meta">
+              <div>
+                <h3>Homebird Coffee House</h3>
+                <span>Coffee shop · Columbus, OH</span>
+              </div>
+              <span class="arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+
+          <a class="card card--empty" href="#contact">
+            <div>
+              <p>Your business here<i>.</i></p>
+              <span>$300 · live in about a week · built around your trade</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="process">
+      <div class="wrap">
+        <span class="kicker">How it works</span>
+        <h2 class="sec-head">Three steps. One week.</h2>
+        <p class="sec-sub">You keep running your business — I handle everything technical, start to finish.</p>
+        <div class="steps">
+          <div class="pstep">
+            <b>01</b>
+            <h3>Tell me about your business</h3>
+            <p>A 15-minute call or a few texts. What you do, where you work, what makes customers pick you.</p>
+          </div>
+          <div class="pstep">
+            <b>02</b>
+            <h3>I build the real thing</h3>
+            <p>No wireframes or mood boards — you get a working site to click through and tweak until it feels right.</p>
+          </div>
+          <div class="pstep">
+            <b>03</b>
+            <h3>Go live &amp; stay live</h3>
+            <p>Domain, hosting, Google-ready SEO basics — handled. $30/month keeps it fast, secure, and up to date.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="pricing" id="pricing">
+      <div class="wrap">
+        <span class="kicker">Pricing</span>
+        <h2 class="sec-head">One price. Everything in.</h2>
+        <p class="sec-sub">Most web agencies quote $2,000+ and take a month. A one-page site done right doesn't need to cost that.</p>
+        <div class="price-panel">
+          <div class="price-left">
+            <div class="price-big">$300<small>one-time build, then <em>$30/month</em></small></div>
+            <a class="btn" href="#contact">Start your site <span class="arrow">→</span></a>
+          </div>
+          <div class="price-right">
+            <h3>Every site includes</h3>
+            <ul class="includes">
+              <li>Custom one-page design built around your trade — never a template</li>
+              <li>Mobile-first, fast, and tested on real phones</li>
+              <li>Click-to-call, quote form, and Google Maps–ready local SEO</li>
+              <li>Hosting, SSL certificate, and your domain connected</li>
+              <li>Unlimited content tweaks and updates — included in your monthly</li>
+              <li>One point of contact — text the person who actually built it</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about">
+      <div class="wrap about-inner">
+        <span class="kicker">About</span>
+        <h2 class="sec-head">Built by one person. On purpose.</h2>
+        <p>I'm Riley, and Site Spark is just me. I build every site myself — design, copy, code, launch. No account managers, no outsourcing, no 40-page proposals. When you text or email, the person who actually built your website answers.</p>
+        <p>I work with local service businesses because a good one-page site is often all they need — and almost nobody sells it at a fair price.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <span class="kicker">Get started</span>
+        <h2>Let's build yours<i>.</i></h2>
+        <div class="contact-row">
+          <a class="btn" href="mailto:rileypmcg@gmail.com?subject=Website%20for%20my%20business">Email me <span class="arrow">→</span></a>
+          <a class="contact-email" href="mailto:rileypmcg@gmail.com">rileypmcg@gmail.com</a>
+          <a class="contact-email" href="tel:8139921445">(813) 992-1445 — call or text</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Site Spark · <a href="tel:8139921445">(813) 992-1445</a></span>
+      <span>Every pixel here was built by hand — yours would be too.</span>
+    </div>
+  </footer>
+
+</body>
+</html>

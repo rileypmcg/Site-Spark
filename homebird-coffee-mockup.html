@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- PLACEHOLDER: all business facts (address, phone, hours, stats, prices, names) are invented — confirm with client -->
+  <meta name="description" content="Homebird Coffee House — Clintonville's cozy neighborhood café on N High St. House-baked pastries, a plant-filled patio, and a Regulars Club punch card. Open daily. (614) 555-0142." />
+  <title>Coffee Shop in Clintonville, Columbus | Homebird Coffee House</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "Homebird Coffee House",
+    "description": "Neighborhood coffee house in Clintonville, Columbus — espresso, house-baked pastries, light breakfast and a dog-friendly patio.",
+    "telephone": "+1-614-555-0142",
+    "email": "hello@homebirdcoffee.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "3281 N High St",
+      "addressLocality": "Columbus",
+      "addressRegion": "OH",
+      "postalCode": "43202",
+      "addressCountry": "US"
+    },
+    "servesCuisine": "Coffee, pastries, breakfast",
+    "priceRange": "$",
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "07:00", "closes": "18:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday"], "opens": "08:00", "closes": "19:00" }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ─── Tokens ─────────────────────────────────────────────── */
+    :root {
+      --cream: #FFF4E3;
+      --peach: #FBE0BF;
+      --terracotta: #D9572F;
+      --terracotta-deep: #B33F1D;
+      --marigold: #F4A72C;
+      --teal: #12766C;          /* CTA */
+      --teal-deep: #0C5C54;
+      --pink: #F27A9B;
+      --ink: #43241B;
+      --ink-soft: #7A5647;
+      --radius-blob: 26px 60px 30px 56px;
+      --shadow: 0 10px 30px rgba(67, 36, 27, .14);
+      --font-display: 'Baloo 2', 'Comic Sans MS', cursive, sans-serif;
+      --font-body: 'Nunito', 'Segoe UI', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      line-height: 1.65;
+      color: var(--ink);
+      background: var(--cream);
+      overflow-x: hidden;
+    }
+    h1, h2, h3 { font-family: var(--font-display); line-height: 1.08; }
+    img { max-width: 100%; display: block; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; border-radius: 6px; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 1.4rem; }
+    section { position: relative; }
+
+    .kicker {
+      display: inline-block;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: .85rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      background: var(--marigold);
+      color: var(--ink);
+      padding: .3rem 1rem;
+      border-radius: 999px;
+      transform: rotate(-1.5deg);
+      margin-bottom: 1.1rem;
+    }
+    .sec-head { font-size: clamp(2rem, 5.5vw, 3.1rem); font-weight: 800; margin-bottom: .6rem; }
+    .sec-sub { color: var(--ink-soft); max-width: 56ch; margin-bottom: 2.6rem; font-size: 1.08rem; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.05rem;
+      padding: .85rem 1.8rem;
+      min-height: 48px;
+      border-radius: 999px;
+      border: 0;
+      cursor: pointer;
+      text-decoration: none;
+      background: var(--teal);
+      color: #fff;
+      box-shadow: 0 5px 0 var(--teal-deep);
+      transition: transform .15s, box-shadow .15s, background .15s;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 7px 0 var(--teal-deep); }
+    .btn:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--teal-deep); }
+    .btn--terra { background: var(--terracotta); box-shadow: 0 5px 0 var(--terracotta-deep); }
+    .btn--terra:hover { box-shadow: 0 7px 0 var(--terracotta-deep); }
+    .btn--ghost {
+      background: transparent;
+      color: var(--ink);
+      box-shadow: none;
+      border: 2.5px dashed var(--terracotta);
+    }
+    .btn--ghost:hover { background: rgba(217, 87, 47, .1); box-shadow: none; }
+
+    /* wavy + scalloped dividers */
+    .wave { display: block; width: 100%; height: 54px; }
+    .scallops {
+      height: 22px;
+      background: radial-gradient(circle at 11px 0, var(--peach) 11px, transparent 12px);
+      background-size: 22px 22px;
+    }
+    .scallops--cream { background: radial-gradient(circle at 11px 0, var(--cream) 11px, transparent 12px); background-size: 22px 22px; }
+
+    /* ─── Header ─────────────────────────────────────────────── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 60;
+      background: rgba(255, 244, 227, .93);
+      backdrop-filter: blur(6px);
+      border-bottom: 2px dashed rgba(217, 87, 47, .4);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; max-width: 1120px; margin: 0 auto; padding: .7rem 1.4rem; }
+    .logo { display: flex; align-items: center; gap: .55rem; font-family: var(--font-display); font-weight: 800; font-size: 1.45rem; color: var(--ink); text-decoration: none; }
+    .logo svg { flex: none; }
+    .nav-links { display: flex; align-items: center; gap: 1.5rem; list-style: none; }
+    .nav-links a { font-weight: 800; font-size: .98rem; color: var(--ink); text-decoration: none; }
+    .nav-links a:hover { color: var(--terracotta); }
+    .nav-phone {
+      display: inline-flex; align-items: center; gap: .45rem;
+      font-family: var(--font-display); font-weight: 700; font-size: .95rem;
+      background: var(--teal); color: #fff; text-decoration: none;
+      padding: .5rem 1.1rem; border-radius: 999px; box-shadow: 0 4px 0 var(--teal-deep);
+      white-space: nowrap;
+    }
+    .nav-phone:hover { transform: translateY(-1px); }
+
+    /* ─── Hero ───────────────────────────────────────────────── */
+    .hero { padding: 4.2rem 0 4.5rem; }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(244, 167, 44, .3) 2.5px, transparent 3px);
+      background-size: 30px 30px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.5), transparent 75%);
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,.5), transparent 75%);
+      pointer-events: none;
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 3.4rem; align-items: center; position: relative; }
+    .hero h1 { font-size: clamp(2.7rem, 7vw, 4.4rem); font-weight: 800; margin-bottom: 1.1rem; }
+    .hero h1 .terra { color: var(--terracotta); }
+    .hero h1 .teal { color: var(--teal); }
+    .hero-sub { font-size: 1.18rem; color: var(--ink-soft); max-width: 46ch; margin-bottom: 1.9rem; }
+    .hero-ctas { display: flex; gap: .9rem; flex-wrap: wrap; margin-bottom: 1.6rem; }
+    .hero-trust { display: flex; flex-wrap: wrap; gap: 1.3rem; font-weight: 800; font-size: .95rem; color: var(--ink-soft); }
+
+    .hero-visual { position: relative; padding-bottom: 4.5rem; }
+    .hero-visual .blob {
+      position: absolute;
+      top: -1.6rem; right: -2rem;
+      width: 78%; height: 82%;
+      background: var(--marigold);
+      border-radius: 62% 38% 55% 45% / 48% 60% 40% 52%;
+      z-index: 0;
+    }
+    .hero-visual .ring {
+      position: absolute;
+      bottom: 3rem; right: -1.4rem;
+      width: 110px; height: 110px;
+      border: 12px solid var(--pink);
+      border-radius: 50%;
+      z-index: 3;
+    }
+    .arch {
+      position: relative;
+      z-index: 1;
+      width: min(88%, 400px);
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      border-radius: 999px 999px 34px 34px;
+      border: 6px solid #fff;
+      box-shadow: var(--shadow);
+    }
+    .arch img { width: 100%; height: 100%; object-fit: cover; }
+    .sticker {
+      position: absolute;
+      top: .6rem; left: -.9rem;
+      z-index: 4;
+      width: 108px; height: 108px;
+      border-radius: 50%;
+      background: var(--teal);
+      color: #fff;
+      border: 3px dashed rgba(255, 244, 227, .8);
+      display: flex; align-items: center; justify-content: center; text-align: center;
+      font-family: var(--font-display); font-weight: 700; font-size: .85rem; line-height: 1.2;
+      padding: .8rem;
+      transform: rotate(-9deg);
+      box-shadow: var(--shadow);
+    }
+
+    /* ─── Signature element: Regulars Club punch card ────────── */
+    .punch {
+      position: absolute;
+      left: -.4rem; bottom: 0;
+      z-index: 5;
+      width: min(88%, 330px);
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      transform: rotate(-3deg);
+      padding: 1.1rem 1.2rem 1rem;
+    }
+    .punch::before {
+      content: "";
+      position: absolute;
+      top: -10px; left: 0; right: 0;
+      height: 11px;
+      background: radial-gradient(circle at 9px 11px, #fff 9px, transparent 10px);
+      background-size: 18px 11px;
+    }
+    .punch-head { display: flex; justify-content: space-between; align-items: baseline; gap: .6rem; margin-bottom: .7rem; }
+    .punch-head b { font-family: var(--font-display); font-weight: 800; font-size: 1.12rem; color: var(--terracotta); }
+    .punch-head span { font-size: .78rem; font-weight: 800; color: var(--ink-soft); text-align: right; }
+    .punch-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: .55rem; }
+    .stamp {
+      aspect-ratio: 1;
+      border-radius: 50%;
+      border: 2.5px dashed var(--marigold);
+      background: var(--cream);
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      color: transparent;
+      transition: transform .18s, background .18s, border-color .18s;
+    }
+    .stamp:hover { transform: scale(1.1) rotate(-6deg); }
+    .stamp[aria-pressed="true"] {
+      background: var(--terracotta);
+      border-color: var(--terracotta);
+      color: #fff;
+      animation: stampIn .28s ease;
+    }
+    @keyframes stampIn {
+      0% { transform: scale(1.6) rotate(-14deg); }
+      100% { transform: scale(1) rotate(0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .stamp[aria-pressed="true"] { animation: none; }
+      html { scroll-behavior: auto; }
+    }
+    .punch-status { margin-top: .7rem; font-size: .88rem; font-weight: 800; color: var(--ink-soft); min-height: 1.4em; }
+    .punch-status.done { color: var(--teal); }
+    .punch-reset {
+      margin-top: .3rem;
+      background: none; border: 0; cursor: pointer;
+      font-family: var(--font-body); font-weight: 800; font-size: .82rem;
+      color: var(--terracotta); text-decoration: underline;
+    }
+
+    /* ─── Stats band ─────────────────────────────────────────── */
+    .stats { background: var(--terracotta); color: var(--cream); padding: 2.6rem 0 3rem; }
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.6rem; text-align: center; }
+    .stat b { display: block; font-family: var(--font-display); font-weight: 800; font-size: 2.4rem; line-height: 1.05; color: #fff; }
+    .stat b em { font-style: normal; color: var(--marigold); }
+    .stat span { font-weight: 700; font-size: .95rem; opacity: .92; }
+
+    /* ─── Menu ───────────────────────────────────────────────── */
+    .menu { padding: 4.5rem 0 4.8rem; }
+    .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.6rem; }
+    .menu-card {
+      background: #fff;
+      border-radius: var(--radius-blob);
+      padding: 1.7rem 1.6rem 1.5rem;
+      box-shadow: var(--shadow);
+      transition: transform .18s;
+    }
+    .menu-card:nth-child(even) { border-radius: 56px 28px 60px 26px; }
+    .menu-card:hover { transform: translateY(-5px) rotate(-.6deg); }
+    .menu-icon {
+      width: 58px; height: 58px;
+      border-radius: 50% 46% 52% 48% / 48% 52% 46% 54%;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1rem;
+      color: var(--ink);
+    }
+    .mi-marigold { background: var(--marigold); }
+    .mi-pink { background: var(--pink); }
+    .mi-teal { background: var(--teal); color: #fff; }
+    .mi-peach { background: var(--peach); }
+    .menu-card h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: .35rem; }
+    .menu-card p { color: var(--ink-soft); font-size: .97rem; margin-bottom: .7rem; }
+    .menu-price { font-family: var(--font-display); font-weight: 700; color: var(--teal); font-size: 1rem; }
+
+    /* ─── Regulars Club (signature expansion) ────────────────── */
+    .regulars { background: var(--peach); padding: 4.2rem 0 4.6rem; }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.5rem; margin-bottom: 2.2rem; }
+    .rstep {
+      background: var(--cream);
+      border-radius: 20px;
+      padding: 1.7rem 1.5rem;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+    .rstep:nth-child(1) { transform: rotate(-1.2deg); }
+    .rstep:nth-child(2) { transform: rotate(.8deg); }
+    .rstep:nth-child(3) { transform: rotate(-.7deg); }
+    .rstep b {
+      position: absolute;
+      top: -1.1rem; left: 1.2rem;
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--pink);
+      color: #fff;
+      font-family: var(--font-display); font-weight: 800; font-size: 1.25rem;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: var(--shadow);
+    }
+    .rstep h3 { font-size: 1.2rem; font-weight: 800; margin: .6rem 0 .4rem; }
+    .rstep p { color: var(--ink-soft); font-size: .96rem; }
+    .perks {
+      background: #fff;
+      border-radius: 22px;
+      padding: 1.6rem 1.8rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      gap: 1.2rem 2.4rem;
+      flex-wrap: wrap;
+      font-weight: 800;
+      font-size: .98rem;
+    }
+    .perks span { display: inline-flex; align-items: center; gap: .5rem; }
+    .perks svg { color: var(--terracotta); flex: none; }
+
+    /* ─── Why us ─────────────────────────────────────────────── */
+    .why { padding: 4.5rem 0 4.8rem; }
+    .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+    .why-tile {
+      border-radius: 20px;
+      padding: 1.6rem 1.5rem;
+      font-weight: 700;
+      box-shadow: var(--shadow);
+    }
+    .why-tile h3 { font-size: 1.18rem; font-weight: 800; margin-bottom: .4rem; }
+    .why-tile p { font-weight: 600; font-size: .96rem; }
+    .wt-1 { background: var(--marigold); transform: rotate(-1deg); }
+    .wt-2 { background: #fff; transform: rotate(.8deg); }
+    .wt-3 { background: var(--pink); color: #fff; transform: rotate(-.6deg); }
+    .wt-3 p { color: rgba(255,255,255,.94); }
+    .wt-4 { background: #fff; transform: rotate(1deg); }
+
+    /* ─── Gallery ────────────────────────────────────────────── */
+    .gallery { background: var(--teal); padding: 4.3rem 0 4.8rem; color: var(--cream); }
+    .gallery .sec-head { color: #fff; }
+    .gallery .sec-sub { color: rgba(255, 244, 227, .85); }
+    .gallery .kicker { background: var(--pink); color: #fff; }
+    .gal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.4rem; }
+    .gal-item { text-align: center; }
+    .gal-item figure {
+      aspect-ratio: 4 / 4.6;
+      overflow: hidden;
+      border-radius: 999px 999px 26px 26px;
+      border: 5px solid rgba(255, 244, 227, .9);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, .22);
+    }
+    .gal-item:nth-child(even) figure { border-radius: 26px 26px 999px 999px; }
+    .gal-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .25s; }
+    .gal-item:hover img { transform: scale(1.05) rotate(1deg); }
+    .gal-item figcaption { font-family: var(--font-display); font-weight: 700; font-size: .95rem; margin-top: .6rem; color: var(--cream); }
+
+    /* ─── Testimonials ───────────────────────────────────────── */
+    .quotes { padding: 4.5rem 0 4.8rem; }
+    .quote-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.6rem; }
+    .quote {
+      background: #fff;
+      border-radius: 24px 24px 24px 4px;
+      padding: 1.7rem 1.6rem;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+    .quote::before {
+      content: "“";
+      position: absolute;
+      top: -1.4rem; left: 1rem;
+      font-family: var(--font-display);
+      font-size: 4rem;
+      color: var(--marigold);
+      line-height: 1;
+    }
+    .quote p { font-weight: 600; margin: .6rem 0 .9rem; }
+    .quote footer { font-family: var(--font-display); font-weight: 700; color: var(--terracotta); font-size: .95rem; }
+
+    /* ─── About ──────────────────────────────────────────────── */
+    .about { background: var(--peach); padding: 4.3rem 0 4.8rem; }
+    .about-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 3rem; align-items: center; }
+    .about p { color: var(--ink-soft); font-weight: 600; margin-bottom: 1rem; }
+    .about .arch { width: min(100%, 360px); margin: 0 auto; }
+
+    /* ─── CTA banner ─────────────────────────────────────────── */
+    .banner { background: var(--marigold); text-align: center; padding: 3.6rem 1.4rem 4rem; }
+    .banner h2 { font-size: clamp(2rem, 6vw, 3.2rem); font-weight: 800; margin-bottom: .5rem; }
+    .banner p { font-weight: 700; color: rgba(67, 36, 27, .8); margin-bottom: 1.6rem; }
+    .banner .btn { margin: 0 .4rem .6rem; }
+
+    /* ─── Contact ────────────────────────────────────────────── */
+    .contact { padding: 4.5rem 0 5rem; }
+    .contact-grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: 3rem; }
+    .c-line { display: flex; gap: .85rem; align-items: flex-start; margin-bottom: 1.25rem; }
+    .c-line svg { flex: none; color: var(--terracotta); margin-top: .2rem; }
+    .c-line b { display: block; font-family: var(--font-display); font-weight: 800; font-size: .95rem; }
+    .c-line a { color: var(--ink); font-weight: 700; text-decoration: underline; text-decoration-color: var(--marigold); text-decoration-thickness: 2px; }
+    .c-line a:hover { color: var(--terracotta); }
+    /* NOTE: mockup form — not wired to a backend */
+    .c-form { background: #fff; border-radius: 24px; padding: 1.8rem 1.7rem; box-shadow: var(--shadow); display: grid; gap: .9rem; }
+    .c-form h3 { font-size: 1.25rem; font-weight: 800; }
+    .c-form label { font-weight: 800; font-size: .88rem; display: block; margin-bottom: .3rem; }
+    .c-form input, .c-form select, .c-form textarea {
+      width: 100%;
+      font: inherit;
+      font-weight: 600;
+      padding: .68rem .9rem;
+      border: 2px solid var(--peach);
+      border-radius: 12px;
+      background: var(--cream);
+      color: var(--ink);
+    }
+    .c-form input:focus, .c-form select:focus, .c-form textarea:focus { outline: 3px solid var(--teal); outline-offset: 1px; }
+    .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: .9rem; }
+
+    /* ─── Footer ─────────────────────────────────────────────── */
+    footer.site { background: var(--ink); color: var(--cream); padding: 2.4rem 0; font-weight: 600; font-size: .95rem; }
+    footer.site .wrap { display: flex; justify-content: space-between; gap: 1.2rem; flex-wrap: wrap; }
+    footer.site a { color: var(--cream); }
+    footer.site a:hover { color: var(--marigold); }
+
+    /* ─── Mobile ─────────────────────────────────────────────── */
+    @media (max-width: 780px) {
+      .nav-links li:not(:last-child) { display: none; }
+      .hero { padding: 2.6rem 0 3.6rem; }
+      .hero-grid { grid-template-columns: 1fr; gap: 2.4rem; }
+      .hero-visual { padding-bottom: 5.2rem; }
+      .hero-visual .blob { right: -1rem; }
+      .arch { margin: 0 auto; }
+      .punch { left: 50%; transform: translateX(-50%) rotate(-2deg); }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .stat b { font-size: 1.9rem; }
+      .row2 { grid-template-columns: 1fr; }
+      .menu, .why, .quotes, .contact { padding: 3.4rem 0 3.7rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="nav" aria-label="Main navigation">
+      <a class="logo" href="#home" aria-label="Homebird Coffee House home">
+        <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+          <circle cx="15" cy="20" r="11" fill="#D9572F"/>
+          <path d="M23 15c3-1 5-4 5-4s-1 5-3.5 6.5z" fill="#F4A72C"/>
+          <circle cx="18.5" cy="16.5" r="1.5" fill="#43241B"/>
+          <path d="M25 19l4 1.5-4 1.2z" fill="#F4A72C"/>
+          <path d="M10 31c1.5 1 3.5 1.5 5 1.5s3.5-.5 5-1.5" stroke="#43241B" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        Homebird
+      </a>
+      <ul class="nav-links">
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#regulars">Regulars Club</a></li>
+        <li><a href="#gallery">The Space</a></li>
+        <li><a href="#visit">Visit</a></li>
+        <li><a class="nav-phone" href="tel:6145550142">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+          (614) 555-0142</a></li> <!-- PLACEHOLDER phone -->
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 1 ── HERO + signature element -->
+  <section class="hero" id="home">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker">Clintonville's living room</span>
+        <h1>Come in, <span class="terra">warm up</span>, stay <span class="teal">awhile</span>.</h1>
+        <p class="hero-sub">Coffee poured into real mugs, pastries baked before sunrise, and a patio the whole neighborhood (dogs included) calls home. Right on N High Street.</p>
+        <div class="hero-ctas">
+          <a class="btn" href="#menu">See the menu</a>
+          <a class="btn btn--ghost" href="#visit">Find our corner</a>
+        </div>
+        <div class="hero-trust">
+          <span>★ 4.9 from the neighbors</span> <!-- PLACEHOLDER rating -->
+          <span>Baked in-house daily</span>
+          <span>Dog-friendly patio</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="blob" aria-hidden="true"></div>
+        <div class="ring" aria-hidden="true"></div>
+        <!-- PLACEHOLDER: all photos on this page are temporary Unsplash stock — replace with real client photography before any production use -->
+        <div class="arch">
+          <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=900&q=75" alt="Friends chatting over coffee in a warm, sunlit café" />
+        </div>
+        <span class="sticker" aria-hidden="true">baked fresh every morning!</span>
+
+        <!-- Signature element: Regulars Club punch card (tap to stamp) -->
+        <div class="punch" id="punch-card">
+          <div class="punch-head">
+            <b>Regulars Club</b>
+            <span>8 stamps =<br />free drink</span>
+          </div>
+          <div class="punch-grid" role="group" aria-label="Try the punch card — tap cups to stamp them">
+            <button class="stamp" aria-pressed="false" aria-label="Stamp cup 1"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 9h11v7a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4z"/><path d="M16 10h2a2.5 2.5 0 0 1 0 5h-2"/><path d="M8 5c0-1 .8-1 .8-2M12 5c0-1 .8-1 .8-2"/></svg></button>
+            <button class="stamp" aria-pressed="false" aria-label="Stamp cup 2"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 9h11v7a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4z"/><path d="M16 10h2a2.5 2.5 0 0 1 0 5h-2"/><path d="M8 5c0-1 .8-1 .8-2M12 5c0-1 .8-1 .8-2"/></svg></button>
+            <button class="stamp" aria-pressed="false" aria-label="Stamp cup 3"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 9h11v7a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4z"/><path d="M16 10h2a2.5 2.5 0 0 1 0 5h-2"/><path d="M8 5c0-1 .8-1 .8-2M12 5c0-1 .8-1 .8-2"/></svg></button>
+            <button class="stamp" aria-pressed="false" aria-label="Stamp cup 4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 9h11v7a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4z"/><path d="M16 10h2a2.5 2.5 0 0 1 0 5h-2"/><path d="M8 5c0-1 .8-1 .8-2M12 5c0-1 .8-1 .8-2"/></svg></button>
+            <button class="stamp" aria-pressed="false" aria-label="Stamp cup 5"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 9h11v7a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4z"/><path d="M16 10h2a2.5 2.5 0 0 1 0 5h-2"/><path d="M8 5c0-1 .8-1 .8-2M12 5c0-1 .8-1 .8-2"/></svg></button>
+            <button class="stamp" aria-pressed="false" aria-label="Stamp cup 6"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 9h11v7a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4z"/><path d="M16 10h2a2.5 2.5 0 0 1 0 5h-2"/><path d="M8 5c0-1 .8-1 .8-2M12 5c0-1 .8-1 .8-2"/></svg></button>
+            <button class="stamp" aria-pressed="false" aria-label="Stamp cup 7"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 9h11v7a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4z"/><path d="M16 10h2a2.5 2.5 0 0 1 0 5h-2"/><path d="M8 5c0-1 .8-1 .8-2M12 5c0-1 .8-1 .8-2"/></svg></button>
+            <button class="stamp" aria-pressed="false" aria-label="Stamp cup 8"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 9h11v7a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4z"/><path d="M16 10h2a2.5 2.5 0 0 1 0 5h-2"/><path d="M8 5c0-1 .8-1 .8-2M12 5c0-1 .8-1 .8-2"/></svg></button>
+          </div>
+          <p class="punch-status" id="punch-status" aria-live="polite">Tap a cup to start your card ↑</p>
+          <button class="punch-reset" id="punch-reset" hidden>Start a fresh card</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 ── STATS BAND -->
+  <svg class="wave" viewBox="0 0 1440 54" preserveAspectRatio="none" aria-hidden="true"><path fill="#D9572F" d="M0 30 C 240 54 480 6 720 24 C 960 42 1200 10 1440 28 L 1440 54 L 0 54 Z"/></svg>
+  <section class="stats" aria-label="A few numbers we're proud of">
+    <div class="wrap stats-grid">
+      <!-- PLACEHOLDER: confirm all four numbers with client -->
+      <div class="stat"><b>3</b><span>years on High Street</span></div>
+      <div class="stat"><b>60<em>K+</em></b><span>cups poured (and counting)</span></div>
+      <div class="stat"><b>212</b><span>card-carrying Regulars</span></div>
+      <div class="stat"><b>4.9<em>★</em></b><span>neighborhood rating</span></div>
+    </div>
+  </section>
+  <svg class="wave" viewBox="0 0 1440 54" preserveAspectRatio="none" aria-hidden="true" style="transform: scaleY(-1); display:block; background: var(--cream);"><path fill="#D9572F" d="M0 30 C 240 54 480 6 720 24 C 960 42 1200 10 1440 28 L 1440 54 L 0 54 Z"/></svg>
+
+  <!-- 3 ── MENU -->
+  <section class="menu" id="menu">
+    <div class="wrap">
+      <span class="kicker">The good stuff</span>
+      <h2 class="sec-head">What's pouring &amp; what's warm.</h2>
+      <p class="sec-sub">Everything's made slow on purpose — beans from an Ohio roaster, bakes from our own oven, and nothing you can't pronounce. <!-- PLACEHOLDER: menu items & prices invented --></p>
+      <div class="menu-grid">
+        <div class="menu-card">
+          <div class="menu-icon mi-marigold"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 8h12v8a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path d="M16 9h2.5a2.5 2.5 0 0 1 0 5H16"/><path d="M7.5 4.5c0-1 .9-1 .9-2.2M11.5 4.5c0-1 .9-1 .9-2.2"/></svg></div>
+          <h3>Espresso &amp; Classics</h3>
+          <p>Lattes, cortados, cappuccinos — pulled on our cherry-red machine, served in mugs with actual weight to them.</p>
+          <span class="menu-price">from $3.75</span>
+        </div>
+        <div class="menu-card">
+          <div class="menu-icon mi-teal"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h10l-1 18H8z"/><path d="M7 8h10"/><path d="M12 12v4"/></svg></div>
+          <h3>Brews &amp; Cold Sips</h3>
+          <p>Bottomless-feeling drip, slow-steeped cold brew, and a seasonal special that changes when the weather does.</p>
+          <span class="menu-price">from $2.95</span>
+        </div>
+        <div class="menu-card">
+          <div class="menu-icon mi-pink"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c-4 0-8 2.5-8 6 0 2 1.5 3.5 3 4l-1 8 6-3 6 3-1-8c1.5-.5 3-2 3-4 0-3.5-4-6-8-6z"/></svg></div>
+          <h3>Baked This Morning</h3>
+          <p>Croissants, brown-butter muffins, and a rotating galette — whatever Junie felt like at 5 a.m., honestly.</p>
+          <span class="menu-price">from $3.25</span>
+        </div>
+        <div class="menu-card">
+          <div class="menu-icon mi-peach"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18v3a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3z"/><path d="M5 13l1 6h12l1-6"/><path d="M8 7c0-2 1.8-3.5 4-3.5S16 5 16 7"/></svg></div>
+          <h3>Toasts &amp; Bites</h3>
+          <p>Ricotta-honey toast, the famous breakfast sammy, and soup Fridays all winter. Enough to call it lunch.</p>
+          <span class="menu-price">from $6.50</span>
+        </div>
+        <div class="menu-card">
+          <div class="menu-icon mi-marigold"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/></svg></div>
+          <h3>On the Patio</h3>
+          <p>Affogato floats, lavender lemonade, string lights after dusk — and free pup cups for the four-legged regulars.</p>
+          <span class="menu-price">from $4.50</span>
+        </div>
+        <div class="menu-card">
+          <div class="menu-icon mi-teal"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8c0-2 1-4 3-5l6 0c2 1 3 3 3 5l-1.5 12a2 2 0 0 1-2 1.8h-5a2 2 0 0 1-2-1.8z"/><path d="M6.5 8h11"/><path d="M12 12c-1.5 1-1.5 3 0 4 1.5-1 1.5-3 0-4z"/></svg></div>
+          <h3>Beans To Go</h3>
+          <p>Our house blend plus a rotating single origin, roasted 30 minutes up the road. Ground however you like.</p>
+          <span class="menu-price">$16 / bag</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 ── SIGNATURE EXPANSION: how the Regulars Club works -->
+  <div class="scallops" aria-hidden="true"></div>
+  <section class="regulars" id="regulars">
+    <div class="wrap">
+      <span class="kicker">Our little loyalty thing</span>
+      <h2 class="sec-head">The Regulars Club.</h2>
+      <p class="sec-sub">No app. No points math. A little card that lives in your wallet and gets happier every visit — just like the one you tried up top.</p>
+      <div class="steps">
+        <div class="rstep">
+          <b>1</b>
+          <h3>Grab a card</h3>
+          <p>Ask at the counter — it's free, it's terracotta, and it smells faintly of espresso within a week.</p>
+        </div>
+        <div class="rstep">
+          <b>2</b>
+          <h3>Stamp every drink</h3>
+          <p>One stamp per visit, hand-stamped with our little bird. Lose your card? We probably remember your count anyway.</p>
+        </div>
+        <div class="rstep">
+          <b>3</b>
+          <h3>Eighth one's on us</h3>
+          <p>Any drink on the menu, any size, no fine print. Then we start the next card together.</p>
+        </div>
+      </div>
+      <div class="perks">
+        <span><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 6.9H21l-5.4 4.2 2 7L12 15.8 6.4 20l2-7L3 8.9h6.6z"/></svg> Regulars get first dibs on seasonal drinks</span>
+        <span><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 6.9H21l-5.4 4.2 2 7L12 15.8 6.4 20l2-7L3 8.9h6.6z"/></svg> Birthday drink, on the house</span>
+        <span><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 6.9H21l-5.4 4.2 2 7L12 15.8 6.4 20l2-7L3 8.9h6.6z"/></svg> Double-stamp Tuesdays</span>
+      </div>
+    </div>
+  </section>
+  <div class="scallops--cream scallops" aria-hidden="true" style="background: radial-gradient(circle at 11px 0, var(--cream) 11px, transparent 12px); background-size: 22px 22px; background-color: transparent;"></div>
+
+  <!-- 5 ── WHY US -->
+  <section class="why">
+    <div class="wrap">
+      <span class="kicker">Why folks nest here</span>
+      <h2 class="sec-head">Comfy on purpose.</h2>
+      <p class="sec-sub">Every mismatched chair and thrifted lamp was chosen so you'd stay longer than you planned to.</p>
+      <div class="why-grid">
+        <div class="why-tile wt-1">
+          <h3>Real mugs, real couches</h3>
+          <p>Paper cups exist, sure — but your drink deserves ceramic and you deserve the velvet armchair by the window.</p>
+        </div>
+        <div class="why-tile wt-2">
+          <h3>Local art, rotating monthly</h3>
+          <p>The walls belong to Clintonville artists. Everything's for sale, and openings come with free drip.</p>
+        </div>
+        <div class="why-tile wt-3">
+          <h3>Plants with names</h3>
+          <p>Meet Fernie Sanders and the philodendron gang. The greenery is real and slightly out of control.</p>
+        </div>
+        <div class="why-tile wt-4">
+          <h3>Wi-Fi &amp; stay-a-while outlets</h3>
+          <p>Work mornings welcome. We'll never side-eye your laptop — just maybe tempt you with a second croissant.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 ── GALLERY -->
+  <svg class="wave" viewBox="0 0 1440 54" preserveAspectRatio="none" aria-hidden="true"><path fill="#12766C" d="M0 30 C 240 54 480 6 720 24 C 960 42 1200 10 1440 28 L 1440 54 L 0 54 Z"/></svg>
+  <section class="gallery" id="gallery">
+    <div class="wrap">
+      <span class="kicker">The space</span>
+      <h2 class="sec-head">Golden hour, all day.</h2>
+      <p class="sec-sub">A peek inside — though it's better with the smell of croissants. <!-- PLACEHOLDER: Unsplash stock photos — swap for client photos --></p>
+      <div class="gal-grid">
+        <figure class="gal-item">
+          <figure><img loading="lazy" src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=70" alt="Hands wrapped around a latte with heart latte art" /></figure>
+          <figcaption>the usual, extra foam</figcaption>
+        </figure>
+        <figure class="gal-item">
+          <figure><img loading="lazy" src="https://images.unsplash.com/photo-1517705008128-361805f42e86?auto=format&fit=crop&w=800&q=70" alt="Fresh pastries and baked goods on a wooden counter" /></figure>
+          <figcaption>the 7am bake haul</figcaption>
+        </figure>
+        <figure class="gal-item">
+          <figure><img loading="lazy" src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=800&q=70" alt="Cozy café interior with plants and warm wood tables" /></figure>
+          <figcaption>fernie sanders' corner</figcaption>
+        </figure>
+        <figure class="gal-item">
+          <figure><img loading="lazy" src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=800&q=70" alt="Espresso machine and bar at a neighborhood coffee shop" /></figure>
+          <figcaption>the cherry-red machine</figcaption>
+        </figure>
+        <figure class="gal-item">
+          <figure><img loading="lazy" src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=800&q=70" alt="Person working on a laptop by a sunny café window" /></figure>
+          <figcaption>monday office hours</figcaption>
+        </figure>
+        <figure class="gal-item">
+          <figure><img loading="lazy" src="https://images.unsplash.com/photo-1525610553991-2bede1a236e2?auto=format&fit=crop&w=800&q=70" alt="Latte with tulip latte art on a saucer" /></figure>
+          <figcaption>tuesday's double-stamp reward</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+  <svg class="wave" viewBox="0 0 1440 54" preserveAspectRatio="none" aria-hidden="true" style="transform: scaleY(-1); display:block; background: var(--cream);"><path fill="#12766C" d="M0 30 C 240 54 480 6 720 24 C 960 42 1200 10 1440 28 L 1440 54 L 0 54 Z"/></svg>
+
+  <!-- 7 ── TESTIMONIALS -->
+  <section class="quotes">
+    <div class="wrap">
+      <span class="kicker">Overheard at the counter</span>
+      <h2 class="sec-head">Neighbors say it best.</h2>
+      <p class="sec-sub"><!-- PLACEHOLDER: replace with real reviews --></p>
+      <div class="quote-grid">
+        <blockquote class="quote">
+          <p>My punch card filled up before my houseplants needed watering again. The breakfast sammy is a personality trait now.</p>
+          <footer>— Dana, Beechwold</footer>
+        </blockquote>
+        <blockquote class="quote">
+          <p>I came for wifi and left with two friends, a galette recipe, and a painting off the wall. This place is a trap (affectionate).</p>
+          <footer>— Theo, Old North</footer>
+        </blockquote>
+        <blockquote class="quote">
+          <p>My dog drags me here. Not walking-route convenient — she just knows the patio does pup cups and I'm powerless.</p>
+          <footer>— Priya &amp; Waffles, SoHud</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 ── ABOUT -->
+  <div class="scallops" aria-hidden="true"></div>
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div>
+        <span class="kicker">Our story</span>
+        <h2 class="sec-head">Two mugs &amp; a dream.</h2>
+        <!-- PLACEHOLDER: owner names & founding story invented -->
+        <p>Junie bakes. Marcus pours. In 2023 they turned a former bike shop on N High into the café they always wished existed — one where the chairs don't match, the playlist is somebody's mixtape, and the barista knows your order by week two.</p>
+        <p>Homebird is for Clintonville, Beechwold, Old North, and anyone who believes a neighborhood needs a third place that isn't anyone's living room but feels like everyone's.</p>
+        <a class="btn btn--terra" href="#visit">Come find us</a>
+      </div>
+      <div class="arch">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=800&q=70" alt="Smiling barista behind the counter of a warm café" />
+      </div>
+    </div>
+  </section>
+  <div class="scallops scallops--cream" aria-hidden="true" style="background: radial-gradient(circle at 11px 0, var(--cream) 11px, transparent 12px); background-size: 22px 22px;"></div>
+
+  <!-- 9 ── CTA BANNER -->
+  <section class="banner">
+    <h2>Your corner seat is waiting.</h2>
+    <p>Open Mon–Fri 7–6 · Sat–Sun 8–7 · 3281 N High St, Columbus <!-- PLACEHOLDER hours/address --></p>
+    <a class="btn" href="tel:6145550142">Call (614) 555-0142</a>
+    <a class="btn btn--terra" href="#visit">Plan your visit</a>
+  </section>
+
+  <!-- 10 ── CONTACT -->
+  <section class="contact" id="visit">
+    <div class="wrap">
+      <span class="kicker">Visit</span>
+      <h2 class="sec-head">Find our corner.</h2>
+      <p class="sec-sub">Street parking on High, bike racks out front, and the #2 bus stops half a block away.</p>
+      <div class="contact-grid">
+        <div>
+          <div class="c-line">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+            <div><b>Address</b>3281 N High St, Columbus, OH 43202 <!-- PLACEHOLDER --></div>
+          </div>
+          <div class="c-line">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+            <div><b>Phone</b><a href="tel:6145550142">(614) 555-0142</a></div>
+          </div>
+          <div class="c-line">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <div><b>Email</b><a href="mailto:hello@homebirdcoffee.com">hello@homebirdcoffee.com</a></div>
+          </div>
+          <div class="c-line">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.2 14.2L11 13V7h1.5v5.3l4.5 2.7-.8 1.2z"/></svg>
+            <div><b>Hours</b>Mon–Fri 7am–6pm · Sat–Sun 8am–7pm</div>
+          </div>
+        </div>
+        <!-- NOTE: mockup form — not wired to a backend -->
+        <form class="c-form" onsubmit="event.preventDefault(); alert('Demo mockup — form not connected yet.');">
+          <h3>Book the big table</h3>
+          <div class="row2">
+            <div><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required /></div>
+            <div><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required /></div>
+          </div>
+          <div>
+            <label for="f-type">What's the occasion?</label>
+            <select id="f-type" name="type">
+              <option>Book club / meetup (the big table)</option>
+              <option>Catering — coffee &amp; pastry box</option>
+              <option>Showing art on the walls</option>
+              <option>Just saying hi</option>
+            </select>
+          </div>
+          <div><label for="f-msg">Tell us more</label><textarea id="f-msg" name="message" rows="4"></textarea></div>
+          <button class="btn btn--terra" type="submit">Send it over</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 ── FOOTER -->
+  <footer class="site">
+    <div class="wrap">
+      <div>
+        <strong style="font-family: var(--font-display); font-size: 1.1rem;">Homebird Coffee House</strong><br />
+        3281 N High St, Columbus, OH · <a href="tel:6145550142">(614) 555-0142</a>
+      </div>
+      <div>Mon–Fri 7–6 · Sat–Sun 8–7</div>
+      <div>© 2026 Homebird Coffee House</div>
+    </div>
+  </footer>
+
+  <script>
+    // Signature element: Regulars Club punch card
+    (function () {
+      const stamps = [...document.querySelectorAll(".stamp")];
+      const status = document.getElementById("punch-status");
+      const reset = document.getElementById("punch-reset");
+      const KEY = "homebird-punch";
+
+      let state;
+      try { state = JSON.parse(localStorage.getItem(KEY)) || []; } catch (e) { state = []; }
+      if (!Array.isArray(state) || state.length !== 8) state = new Array(8).fill(false);
+
+      function render() {
+        stamps.forEach((b, i) => b.setAttribute("aria-pressed", state[i] ? "true" : "false"));
+        const n = state.filter(Boolean).length;
+        status.classList.toggle("done", n === 8);
+        reset.hidden = n !== 8;
+        if (n === 0) status.textContent = "Tap a cup to start your card ↑";
+        else if (n === 8) status.textContent = "Card complete — next drink's on us!";
+        else status.textContent = n + " of 8 stamped — " + (8 - n) + " to a free drink";
+        try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+      }
+
+      stamps.forEach((b, i) => b.addEventListener("click", () => { state[i] = !state[i]; render(); }));
+      reset.addEventListener("click", () => { state = new Array(8).fill(false); render(); });
+      render();
+    })();
+  </script>
+</body>
+</html>
