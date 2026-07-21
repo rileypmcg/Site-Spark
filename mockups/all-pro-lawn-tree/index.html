@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex" />
+<!--
+  MOCKUP: All Pro Lawn & Tree Service — Gainesville, FL
+  Pitch angle: their existing site is broken/blocked — this is the "we fixed what's broken" replacement.
+  (Keep that framing in the outreach note, not in customer-facing copy.)
+-->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tree Service &amp; Lawn Care in Gainesville, FL | All Pro Lawn &amp; Tree Service</title>
+<meta name="description" content="Tree removal, trimming, storm cleanup and full lawn care in Gainesville, FL. Licensed, insured, same-week scheduling. Call (352) 214-0101 for a free estimate." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "All Pro Lawn & Tree Service",
+  "telephone": "(352) 214-0101",
+  "email": "info@allprolawntree.com",
+  "address": { "@type": "PostalAddress", "addressLocality": "Gainesville", "addressRegion": "FL", "addressCountry": "US" },
+  "areaServed": "Gainesville, FL",
+  "description": "Tree removal, trimming, stump grinding, storm cleanup and lawn maintenance in Gainesville, Florida."
+}
+</script>
+<style>
+  :root {
+    --pine-950: #0D241C;   /* deep pine — hero / footer */
+    --pine-900: #143229;   /* primary brand */
+    --pine-800: #1C4234;
+    --pine-100: #D9E7DF;
+    --pine-50:  #F1F6F3;
+    --bark-600: #57503F;   /* bark brown — secondary brand */
+    --bark-100: #E9E4D8;
+    --orange-600: #F4640A; /* safety orange — CTA ONLY */
+    --orange-700: #D95608;
+    --ink: #1E2B25;
+    --ink-soft: #55655D;
+    --paper: #FFFFFF;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Public Sans', 'Segoe UI', Arial, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  h1, h2, h3, .disp {
+    font-family: 'Oswald', 'Arial Narrow', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .02em;
+    line-height: 1.12;
+  }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+    outline: 3px solid var(--orange-600); outline-offset: 2px;
+  }
+  img { max-width: 100%; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 1.25rem; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+    background: var(--orange-600); color: #fff; text-decoration: none;
+    font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: .06em;
+    font-size: 1.05rem; font-weight: 600; padding: .9rem 1.7rem; border: 0; cursor: pointer;
+    transition: background .2s ease;
+  }
+  .btn:hover { background: var(--orange-700); }
+  .btn--ghost {
+    background: transparent; border: 2px solid rgba(255,255,255,.55); color: #fff;
+    transition: border-color .2s ease, background .2s ease;
+  }
+  .btn--ghost:hover { background: rgba(255,255,255,.1); border-color: #fff; }
+  .kicker {
+    font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: .18em;
+    font-size: .8rem; font-weight: 600; color: var(--orange-600); display: block; margin-bottom: .6rem;
+  }
+  .sec-head { font-size: clamp(1.7rem, 3.5vw, 2.4rem); color: var(--pine-900); margin-bottom: .5rem; }
+  section { padding: 3.5rem 0; }
+
+  /* NAV */
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    background: var(--pine-950); border-bottom: 3px solid var(--orange-600);
+  }
+  .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 62px; }
+  .logo { display: flex; align-items: center; gap: .55rem; color: #fff; text-decoration: none; }
+  .logo svg { flex: none; }
+  .logo b { font-family: 'Oswald', sans-serif; text-transform: uppercase; font-size: 1.05rem; letter-spacing: .05em; line-height: 1.1; }
+  .logo b span { color: var(--orange-600); }
+  .nav-links { display: flex; gap: 1.4rem; align-items: center; }
+  .nav-links a { color: var(--pine-100); text-decoration: none; font-weight: 600; font-size: .92rem; transition: color .2s; }
+  .nav-links a:hover { color: #fff; }
+  .nav-call {
+    display: inline-flex; align-items: center; gap: .4rem; background: var(--orange-600); color: #fff !important;
+    padding: .5rem .9rem; font-family: 'Oswald', sans-serif; letter-spacing: .05em; text-transform: uppercase;
+    transition: background .2s;
+  }
+  .nav-call:hover { background: var(--orange-700); }
+  @media (max-width: 780px) { .nav-links a:not(.nav-call) { display: none; } }
+
+  /* HERO */
+  .hero {
+    background:
+      linear-gradient(160deg, rgba(13,36,28,.94) 0%, rgba(20,50,41,.9) 55%, rgba(28,66,52,.88) 100%),
+      repeating-linear-gradient(115deg, #0D241C 0 22px, #123027 22px 44px);
+    color: #fff; padding: 4rem 0 4.5rem;
+  }
+  .hero .wrap { display: grid; grid-template-columns: 1.15fr .85fr; gap: 2.5rem; align-items: center; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: .5rem; font-size: .82rem; font-weight: 700;
+    letter-spacing: .12em; text-transform: uppercase; color: var(--pine-100);
+    border: 1px solid rgba(255,255,255,.28); padding: .35rem .8rem; margin-bottom: 1.1rem;
+  }
+  .hero-badge i { width: 8px; height: 8px; border-radius: 50%; background: var(--orange-600); }
+  .hero h1 { font-size: clamp(2.3rem, 5.6vw, 3.6rem); margin-bottom: 1rem; }
+  .hero h1 em { font-style: normal; color: var(--orange-600); }
+  .hero p.sub { color: var(--pine-100); font-size: 1.08rem; max-width: 34rem; margin-bottom: 1.6rem; }
+  .hero-ctas { display: flex; flex-wrap: wrap; gap: .8rem; }
+  .hero-note { margin-top: 1rem; font-size: .88rem; color: var(--pine-100); }
+  .hero-note a { color: #fff; font-weight: 700; text-decoration: none; border-bottom: 1px solid var(--orange-600); }
+
+  /* SIGNATURE: weekly crew availability board */
+  .board {
+    background: var(--paper); color: var(--ink); padding: 1.4rem 1.4rem 1.2rem;
+    border-top: 5px solid var(--orange-600); box-shadow: 0 18px 45px rgba(0,0,0,.35);
+  }
+  .board h2 { font-size: 1.15rem; color: var(--pine-900); display: flex; justify-content: space-between; align-items: baseline; gap: .5rem; }
+  .board .wk { font-size: .72rem; letter-spacing: .14em; color: var(--ink-soft); font-family: 'Public Sans', sans-serif; font-weight: 700; }
+  .board-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: .45rem; margin: 1rem 0 .8rem; }
+  .day {
+    border: 1px solid var(--pine-100); padding: .55rem .2rem .6rem; text-align: center; background: var(--pine-50);
+  }
+  .day b { display: block; font-family: 'Oswald', sans-serif; font-size: .8rem; letter-spacing: .08em; color: var(--pine-900); }
+  .day span { display: block; font-size: .68rem; font-weight: 700; margin-top: .3rem; line-height: 1.25; }
+  .day--open span { color: #1D7A3E; }
+  .day--tight span { color: var(--orange-700); }
+  .day--full { background: #F4F1EA; }
+  .day--full span { color: var(--ink-soft); }
+  .day--today { border: 2px solid var(--orange-600); position: relative; }
+  .day--today::after {
+    content: "TODAY"; position: absolute; top: -9px; left: 50%; transform: translateX(-50%);
+    background: var(--orange-600); color: #fff; font-size: .55rem; font-weight: 700; letter-spacing: .1em;
+    padding: 1px 5px;
+  }
+  .board-storm {
+    display: flex; gap: .6rem; align-items: flex-start; background: var(--pine-50);
+    border-left: 4px solid var(--orange-600); padding: .7rem .8rem; font-size: .85rem;
+  }
+  .board-storm b { color: var(--pine-900); }
+  .board-storm a { color: var(--pine-900); font-weight: 700; }
+
+  /* STATS */
+  .stats { background: var(--pine-900); color: #fff; padding: 2.2rem 0; }
+  .stats .wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; text-align: center; }
+  .stat b { display: block; font-family: 'Oswald', sans-serif; font-size: 2rem; color: var(--orange-600); }
+  .stat span { font-size: .85rem; color: var(--pine-100); font-weight: 600; }
+
+  /* SERVICES */
+  .services { background: var(--paper); }
+  .svc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-top: 1.8rem; }
+  .svc {
+    border: 1px solid var(--pine-100); border-top: 4px solid var(--pine-800); padding: 1.3rem 1.2rem;
+    background: var(--pine-50); transition: border-color .2s, background .2s;
+  }
+  .svc:hover { background: #fff; border-color: var(--pine-800); }
+  .svc svg { width: 34px; height: 34px; stroke: var(--pine-800); margin-bottom: .7rem; }
+  .svc h3 { font-size: 1.05rem; color: var(--pine-900); margin-bottom: .35rem; }
+  .svc p { font-size: .92rem; color: var(--ink-soft); }
+
+  /* PROCESS */
+  .process { background: var(--bark-100); }
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; margin-top: 1.8rem; }
+  .step { background: #fff; padding: 1.4rem 1.3rem; border-bottom: 4px solid var(--orange-600); }
+  .step b { font-family: 'Oswald', sans-serif; font-size: 1.6rem; color: var(--bark-600); display: block; margin-bottom: .4rem; }
+  .step h3 { font-size: 1.02rem; color: var(--pine-900); margin-bottom: .3rem; }
+  .step p { font-size: .9rem; color: var(--ink-soft); }
+
+  /* WHY */
+  .why .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start; }
+  .why-list { display: grid; gap: 1rem; margin-top: 1.4rem; }
+  .why-item { display: flex; gap: .8rem; align-items: flex-start; }
+  .why-item svg { flex: none; width: 26px; height: 26px; stroke: var(--orange-600); margin-top: .15rem; }
+  .why-item b { color: var(--pine-900); }
+  .why-item p { font-size: .93rem; color: var(--ink-soft); }
+  .guarantee {
+    background: var(--pine-900); color: #fff; padding: 1.8rem 1.6rem; border-left: 6px solid var(--orange-600);
+  }
+  .guarantee h3 { font-size: 1.3rem; margin-bottom: .6rem; }
+  .guarantee p { color: var(--pine-100); font-size: .95rem; }
+  .guarantee strong { color: #fff; }
+
+  /* GALLERY */
+  .gallery { background: var(--pine-50); }
+  .gal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; margin-top: 1.8rem; }
+  .tile { height: 200px; position: relative; overflow: hidden; }
+  .tile figcaption {
+    position: absolute; left: 0; right: 0; bottom: 0; background: rgba(13,36,28,.85); color: #fff;
+    font-size: .8rem; font-weight: 600; padding: .45rem .7rem;
+  }
+  /* PLACEHOLDER photo tiles — replace with real job photos */
+  .tile--1 { background: linear-gradient(135deg, #1C4234, #2E5B47 60%, #57503F); }
+  .tile--2 { background: linear-gradient(135deg, #57503F, #7A6F55 55%, #1C4234); }
+  .tile--3 { background: linear-gradient(135deg, #143229, #1C4234 45%, #7A6F55); }
+  .tile--4 { background: linear-gradient(135deg, #2E5B47, #143229 65%, #0D241C); }
+
+  /* TESTIMONIALS */
+  .quotes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.2rem; margin-top: 1.8rem; }
+  .quote { border: 1px solid var(--pine-100); padding: 1.4rem 1.3rem; background: #fff; }
+  .quote .strs { color: var(--orange-600); letter-spacing: .18em; font-size: .85rem; margin-bottom: .6rem; }
+  .quote p { font-size: .95rem; margin-bottom: .8rem; }
+  .quote b { font-size: .85rem; color: var(--pine-900); }
+  .quote span { font-size: .8rem; color: var(--ink-soft); display: block; }
+
+  /* ABOUT */
+  .about { background: var(--bark-100); }
+  .about p { max-width: 46rem; color: var(--ink); margin-top: .6rem; }
+
+  /* CTA BANNER */
+  .banner { background: var(--orange-600); padding: 2.6rem 0; }
+  .banner .wrap { display: flex; flex-wrap: wrap; gap: 1.2rem; align-items: center; justify-content: space-between; }
+  .banner h2 { color: #fff; font-size: clamp(1.5rem, 3vw, 2.1rem); }
+  .banner .btn { background: var(--pine-950); }
+  .banner .btn:hover { background: var(--pine-900); }
+
+  /* CONTACT */
+  .contact .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+  .c-info { display: grid; gap: 1rem; margin-top: 1.2rem; font-size: .96rem; }
+  .c-info a { color: var(--pine-900); font-weight: 700; text-decoration: none; }
+  .c-info a:hover { text-decoration: underline; }
+  .c-info b { display: block; font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); }
+  /* NOTE: form is non-functional in this mockup — wire to a form handler at launch */
+  form { display: grid; gap: .8rem; margin-top: 1.2rem; }
+  label { font-size: .82rem; font-weight: 700; color: var(--pine-900); }
+  input, textarea, select {
+    width: 100%; padding: .7rem .8rem; border: 1px solid #BFCCC5; font: inherit; background: #fff; color: var(--ink);
+  }
+  .contact .btn { width: 100%; }
+
+  /* FOOTER */
+  footer { background: var(--pine-950); color: var(--pine-100); padding: 2.2rem 0; font-size: .88rem; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; }
+  footer a { color: #fff; text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  /* MOBILE CALL BAR */
+  .callbar {
+    display: none; position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
+    background: var(--orange-600); text-align: center; padding: .85rem;
+  }
+  .callbar a { color: #fff; font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: .06em; font-size: 1.05rem; text-decoration: none; }
+
+  @media (max-width: 780px) {
+    .hero .wrap, .why .wrap, .contact .wrap { grid-template-columns: 1fr; }
+    .board-grid { grid-template-columns: repeat(4, 1fr); }
+    .callbar { display: block; }
+    body { padding-bottom: 56px; }
+    section { padding: 2.6rem 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="All Pro Lawn and Tree Service home">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 6 10h3l-4 6h5v6h4v-6h5l-4-6h3L12 2z" fill="#F4640A"/></svg>
+      <b>All Pro <span>Lawn &amp; Tree</span></b>
+    </a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-call" href="tel:+13522140101">(352) 214-0101</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="hero-badge"><i aria-hidden="true"></i> Licensed &amp; insured · Gainesville, FL</span>
+      <h1>Big trees. Rough storms. <em>Handled.</em></h1>
+      <p class="sub">From 60-foot oak removals to weekly lawn maintenance, one crew does it right the first time — with the equipment and insurance to back it up.</p>
+      <div class="hero-ctas">
+        <a class="btn" href="#contact">Get a Free Estimate</a>
+        <a class="btn btn--ghost" href="tel:+13522140101">Call (352) 214-0101</a>
+      </div>
+      <p class="hero-note">Storm damage? We answer nights and weekends — <a href="tel:+13522140101">call the crew line</a>.</p>
+    </div>
+
+    <!-- SIGNATURE ELEMENT: weekly crew availability board -->
+    <div class="board" aria-label="Crew availability this week">
+      <h2>Crew availability <span class="wk">This week</span></h2>
+      <div class="board-grid" id="board">
+        <!-- PLACEHOLDER: slot counts are illustrative — confirm real scheduling with All Pro -->
+        <div class="day day--open" data-day="1"><b>Mon</b><span>2 slots</span></div>
+        <div class="day day--tight" data-day="2"><b>Tue</b><span>1 slot</span></div>
+        <div class="day day--open" data-day="3"><b>Wed</b><span>3 slots</span></div>
+        <div class="day day--full" data-day="4"><b>Thu</b><span>Full</span></div>
+        <div class="day day--tight" data-day="5"><b>Fri</b><span>1 slot</span></div>
+        <div class="day day--open" data-day="6"><b>Sat</b><span>2 slots</span></div>
+        <div class="day day--full" data-day="0"><b>Sun</b><span>Storm calls</span></div>
+      </div>
+      <p class="board-storm"><b>Same-week scheduling.</b>&nbsp;Estimates within 24 hours — storm response crews roll same-day. <a href="tel:+13522140101">Grab a slot →</a></p>
+    </div>
+  </div>
+</header>
+
+<section class="stats" aria-label="Track record">
+  <div class="wrap">
+    <!-- PLACEHOLDER: confirm real numbers with client -->
+    <div class="stat"><b>15+</b><span>Years in the trees</span></div>
+    <div class="stat"><b>2,400+</b><span>Jobs completed</span></div>
+    <div class="stat"><b>24 hr</b><span>Estimate turnaround</span></div>
+    <div class="stat"><b>100%</b><span>Licensed &amp; insured</span></div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <span class="kicker">What we do</span>
+    <h2 class="sec-head">One crew for the whole property</h2>
+    <div class="svc-grid">
+      <div class="svc">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 3 7 10h3l-4 6h12l-4-6h3l-5-7zM12 16v5"/></svg>
+        <h3>Tree Removal</h3>
+        <p>Full takedowns of dead, leaning, or storm-damaged trees — tight spaces and over-structure work included.</p>
+      </div>
+      <div class="svc">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 20 18 8M15 5l4 4M9 13l-3-3 4-4 3 3"/></svg>
+        <h3>Trimming &amp; Pruning</h3>
+        <p>Crown reduction, deadwooding, and clearance cuts that keep trees healthy and off your roofline.</p>
+      </div>
+      <div class="svc">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><ellipse cx="12" cy="16" rx="8" ry="4"/><path d="M8 15c0-4 1-9 4-11 3 2 4 7 4 11"/></svg>
+        <h3>Stump Grinding</h3>
+        <p>Stumps ground below grade, chips hauled or left as mulch — your call, same visit.</p>
+      </div>
+      <div class="svc">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg>
+        <h3>Storm Cleanup</h3>
+        <p>Downed limbs and hazard trees cleared fast after Florida weather does its worst. Priority response.</p>
+      </div>
+      <div class="svc">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 20h18M5 20c1-6 2-10 7-14 5 4 6 8 7 14M12 6v14"/></svg>
+        <h3>Lawn Maintenance</h3>
+        <p>Mowing, edging, and cleanup on a schedule — the same reliability as our tree work, every week.</p>
+      </div>
+      <div class="svc">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 17h15l4-6h-6l-3-6H8L6 11H2v6zM7 21a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm10 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>
+        <h3>Debris Hauling</h3>
+        <p>Limbs, logs, and yard waste loaded and gone the same day — nothing left at the curb for weeks.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process">
+  <div class="wrap">
+    <span class="kicker">How a job goes</span>
+    <h2 class="sec-head">No surprises, start to stump</h2>
+    <div class="steps">
+      <div class="step"><b>01</b><h3>Walk the property</h3><p>We look at the tree, the drop zone, and what's under it — then quote a firm number, not a range.</p></div>
+      <div class="step"><b>02</b><h3>Rig it &amp; drop it</h3><p>Roped, sectioned, and lowered under control. Your roof, fence, and flower beds stay exactly as we found them.</p></div>
+      <div class="step"><b>03</b><h3>Grind &amp; clean</h3><p>Stump ground, debris hauled, lawn raked. The only sign we were there is the missing tree.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="wrap">
+    <div>
+      <span class="kicker">Why All Pro</span>
+      <h2 class="sec-head">The crew your neighbors already use</h2>
+      <div class="why-list">
+        <div class="why-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4z"/><path d="m9 12 2 2 4-4"/></svg>
+          <div><b>Fully insured for tree work</b><p>Real liability coverage for over-structure removals — ask any crew you hire to show you theirs.</p></div>
+        </div>
+        <div class="why-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          <div><b>Estimates in 24 hours</b><p>Call today, get a firm written number by tomorrow. Storm hazards get same-day eyes.</p></div>
+        </div>
+        <div class="why-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V4s-1 1-4 1-5-2-8-2-4 1-4 1v11zM4 22v-7"/></svg>
+          <div><b>One call, whole property</b><p>Trees, lawn, hauling — one number to save, one crew that already knows your yard.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="guarantee">
+      <h3>The All Pro Promise</h3>
+      <p><strong>If we leave your property in worse shape than we found it, we make it right — on our dime.</strong></p>
+      <p style="margin-top:.8rem">That covers ruts in the lawn, dinged fences, and debris left behind. It's why most of our work comes from the same streets, year after year.</p>
+      <!-- PLACEHOLDER: confirm guarantee wording with client -->
+    </div>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="wrap">
+    <span class="kicker">Recent work</span>
+    <h2 class="sec-head">Jobs done around Gainesville</h2>
+    <div class="gal-grid">
+      <!-- PLACEHOLDER: swap gradient tiles for real job photos -->
+      <figure class="tile tile--1"><figcaption>Oak removal — NW 39th Ave</figcaption></figure>
+      <figure class="tile tile--2"><figcaption>Storm cleanup — Haile Plantation</figcaption></figure>
+      <figure class="tile tile--3"><figcaption>Crown reduction — Duckpond</figcaption></figure>
+      <figure class="tile tile--4"><figcaption>Stump grind &amp; re-sod — Millhopper</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="kicker">Word around town</span>
+    <h2 class="sec-head">What customers say</h2>
+    <div class="quotes-grid">
+      <!-- PLACEHOLDER testimonials: replace with real reviews -->
+      <div class="quote">
+        <div class="strs" aria-label="5 stars">★★★★★</div>
+        <p>"A huge laurel oak came down on our fence line in a storm. They were out the next morning and you can't tell it ever happened."</p>
+        <b>Dana R.</b><span>Haile Plantation</span>
+      </div>
+      <div class="quote">
+        <div class="strs" aria-label="5 stars">★★★★★</div>
+        <p>"Three other companies gave me a 'range.' All Pro gave me a number, showed up on the day, and finished by 2pm."</p>
+        <b>Marcus T.</b><span>NW Gainesville</span>
+      </div>
+      <div class="quote">
+        <div class="strs" aria-label="5 stars">★★★★★</div>
+        <p>"They grind the stump, haul everything, and the lawn crew comes back weekly now. One less thing to think about."</p>
+        <b>Ellen P.</b><span>Suburban Heights</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap">
+    <span class="kicker">About us</span>
+    <h2 class="sec-head">Gainesville's whole-property crew</h2>
+    <!-- PLACEHOLDER: confirm story/years with client -->
+    <p>All Pro Lawn &amp; Tree Service has been climbing, cutting, and mowing across Gainesville for over 15 years — from Haile Plantation to Millhopper, Jonesville to Duckpond. We're the crew people call when the job is too big, too high, or too close to the house for guesswork. Same faces, same trucks, same standard — whether it's a 60-foot removal or Tuesday's mow.</p>
+  </div>
+</section>
+
+<section class="banner">
+  <div class="wrap">
+    <h2>Got a tree that worries you? Get eyes on it this week.</h2>
+    <a class="btn" href="#contact">Get a Free Estimate</a>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div>
+      <span class="kicker">Contact</span>
+      <h2 class="sec-head">Free estimates, firm numbers</h2>
+      <div class="c-info">
+        <div><b>Phone</b><a href="tel:+13522140101">(352) 214-0101</a></div>
+        <div><b>Email</b><a href="mailto:info@allprolawntree.com">info@allprolawntree.com</a></div>
+        <div><b>Hours</b>Mon–Sat 7am–6pm · Storm response 24/7 <!-- PLACEHOLDER: confirm hours --></div>
+        <div><b>Service area</b>Gainesville, Jonesville, Newberry, Alachua, Micanopy &amp; surrounding Alachua County</div>
+      </div>
+    </div>
+    <div>
+      <!-- NOTE: form is non-functional in this mockup -->
+      <form aria-label="Request an estimate">
+        <div><label for="f-name">Name</label><input id="f-name" type="text" autocomplete="name" /></div>
+        <div><label for="f-phone">Phone</label><input id="f-phone" type="tel" autocomplete="tel" /></div>
+        <div><label for="f-need">What do you need?</label>
+          <select id="f-need">
+            <option>Tree removal</option><option>Trimming / pruning</option><option>Stump grinding</option>
+            <option>Storm cleanup</option><option>Lawn maintenance</option><option>Something else</option>
+          </select>
+        </div>
+        <div><label for="f-msg">Tell us about the job</label><textarea id="f-msg" rows="4"></textarea></div>
+        <button class="btn" type="submit">Request My Estimate</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 All Pro Lawn &amp; Tree Service · Gainesville, FL · <a href="tel:+13522140101">(352) 214-0101</a> · <a href="mailto:info@allprolawntree.com">info@allprolawntree.com</a></span>
+    <span><a href="#services">Services</a> · <a href="#why">Why Us</a> · <a href="#contact">Contact</a></span>
+  </div>
+</footer>
+
+<div class="callbar"><a href="tel:+13522140101">📞 Call All Pro — (352) 214-0101</a></div>
+
+<script>
+  // Mark today's cell on the availability board
+  (function () {
+    var today = new Date().getDay();
+    var cell = document.querySelector('.day[data-day="' + today + '"]');
+    if (cell) cell.classList.add('day--today');
+  })();
+</script>
+
+</body>
+</html>
