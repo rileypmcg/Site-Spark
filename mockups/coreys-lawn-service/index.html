@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex" />
+<!--
+  MOCKUP: Corey's Lawn Service — Gainesville, FL
+  Owner: Corey Shanely · (954) 999-6514 · NO EMAIL ON FILE — outreach by text/call only.
+-->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lawn Care in Gainesville, FL | Corey's Lawn Service</title>
+<meta name="description" content="Owner-operated lawn care in Gainesville, FL. Corey mows, edges, and trims your yard himself — call or text (954) 999-6514 for a free quote." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Karla:wght@400;500;700&display=swap" rel="stylesheet" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Corey's Lawn Service",
+  "founder": { "@type": "Person", "name": "Corey Shanely" },
+  "telephone": "(954) 999-6514",
+  "address": { "@type": "PostalAddress", "addressLocality": "Gainesville", "addressRegion": "FL", "addressCountry": "US" },
+  "areaServed": "Gainesville, FL",
+  "description": "Owner-operated lawn mowing, edging, and yard care in Gainesville, Florida."
+}
+</script>
+<style>
+  :root {
+    --oat-50:  #FAF6ED;   /* warm neutral background — primary brand */
+    --oat-100: #F3ECDD;
+    --oat-200: #E7DCC4;
+    --olive-800: #4A452F; /* olive-brown — secondary brand */
+    --olive-600: #6B644A;
+    --green-600: #2F8F44; /* fresh green — CTA / accent ONLY */
+    --green-700: #257A38;
+    --green-50:  #EAF5EC;
+    --ink: #38341F;
+    --ink-soft: #6F684F;
+    --card: #FFFDF7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Karla', 'Segoe UI', Arial, sans-serif;
+    color: var(--ink); background: var(--oat-50);
+    font-size: 16px; line-height: 1.65;
+  }
+  h1, h2, h3 { font-family: 'Fredoka', 'Comic Sans MS', sans-serif; font-weight: 600; line-height: 1.15; color: var(--olive-800); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+    outline: 3px solid var(--green-600); outline-offset: 2px;
+  }
+  .wrap { max-width: 1060px; margin: 0 auto; padding: 0 1.25rem; }
+  section { padding: 3.5rem 0; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+    background: var(--green-600); color: #fff; text-decoration: none; cursor: pointer;
+    font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 1.05rem;
+    padding: .85rem 1.6rem; border: 0; border-radius: 999px;
+    transition: background .2s ease;
+  }
+  .btn:hover { background: var(--green-700); }
+  .btn--soft { background: var(--card); color: var(--olive-800); border: 2px solid var(--oat-200); }
+  .btn--soft:hover { background: var(--oat-100); border-color: var(--olive-600); }
+  .kicker {
+    font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: .85rem; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--green-600); display: block; margin-bottom: .5rem;
+  }
+  .sec-head { font-size: clamp(1.6rem, 3.4vw, 2.2rem); margin-bottom: .5rem; }
+
+  /* NAV */
+  .nav { position: sticky; top: 0; z-index: 50; background: rgba(250,246,237,.95); border-bottom: 2px solid var(--oat-200); backdrop-filter: blur(6px); }
+  .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  .logo { display: flex; align-items: center; gap: .5rem; text-decoration: none; color: var(--olive-800); font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 1.1rem; }
+  .logo svg { flex: none; }
+  .nav-links { display: flex; gap: 1.3rem; align-items: center; }
+  .nav-links a { color: var(--olive-800); text-decoration: none; font-weight: 700; font-size: .92rem; transition: color .2s; }
+  .nav-links a:hover { color: var(--green-600); }
+  .nav-call { background: var(--green-600); color: #fff !important; border-radius: 999px; padding: .45rem 1rem; transition: background .2s; }
+  .nav-call:hover { background: var(--green-700); color: #fff !important; }
+  @media (max-width: 780px) { .nav-links a:not(.nav-call) { display: none; } }
+
+  /* HERO */
+  .hero { padding: 4rem 0 3.5rem; }
+  .hero .wrap { display: grid; grid-template-columns: 1.05fr .95fr; gap: 2.6rem; align-items: center; }
+  .hero-hi {
+    display: inline-flex; align-items: center; gap: .5rem; background: var(--card); border: 2px solid var(--oat-200);
+    border-radius: 999px; padding: .35rem .9rem; font-weight: 700; font-size: .85rem; color: var(--olive-600); margin-bottom: 1rem;
+  }
+  .hero h1 { font-size: clamp(2.1rem, 5vw, 3.1rem); margin-bottom: .9rem; }
+  .hero h1 span { color: var(--green-600); }
+  .hero p.sub { font-size: 1.08rem; color: var(--ink-soft); max-width: 30rem; margin-bottom: 1.5rem; }
+  .hero-ctas { display: flex; flex-wrap: wrap; gap: .8rem; align-items: center; }
+  .hero-note { margin-top: .9rem; font-size: .88rem; color: var(--ink-soft); }
+
+  /* SIGNATURE ELEMENT: Corey's route this week */
+  .route {
+    background: var(--card); border: 2px solid var(--oat-200); border-radius: 22px;
+    padding: 1.5rem 1.4rem 1.3rem; box-shadow: 0 14px 32px rgba(74,69,47,.12);
+  }
+  .route h2 { font-size: 1.2rem; display: flex; align-items: center; gap: .5rem; margin-bottom: .35rem; }
+  .route > p { font-size: .88rem; color: var(--ink-soft); margin-bottom: 1rem; }
+  .route-days { display: grid; gap: .5rem; }
+  .rday {
+    display: flex; align-items: center; gap: .8rem;
+    background: var(--oat-50); border: 1.5px solid var(--oat-200); border-radius: 14px; padding: .55rem .8rem;
+  }
+  .rday b {
+    font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: .82rem; color: var(--olive-800);
+    background: var(--oat-100); border-radius: 8px; padding: .2rem .55rem; min-width: 3.1rem; text-align: center;
+  }
+  .rday span { font-size: .9rem; font-weight: 500; color: var(--ink); }
+  .rday--today { border-color: var(--green-600); background: var(--green-50); }
+  .rday--today b { background: var(--green-600); color: #fff; }
+  .rday--today .tdy {
+    margin-left: auto; font-size: .68rem; font-weight: 700; letter-spacing: .08em; color: var(--green-700);
+    text-transform: uppercase;
+  }
+  .route-foot { margin-top: .9rem; font-size: .85rem; color: var(--ink-soft); }
+  .route-foot a { color: var(--green-700); font-weight: 700; }
+
+  /* STATS */
+  .stats { background: var(--card); border-top: 2px solid var(--oat-200); border-bottom: 2px solid var(--oat-200); padding: 2rem 0; }
+  .stats .wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.4rem; text-align: center; }
+  .stat b { display: block; font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 1.9rem; color: var(--olive-800); }
+  .stat span { font-size: .85rem; color: var(--ink-soft); font-weight: 700; }
+
+  /* SERVICES */
+  .svc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; margin-top: 1.7rem; }
+  .svc {
+    background: var(--card); border: 2px solid var(--oat-200); border-radius: 18px; padding: 1.4rem 1.3rem;
+    transition: border-color .2s, transform .2s;
+  }
+  .svc:hover { border-color: var(--olive-600); }
+  .svc svg { width: 32px; height: 32px; stroke: var(--olive-800); margin-bottom: .6rem; }
+  .svc h3 { font-size: 1.05rem; margin-bottom: .3rem; }
+  .svc p { font-size: .92rem; color: var(--ink-soft); }
+
+  /* HOW IT WORKS */
+  .how { background: var(--oat-100); }
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.1rem; margin-top: 1.7rem; }
+  .step { background: var(--card); border-radius: 18px; padding: 1.4rem 1.3rem; border: 2px solid var(--oat-200); }
+  .step b {
+    display: inline-flex; width: 2.2rem; height: 2.2rem; align-items: center; justify-content: center;
+    background: var(--olive-800); color: var(--oat-50); border-radius: 50%;
+    font-family: 'Fredoka', sans-serif; font-weight: 600; margin-bottom: .6rem;
+  }
+  .step h3 { font-size: 1.02rem; margin-bottom: .3rem; }
+  .step p { font-size: .9rem; color: var(--ink-soft); }
+
+  /* WHY */
+  .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.1rem; margin-top: 1.7rem; }
+  .why-card { display: flex; gap: .8rem; align-items: flex-start; background: var(--card); border: 2px solid var(--oat-200); border-radius: 18px; padding: 1.2rem 1.1rem; }
+  .why-card svg { flex: none; width: 26px; height: 26px; stroke: var(--green-600); margin-top: .1rem; }
+  .why-card b { color: var(--olive-800); }
+  .why-card p { font-size: .9rem; color: var(--ink-soft); }
+  .promise {
+    margin-top: 1.6rem; background: var(--olive-800); color: var(--oat-50); border-radius: 18px;
+    padding: 1.5rem 1.5rem; font-size: 1.02rem;
+  }
+  .promise strong { color: #fff; }
+
+  /* STORY */
+  .story .wrap { display: grid; grid-template-columns: .9fr 1.1fr; gap: 2.4rem; align-items: center; }
+  .portrait {
+    border-radius: 22px; height: 320px; position: relative; overflow: hidden;
+    background: linear-gradient(150deg, #6B644A 0%, #4A452F 55%, #2F8F44 130%);
+    border: 2px solid var(--oat-200);
+  }
+  /* PLACEHOLDER portrait tile — replace with a real photo of Corey */
+  .portrait figcaption {
+    position: absolute; left: 0; right: 0; bottom: 0; background: rgba(56,52,31,.85); color: var(--oat-50);
+    padding: .5rem .9rem; font-size: .82rem; font-weight: 700;
+  }
+  .story p { color: var(--ink); margin-top: .7rem; }
+  .story p + p { margin-top: .9rem; }
+
+  /* TESTIMONIALS */
+  .quotes { background: var(--oat-100); }
+  .quotes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.1rem; margin-top: 1.7rem; }
+  .quote { background: var(--card); border: 2px solid var(--oat-200); border-radius: 18px; padding: 1.3rem 1.2rem; }
+  .quote .strs { color: var(--green-600); letter-spacing: .16em; font-size: .85rem; margin-bottom: .5rem; }
+  .quote p { font-size: .93rem; margin-bottom: .7rem; }
+  .quote b { font-size: .85rem; color: var(--olive-800); }
+  .quote span { display: block; font-size: .8rem; color: var(--ink-soft); }
+
+  /* CTA BANNER */
+  .banner { background: var(--green-600); }
+  .banner .wrap { display: flex; flex-wrap: wrap; gap: 1.2rem; align-items: center; justify-content: space-between; }
+  .banner h2 { color: #fff; font-size: clamp(1.4rem, 3vw, 2rem); }
+  .banner .btn { background: #fff; color: var(--green-700); }
+  .banner .btn:hover { background: var(--oat-50); }
+
+  /* CONTACT */
+  .contact .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 2.4rem; }
+  .c-info { display: grid; gap: 1rem; margin-top: 1.1rem; font-size: .96rem; }
+  .c-info b { display: block; font-size: .76rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); }
+  .c-info a { color: var(--olive-800); font-weight: 700; text-decoration: none; }
+  .c-info a:hover { text-decoration: underline; }
+  .text-first {
+    background: var(--green-50); border: 2px solid var(--green-600); border-radius: 18px;
+    padding: 1.1rem 1.2rem; font-size: .92rem; margin-top: 1.2rem;
+  }
+  .text-first b { color: var(--green-700); }
+  /* NOTE: form is non-functional in this mockup — wire to a form handler at launch */
+  form { display: grid; gap: .8rem; margin-top: 1.1rem; }
+  label { font-size: .82rem; font-weight: 700; color: var(--olive-800); }
+  input, textarea {
+    width: 100%; padding: .7rem .85rem; border: 2px solid var(--oat-200); border-radius: 12px;
+    font: inherit; background: var(--card); color: var(--ink);
+  }
+  .contact .btn { width: 100%; }
+
+  /* FOOTER */
+  footer { background: var(--olive-800); color: var(--oat-100); padding: 2rem 0; font-size: .88rem; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; }
+  footer a { color: #fff; text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  /* MOBILE CALL BAR */
+  .callbar { display: none; position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; background: var(--green-600); text-align: center; padding: .85rem; }
+  .callbar a { color: #fff; font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 1.05rem; text-decoration: none; }
+
+  @media (max-width: 780px) {
+    .hero .wrap, .story .wrap, .contact .wrap { grid-template-columns: 1fr; }
+    .portrait { height: 240px; }
+    .callbar { display: block; }
+    body { padding-bottom: 56px; }
+    section { padding: 2.6rem 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Corey's Lawn Service home">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#2F8F44"/><path d="M7 16c1.5-4 3-7 5-9 2 2 3.5 5 5 9" stroke="#FAF6ED" stroke-width="1.8" stroke-linecap="round" fill="none"/><path d="M6 16h12" stroke="#FAF6ED" stroke-width="1.8" stroke-linecap="round"/></svg>
+      Corey's Lawn Service
+    </a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#route">My Route</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-call" href="tel:+19549996514">Call or Text</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="hero-hi">👋 Hi, I'm Corey — I'll be the one mowing your lawn</span>
+      <h1>Your lawn, cut like it's <span>my own yard</span>.</h1>
+      <p class="sub">No crews that change every week. No office phone tree. Just one guy who shows up on your day, does it right, and waves on the way out.</p>
+      <div class="hero-ctas">
+        <a class="btn" href="sms:+19549996514">Text Corey for a Quote</a>
+        <a class="btn btn--soft" href="tel:+19549996514">Call (954) 999-6514</a>
+      </div>
+      <p class="hero-note">Texts usually answered between yards — same day, every time.</p>
+    </div>
+
+    <!-- SIGNATURE ELEMENT: Corey's route this week -->
+    <div class="route" id="route" aria-label="Corey's route this week">
+      <h2>🚜 Corey's route this week</h2>
+      <p>One truck, one route — here's where I'll be. If your neighborhood's on the list, you're an easy add.</p>
+      <div class="route-days">
+        <!-- PLACEHOLDER: confirm real route days/areas with Corey -->
+        <div class="rday" data-day="1"><b>Mon</b><span>Jonesville &amp; Tioga</span><span class="tdy" hidden>Today</span></div>
+        <div class="rday" data-day="2"><b>Tue</b><span>Haile Plantation &amp; SW 24th</span><span class="tdy" hidden>Today</span></div>
+        <div class="rday" data-day="3"><b>Wed</b><span>Duckpond &amp; Downtown</span><span class="tdy" hidden>Today</span></div>
+        <div class="rday" data-day="4"><b>Thu</b><span>Millhopper &amp; NW 43rd St</span><span class="tdy" hidden>Today</span></div>
+        <div class="rday" data-day="5"><b>Fri</b><span>Newberry Rd &amp; Oakmont</span><span class="tdy" hidden>Today</span></div>
+        <div class="rday" data-day="6"><b>Sat</b><span>Catch-up day + new yards</span><span class="tdy" hidden>Today</span></div>
+      </div>
+      <p class="route-foot">Not on the route? <a href="sms:+19549996514">Text me your street</a> — I can usually work you in.</p>
+    </div>
+  </div>
+</header>
+
+<section class="stats" aria-label="Quick facts">
+  <div class="wrap">
+    <!-- PLACEHOLDER: confirm real numbers with Corey -->
+    <div class="stat"><b>1</b><span>Guy on every job (me)</span></div>
+    <div class="stat"><b>60+</b><span>Yards on the weekly route</span></div>
+    <div class="stat"><b>Same day</b><span>Text-back time</span></div>
+    <div class="stat"><b>7 yrs</b><span>Mowing in Gainesville</span></div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <span class="kicker">What I do</span>
+    <h2 class="sec-head">Simple services, done every visit</h2>
+    <div class="svc-grid">
+      <div class="svc">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 18h18M6 18c1-5 2.5-8.5 6-11 3.5 2.5 5 6 6 11"/></svg>
+        <h3>Mowing</h3>
+        <p>Weekly or bi-weekly, cut to the right height for Florida grass — never scalped.</p>
+      </div>
+      <div class="svc">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 20 20 4M14 4h6v6"/></svg>
+        <h3>Edging</h3>
+        <p>Crisp lines along driveways, walks, and beds — the part your neighbors actually notice.</p>
+      </div>
+      <div class="svc">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 3v6m0 0c-2 0-4 1.5-4 4s2 5 4 8c2-3 4-5.5 4-8s-2-4-4-4z"/></svg>
+        <h3>Trimming</h3>
+        <p>String-trimming around trees, fences, and the spots mowers can't reach.</p>
+      </div>
+      <div class="svc">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 14c3-1 5-4 6-8 1 4 3 7 6 8M6 20h12M12 14v6"/></svg>
+        <h3>Blow &amp; Tidy</h3>
+        <p>Clippings blown off every hard surface before I leave. No green driveways.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how">
+  <div class="wrap">
+    <span class="kicker">How it works</span>
+    <h2 class="sec-head">Easiest thing you'll set up this year</h2>
+    <div class="steps">
+      <div class="step"><b>1</b><h3>Text me your address</h3><p>I'll drive by, look at the yard, and text you a flat price. No appointment needed.</p></div>
+      <div class="step"><b>2</b><h3>Pick your day</h3><p>You go on the route for your side of town. Same day, every week or every other week.</p></div>
+      <div class="step"><b>3</b><h3>Forget about it</h3><p>I show up, cut it right, and you get a text when it's done. That's the whole system.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="kicker">Why folks stick with me</span>
+    <h2 class="sec-head">The owner-operator difference</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <div><b>Same face every week</b><p>The person who quoted your yard is the person cutting it. Every single visit.</p></div>
+      </div>
+      <div class="why-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M17 3a2.8 2.8 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg>
+        <div><b>Flat, honest pricing</b><p>One price, texted up front. It doesn't creep up mid-summer.</p></div>
+      </div>
+      <div class="why-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3A19.5 19.5 0 0 1 5.2 13 19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>
+        <div><b>I answer my own phone</b><p>Question about your yard? You text me, Corey — not a call center.</p></div>
+      </div>
+      <div class="why-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V6l-8-4z"/><path d="m9 12 2 2 4-4"/></svg>
+        <div><b>Reliable rain or shine</b><p>If weather pushes your day, you get a text — not a no-show.</p></div>
+      </div>
+    </div>
+    <p class="promise"><strong>My promise:</strong> if you're ever not happy with a cut, tell me and I'll come back and fix it free — usually the same week. <!-- PLACEHOLDER: confirm guarantee wording with Corey --></p>
+  </div>
+</section>
+
+<section class="story">
+  <div class="wrap">
+    <figure class="portrait">
+      <!-- PLACEHOLDER: real photo of Corey with his truck/mower -->
+      <figcaption>Corey Shanely — owner &amp; operator</figcaption>
+    </figure>
+    <div>
+      <span class="kicker">Meet Corey</span>
+      <h2 class="sec-head">One truck, one standard</h2>
+      <!-- PLACEHOLDER: confirm story details with Corey -->
+      <p>I started Corey's Lawn Service with one mower and a pickup, and I've kept it deliberately small ever since. When a company grows past its owner, quality is the first thing loaded on the trailer — so I stay on the mower.</p>
+      <p>Most of my customers came from a neighbor seeing their lawn and asking who cuts it. That's the business I want: yards good enough to advertise themselves, on streets I drive every week anyway.</p>
+    </div>
+  </div>
+</section>
+
+<section class="quotes">
+  <div class="wrap">
+    <span class="kicker">From the route</span>
+    <h2 class="sec-head">What neighbors say</h2>
+    <div class="quotes-grid">
+      <!-- PLACEHOLDER testimonials: replace with real reviews -->
+      <div class="quote">
+        <div class="strs" aria-label="5 stars">★★★★★</div>
+        <p>"Corey has cut our yard for three years. Same day every week, and he texts if rain moves things. Zero drama."</p>
+        <b>Janet M.</b><span>Millhopper</span>
+      </div>
+      <div class="quote">
+        <div class="strs" aria-label="5 stars">★★★★★</div>
+        <p>"I texted him a photo of my yard on a Tuesday, had a price in an hour, and he cut it that Saturday."</p>
+        <b>Devon K.</b><span>Jonesville</span>
+      </div>
+      <div class="quote">
+        <div class="strs" aria-label="5 stars">★★★★★</div>
+        <p>"The edging is what sold me. My driveway lines look like they were done with a ruler."</p>
+        <b>Rosa A.</b><span>Haile Plantation</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="banner">
+  <div class="wrap">
+    <h2>Want on the route? Texting me takes 30 seconds.</h2>
+    <a class="btn" href="sms:+19549996514">Text Corey Now</a>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div>
+      <span class="kicker">Get in touch</span>
+      <h2 class="sec-head">Call or text — I'll get back to you today</h2>
+      <div class="c-info">
+        <div><b>Call or text</b><a href="tel:+19549996514">(954) 999-6514</a></div>
+        <div><b>Hours</b>Mon–Sat, sunup to sundown <!-- PLACEHOLDER: confirm hours --></div>
+        <div><b>Service area</b>Gainesville — Jonesville, Tioga, Haile Plantation, Duckpond, Millhopper, Oakmont &amp; nearby</div>
+      </div>
+      <p class="text-first"><b>Fastest way to reach me:</b> a text with your address and "lawn quote." I'll drive by and text back a flat price — usually the same day.</p>
+    </div>
+    <div>
+      <!-- NOTE: form is non-functional in this mockup -->
+      <form aria-label="Request a quote">
+        <div><label for="f-name">Name</label><input id="f-name" type="text" autocomplete="name" /></div>
+        <div><label for="f-phone">Phone (for a text back)</label><input id="f-phone" type="tel" autocomplete="tel" /></div>
+        <div><label for="f-addr">Street address</label><input id="f-addr" type="text" autocomplete="street-address" /></div>
+        <div><label for="f-msg">Anything I should know?</label><textarea id="f-msg" rows="3" placeholder="Gate code, dog, tricky spots…"></textarea></div>
+        <button class="btn" type="submit">Send It to Corey</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Corey's Lawn Service · Gainesville, FL · <a href="tel:+19549996514">(954) 999-6514</a></span>
+    <span><a href="#services">Services</a> · <a href="#route">My Route</a> · <a href="#contact">Contact</a></span>
+  </div>
+</footer>
+
+<div class="callbar"><a href="sms:+19549996514">💬 Text Corey — (954) 999-6514</a></div>
+
+<script>
+  // Highlight today's route day (Mon=1 … Sat=6; Sunday shows no highlight — day off)
+  (function () {
+    var today = new Date().getDay();
+    var row = document.querySelector('.rday[data-day="' + today + '"]');
+    if (row) {
+      row.classList.add('rday--today');
+      var t = row.querySelector('.tdy');
+      if (t) t.hidden = false;
+    }
+  })();
+</script>
+
+</body>
+</html>
