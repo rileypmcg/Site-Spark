@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex" />
+<!--
+  MOCKUP: Pure Pressure LLC — Gainesville, FL
+  Contact: Austin · (352) 226-9319 · austin.purepressure@gmail.com
+  IMPORTANT: likely a pressure-washing business, NOT lawn care — confirm actual services with Austin
+  before finalizing copy. Services below are the standard pressure-washing menu, all flagged.
+-->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pressure Washing in Gainesville, FL | Pure Pressure LLC</title>
+<meta name="description" content="Driveways, house washes, roofs and more — Pure Pressure LLC restores Gainesville, FL exteriors. Call or text Austin at (352) 226-9319 for a free quote." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Pure Pressure LLC",
+  "telephone": "(352) 226-9319",
+  "email": "austin.purepressure@gmail.com",
+  "address": { "@type": "PostalAddress", "addressLocality": "Gainesville", "addressRegion": "FL", "addressCountry": "US" },
+  "areaServed": "Gainesville, FL",
+  "description": "Pressure washing and exterior cleaning in Gainesville, Florida — driveways, siding, roofs, and commercial surfaces."
+}
+</script>
+<style>
+  :root {
+    --navy-950: #071C33;   /* deep navy — primary brand */
+    --navy-900: #0A2540;
+    --navy-800: #10345C;
+    --blue-600: #1478F0;   /* electric blue — secondary brand */
+    --blue-100: #D8EAFE;
+    --ice-50:  #F2F8FE;
+    --cyan-500: #10C9EE;   /* jet cyan — CTA ONLY */
+    --cyan-600: #0BB2D4;
+    --ink: #12283C;
+    --ink-soft: #4E6478;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Figtree', 'Segoe UI', Arial, sans-serif;
+    color: var(--ink); background: #fff; font-size: 16px; line-height: 1.6;
+  }
+  h1, h2, h3 { font-family: 'Anton', 'Arial Narrow', sans-serif; font-weight: 400; text-transform: uppercase; letter-spacing: .015em; line-height: 1.1; }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+    outline: 3px solid var(--cyan-500); outline-offset: 2px;
+  }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 1.25rem; }
+  section { padding: 3.5rem 0; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+    background: var(--cyan-500); color: var(--navy-950); text-decoration: none; cursor: pointer;
+    font-family: 'Anton', sans-serif; text-transform: uppercase; letter-spacing: .05em;
+    font-size: 1.02rem; padding: .95rem 1.8rem; border: 0;
+    clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+    transition: background .2s ease;
+  }
+  .btn:hover { background: var(--cyan-600); }
+  .btn--line { background: transparent; color: #fff; box-shadow: inset 0 0 0 2px rgba(255,255,255,.6); clip-path: none; transition: box-shadow .2s, background .2s; }
+  .btn--line:hover { background: rgba(255,255,255,.08); box-shadow: inset 0 0 0 2px #fff; }
+  .kicker {
+    font-family: 'Anton', sans-serif; text-transform: uppercase; letter-spacing: .2em;
+    font-size: .78rem; color: var(--blue-600); display: block; margin-bottom: .6rem;
+  }
+  .sec-head { font-size: clamp(1.8rem, 3.8vw, 2.6rem); color: var(--navy-900); margin-bottom: .5rem; }
+
+  /* NAV */
+  .nav { position: sticky; top: 0; z-index: 50; background: var(--navy-950); }
+  .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 62px; }
+  .logo { display: flex; align-items: center; gap: .55rem; text-decoration: none; color: #fff; font-family: 'Anton', sans-serif; text-transform: uppercase; font-size: 1.15rem; letter-spacing: .04em; }
+  .logo span { color: var(--cyan-500); }
+  .nav-links { display: flex; gap: 1.4rem; align-items: center; }
+  .nav-links a { color: var(--blue-100); text-decoration: none; font-weight: 700; font-size: .92rem; transition: color .2s; }
+  .nav-links a:hover { color: #fff; }
+  .nav-call { background: var(--cyan-500); color: var(--navy-950) !important; padding: .5rem 1rem; font-family: 'Anton', sans-serif; letter-spacing: .05em; transition: background .2s; }
+  .nav-call:hover { background: var(--cyan-600); }
+  @media (max-width: 780px) { .nav-links a:not(.nav-call) { display: none; } }
+
+  /* HERO */
+  .hero {
+    background:
+      radial-gradient(90rem 40rem at 110% -20%, rgba(20,120,240,.35), transparent 60%),
+      linear-gradient(165deg, var(--navy-950) 0%, var(--navy-900) 60%, #0D2E52 100%);
+    color: #fff; padding: 4rem 0 4.5rem; overflow: hidden;
+  }
+  .hero .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 2.6rem; align-items: center; }
+  .hero-badge {
+    display: inline-block; font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--blue-100); border-left: 3px solid var(--cyan-500); padding-left: .7rem; margin-bottom: 1.1rem;
+  }
+  .hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 1rem; }
+  .hero h1 em { font-style: normal; color: var(--cyan-500); }
+  .hero p.sub { color: var(--blue-100); font-size: 1.08rem; max-width: 30rem; margin-bottom: 1.6rem; }
+  .hero-ctas { display: flex; flex-wrap: wrap; gap: .9rem; }
+  .hero-note { margin-top: 1rem; font-size: .88rem; color: var(--blue-100); }
+
+  /* SIGNATURE ELEMENT: before/after slider */
+  .ba {
+    background: #fff; padding: 1rem 1rem 1.2rem; box-shadow: 0 20px 50px rgba(0,0,0,.4);
+  }
+  .ba h2 { color: var(--navy-900); font-size: 1.05rem; margin-bottom: .7rem; display: flex; justify-content: space-between; align-items: baseline; }
+  .ba h2 small { font-family: 'Figtree', sans-serif; font-weight: 700; font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); }
+  .ba-stage { position: relative; height: 260px; overflow: hidden; }
+  /* PLACEHOLDER surfaces: swap for real before/after job photos */
+  .ba-before, .ba-after { position: absolute; inset: 0; }
+  .ba-before {
+    background:
+      repeating-linear-gradient(90deg, transparent 0 46px, rgba(0,0,0,.12) 46px 48px),
+      repeating-linear-gradient(0deg, transparent 0 60px, rgba(0,0,0,.1) 60px 62px),
+      radial-gradient(14rem 6rem at 30% 70%, rgba(52,64,45,.55), transparent 60%),
+      radial-gradient(10rem 5rem at 70% 30%, rgba(64,58,42,.5), transparent 65%),
+      linear-gradient(180deg, #7A7E72 0%, #6E7265 100%);
+  }
+  .ba-after {
+    background:
+      repeating-linear-gradient(90deg, transparent 0 46px, rgba(0,0,0,.08) 46px 48px),
+      repeating-linear-gradient(0deg, transparent 0 60px, rgba(0,0,0,.06) 60px 62px),
+      linear-gradient(180deg, #D9DDE0 0%, #C9CED3 100%);
+    clip-path: inset(0 0 0 var(--split, 50%));
+  }
+  .ba-divider {
+    position: absolute; top: 0; bottom: 0; left: var(--split, 50%); width: 3px;
+    background: var(--cyan-500); transform: translateX(-1.5px); pointer-events: none;
+  }
+  .ba-divider::after {
+    content: "◂ ▸"; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    background: var(--cyan-500); color: var(--navy-950); font-size: .7rem; font-weight: 700;
+    padding: .35rem .5rem; border-radius: 999px; white-space: nowrap;
+  }
+  .ba-tag {
+    position: absolute; top: .6rem; font-family: 'Anton', sans-serif; font-size: .7rem; letter-spacing: .12em;
+    padding: .25rem .6rem; color: #fff; background: rgba(7,28,51,.75); pointer-events: none;
+  }
+  .ba-tag--b { left: .6rem; }
+  .ba-tag--a { right: .6rem; }
+  .ba input[type="range"] {
+    width: 100%; margin-top: .9rem; accent-color: var(--blue-600); cursor: pointer; height: 28px;
+  }
+  .ba-hint { font-size: .8rem; color: var(--ink-soft); text-align: center; margin-top: .2rem; }
+
+  /* STATS */
+  .stats { background: var(--blue-600); color: #fff; padding: 2.2rem 0; }
+  .stats .wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; text-align: center; }
+  .stat b { display: block; font-family: 'Anton', sans-serif; font-size: 2rem; }
+  .stat span { font-size: .85rem; font-weight: 700; color: var(--blue-100); }
+
+  /* SERVICES */
+  .svc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-top: 1.8rem; }
+  .svc {
+    background: var(--ice-50); border: 1px solid var(--blue-100); padding: 1.4rem 1.3rem;
+    border-left: 4px solid var(--blue-600); transition: background .2s, border-color .2s;
+  }
+  .svc:hover { background: #fff; border-color: var(--blue-600); }
+  .svc svg { width: 32px; height: 32px; stroke: var(--blue-600); margin-bottom: .7rem; }
+  .svc h3 { font-size: 1rem; color: var(--navy-900); margin-bottom: .35rem; }
+  .svc p { font-size: .92rem; color: var(--ink-soft); }
+
+  /* METHOD */
+  .method { background: var(--navy-950); color: #fff; }
+  .method .kicker { color: var(--cyan-500); }
+  .method .sec-head { color: #fff; }
+  .method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.2rem; margin-top: 1.8rem; }
+  .mcard { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.14); padding: 1.4rem 1.3rem; }
+  .mcard b { font-family: 'Anton', sans-serif; font-size: 1.5rem; color: var(--cyan-500); display: block; margin-bottom: .5rem; }
+  .mcard h3 { font-size: 1rem; margin-bottom: .35rem; }
+  .mcard p { font-size: .9rem; color: var(--blue-100); }
+
+  /* WHY */
+  .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.1rem; margin-top: 1.8rem; }
+  .why-card { display: flex; gap: .8rem; align-items: flex-start; border: 1px solid var(--blue-100); padding: 1.2rem 1.1rem; }
+  .why-card svg { flex: none; width: 26px; height: 26px; stroke: var(--blue-600); margin-top: .1rem; }
+  .why-card b { color: var(--navy-900); }
+  .why-card p { font-size: .9rem; color: var(--ink-soft); }
+  .guarantee {
+    margin-top: 1.6rem; background: var(--ice-50); border-left: 5px solid var(--blue-600);
+    padding: 1.4rem 1.5rem; font-size: 1.02rem;
+  }
+  .guarantee strong { color: var(--navy-900); }
+
+  /* GALLERY */
+  .gallery { background: var(--ice-50); }
+  .gal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; margin-top: 1.8rem; }
+  .tile { height: 190px; position: relative; overflow: hidden; }
+  .tile figcaption {
+    position: absolute; left: 0; right: 0; bottom: 0; background: rgba(7,28,51,.85); color: #fff;
+    font-size: .8rem; font-weight: 700; padding: .45rem .7rem;
+  }
+  /* PLACEHOLDER photo tiles — replace with real job photos */
+  .tile--1 { background: linear-gradient(120deg, #6E7265 0 50%, #C9CED3 50% 100%); }
+  .tile--2 { background: linear-gradient(120deg, #5C6154 0 45%, #D5D9DC 45% 100%); }
+  .tile--3 { background: linear-gradient(120deg, #56584A 0 55%, #CDD2D6 55% 100%); }
+
+  /* TESTIMONIALS */
+  .quotes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.2rem; margin-top: 1.8rem; }
+  .quote { border: 1px solid var(--blue-100); border-top: 4px solid var(--blue-600); padding: 1.4rem 1.3rem; }
+  .quote .strs { color: var(--blue-600); letter-spacing: .18em; font-size: .85rem; margin-bottom: .6rem; }
+  .quote p { font-size: .95rem; margin-bottom: .8rem; }
+  .quote b { font-size: .85rem; color: var(--navy-900); }
+  .quote span { display: block; font-size: .8rem; color: var(--ink-soft); }
+
+  /* CTA BANNER */
+  .banner { background: linear-gradient(120deg, var(--navy-900), var(--blue-600)); padding: 2.6rem 0; }
+  .banner .wrap { display: flex; flex-wrap: wrap; gap: 1.2rem; align-items: center; justify-content: space-between; }
+  .banner h2 { color: #fff; font-size: clamp(1.5rem, 3vw, 2.1rem); }
+
+  /* CONTACT */
+  .contact .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+  .c-info { display: grid; gap: 1rem; margin-top: 1.2rem; font-size: .96rem; }
+  .c-info b { display: block; font-size: .76rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); }
+  .c-info a { color: var(--navy-900); font-weight: 700; text-decoration: none; }
+  .c-info a:hover { text-decoration: underline; }
+  /* NOTE: form is non-functional in this mockup — wire to a form handler at launch */
+  form { display: grid; gap: .8rem; margin-top: 1.2rem; }
+  label { font-size: .82rem; font-weight: 700; color: var(--navy-900); }
+  input, textarea, select { width: 100%; padding: .7rem .85rem; border: 1px solid #B9CFE4; font: inherit; color: var(--ink); background: #fff; }
+  .contact .btn { width: 100%; clip-path: none; }
+
+  /* FOOTER */
+  footer { background: var(--navy-950); color: var(--blue-100); padding: 2.2rem 0; font-size: .88rem; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; }
+  footer a { color: #fff; text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  /* MOBILE CALL BAR */
+  .callbar { display: none; position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; background: var(--cyan-500); text-align: center; padding: .85rem; }
+  .callbar a { color: var(--navy-950); font-family: 'Anton', sans-serif; text-transform: uppercase; letter-spacing: .05em; font-size: 1.02rem; text-decoration: none; }
+
+  @media (max-width: 780px) {
+    .hero .wrap, .contact .wrap { grid-template-columns: 1fr; }
+    .ba-stage { height: 210px; }
+    .callbar { display: block; }
+    body { padding-bottom: 56px; }
+    section { padding: 2.6rem 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Pure Pressure home">PURE <span>PRESSURE</span></a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#method">Our Process</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-call" href="tel:+13522269319">(352) 226-9319</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="hero-badge">Gainesville, FL · Licensed &amp; insured</span>
+      <h1>Years of grime. <em>Gone in an afternoon.</em></h1>
+      <p class="sub">Driveways, siding, roofs, and storefronts blasted back to like-new — with pro equipment and the right pressure for every surface.</p>
+      <div class="hero-ctas">
+        <a class="btn" href="#contact">Get a Free Quote</a>
+        <a class="btn btn--line" href="tel:+13522269319">Call Austin</a>
+      </div>
+      <p class="hero-note">Most quotes texted back the same day.</p>
+    </div>
+
+    <!-- SIGNATURE ELEMENT: before/after slider -->
+    <div class="ba" aria-label="Before and after comparison">
+      <h2>Drag it clean <small>Driveway — NW Gainesville</small></h2>
+      <div class="ba-stage" id="ba-stage">
+        <div class="ba-before" aria-hidden="true"></div>
+        <div class="ba-after" id="ba-after" aria-hidden="true"></div>
+        <div class="ba-divider" id="ba-divider" aria-hidden="true"></div>
+        <span class="ba-tag ba-tag--b">Before</span>
+        <span class="ba-tag ba-tag--a">After</span>
+      </div>
+      <input type="range" id="ba-range" min="0" max="100" value="50" aria-label="Reveal the after photo" />
+      <p class="ba-hint">Slide to see the difference one visit makes.</p>
+    </div>
+  </div>
+</header>
+
+<section class="stats" aria-label="Track record">
+  <div class="wrap">
+    <!-- PLACEHOLDER: confirm real numbers with Austin -->
+    <div class="stat"><b>500+</b><span>Surfaces restored</span></div>
+    <div class="stat"><b>4,000 PSI</b><span>Pro-grade equipment</span></div>
+    <div class="stat"><b>Same day</b><span>Quote turnaround</span></div>
+    <div class="stat"><b>100%</b><span>Rinse-clean guarantee</span></div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <span class="kicker">What we wash</span>
+    <h2 class="sec-head">Every surface, the right way</h2>
+    <!-- PLACEHOLDER: CONFIRM SERVICE LIST WITH AUSTIN — this is the standard pressure-washing menu -->
+    <div class="svc-grid">
+      <div class="svc">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 20h16M6 20V8l6-4 6 4v12M10 20v-5h4v5"/></svg>
+        <h3>House Washing</h3>
+        <p>Low-pressure soft wash that lifts mold and mildew off siding and stucco without stripping paint.</p>
+      </div>
+      <div class="svc">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16M8 3v18M16 3v18"/></svg>
+        <h3>Driveways &amp; Concrete</h3>
+        <p>Surface-cleaned in even passes — no zebra stripes, no missed edges, sealed on request.</p>
+      </div>
+      <div class="svc">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 12 12 4l9 8M6 10v9h12v-9"/></svg>
+        <h3>Roof Soft Wash</h3>
+        <p>Those black streaks are algae eating your shingles. We remove them safely — no high pressure on roofs, ever.</p>
+      </div>
+      <div class="svc">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 8h18v3H3zM5 11v7m14-7v7M9 11v4m6-4v4"/></svg>
+        <h3>Fences &amp; Decks</h3>
+        <p>Gray, weathered wood brought back to its real color — ready to stain or just enjoy.</p>
+      </div>
+      <div class="svc">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 4h16v10H4zM4 14l3 6h10l3-6"/></svg>
+        <h3>Gutters &amp; Brightening</h3>
+        <p>Black tiger stripes scrubbed off gutter faces so the whole exterior reads clean.</p>
+      </div>
+      <div class="svc">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 21h18M5 21V7h14v14M9 21v-4h6v4M9 7V3h6v4"/></svg>
+        <h3>Commercial &amp; Storefronts</h3>
+        <p>Sidewalks, entries, and dumpster pads on a schedule — before your customers arrive.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="method" id="method">
+  <div class="wrap">
+    <span class="kicker">The Pure Pressure process</span>
+    <h2 class="sec-head">Pressure is a tool, not a setting</h2>
+    <div class="method-grid">
+      <div class="mcard"><b>01</b><h3>Read the surface</h3><p>Concrete, shingle, wood, and stucco all take different pressure and different chemistry. We match both before a single pass.</p></div>
+      <div class="mcard"><b>02</b><h3>Treat, then wash</h3><p>Pre-treatment breaks down organic growth so the wash removes it at the root — not just the visible layer.</p></div>
+      <div class="mcard"><b>03</b><h3>Rinse &amp; walk-through</h3><p>Plants rinsed, windows spot-checked, and a walk-around with you before we roll up the hoses.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="kicker">Why Pure Pressure</span>
+    <h2 class="sec-head">Clean that lasts longer</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V6l-8-4z"/><path d="m9 12 2 2 4-4"/></svg>
+        <div><b>Soft wash certified approach</b><p>High pressure only where surfaces can take it — chemistry does the work everywhere else.</p></div>
+      </div>
+      <div class="why-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 22c4-3 8-6.5 8-11a8 8 0 1 0-16 0c0 4.5 4 8 8 11z"/><circle cx="12" cy="11" r="3"/></svg>
+        <div><b>Local &amp; owner-run</b><p>Austin quotes it, Austin washes it. No franchise call center in another state.</p></div>
+      </div>
+      <div class="why-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 8v5l3 2M21 12a9 9 0 1 1-9-9 9 9 0 0 1 9 9z"/></svg>
+        <div><b>On time, in and out</b><p>Most residential jobs done in one visit, scheduled to the hour — not a four-hour window.</p></div>
+      </div>
+      <div class="why-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <div><b>Plants &amp; property protected</b><p>Landscaping pre-soaked and rinsed after — your azaleas will never know we were there.</p></div>
+      </div>
+    </div>
+    <p class="guarantee"><strong>The rinse-clean guarantee:</strong> if any spot we washed isn't clean when we leave, point at it — we re-treat it on the spot, free. <!-- PLACEHOLDER: confirm guarantee wording with Austin --></p>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="wrap">
+    <span class="kicker">Recent washes</span>
+    <h2 class="sec-head">Half-and-half, because it sells itself</h2>
+    <div class="gal-grid">
+      <!-- PLACEHOLDER: swap split tiles for real half-washed job photos -->
+      <figure class="tile tile--1"><figcaption>Driveway split pass — NW 16th Ave</figcaption></figure>
+      <figure class="tile tile--2"><figcaption>Pool deck — Haile Plantation</figcaption></figure>
+      <figure class="tile tile--3"><figcaption>Sidewalk &amp; entry — downtown Gainesville</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="kicker">Reviews</span>
+    <h2 class="sec-head">What customers say</h2>
+    <div class="quotes-grid">
+      <!-- PLACEHOLDER testimonials: replace with real reviews -->
+      <div class="quote">
+        <div class="strs" aria-label="5 stars">★★★★★</div>
+        <p>"Our driveway hadn't been cleaned since we bought the house. Neighbors literally stopped to ask who did it."</p>
+        <b>Kim S.</b><span>Turkey Creek</span>
+      </div>
+      <div class="quote">
+        <div class="strs" aria-label="5 stars">★★★★★</div>
+        <p>"Austin texted a quote within the hour, showed up Saturday morning, and the house looks freshly painted. It's not — it's just clean."</p>
+        <b>Jared O.</b><span>NW Gainesville</span>
+      </div>
+      <div class="quote">
+        <div class="strs" aria-label="5 stars">★★★★★</div>
+        <p>"He soft-washed the roof and the black streaks are completely gone. Careful with every plant in the beds, too."</p>
+        <b>Priya N.</b><span>Haile Plantation</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="banner">
+  <div class="wrap">
+    <h2>Your house is one visit away from looking new.</h2>
+    <a class="btn" href="#contact">Get My Free Quote</a>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div>
+      <span class="kicker">Contact</span>
+      <h2 class="sec-head">Free quotes, zero pressure*</h2>
+      <p style="font-size:.85rem;color:var(--ink-soft)">*On the sales side. Plenty on the driveway.</p>
+      <div class="c-info">
+        <div><b>Call or text</b><a href="tel:+13522269319">(352) 226-9319</a></div>
+        <div><b>Email</b><a href="mailto:austin.purepressure@gmail.com">austin.purepressure@gmail.com</a></div>
+        <div><b>Hours</b>Mon–Sat 8am–6pm <!-- PLACEHOLDER: confirm hours --></div>
+        <div><b>Service area</b>Gainesville, Alachua, Newberry, Jonesville, Micanopy &amp; surrounding Alachua County</div>
+      </div>
+    </div>
+    <div>
+      <!-- NOTE: form is non-functional in this mockup -->
+      <form aria-label="Request a quote">
+        <div><label for="f-name">Name</label><input id="f-name" type="text" autocomplete="name" /></div>
+        <div><label for="f-phone">Phone</label><input id="f-phone" type="tel" autocomplete="tel" /></div>
+        <div><label for="f-surface">What needs washing?</label>
+          <select id="f-surface">
+            <option>Driveway / concrete</option><option>House exterior</option><option>Roof</option>
+            <option>Deck or fence</option><option>Commercial property</option><option>Multiple / not sure</option>
+          </select>
+        </div>
+        <div><label for="f-msg">Anything else?</label><textarea id="f-msg" rows="4"></textarea></div>
+        <button class="btn" type="submit">Send My Quote Request</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Pure Pressure LLC · Gainesville, FL · <a href="tel:+13522269319">(352) 226-9319</a> · <a href="mailto:austin.purepressure@gmail.com">austin.purepressure@gmail.com</a></span>
+    <span><a href="#services">Services</a> · <a href="#method">Process</a> · <a href="#contact">Contact</a></span>
+  </div>
+</footer>
+
+<div class="callbar"><a href="tel:+13522269319">💦 Call Pure Pressure — (352) 226-9319</a></div>
+
+<script>
+  // Before/after slider: range input drives the clip-path split
+  (function () {
+    var range = document.getElementById('ba-range');
+    var stage = document.getElementById('ba-stage');
+    if (!range || !stage) return;
+    range.addEventListener('input', function () {
+      stage.style.setProperty('--split', range.value + '%');
+    });
+  })();
+</script>
+
+</body>
+</html>
