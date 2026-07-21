@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+  MOCKUP: Local Lawn Care of Gainesville — Gainesville, FL
+  Contact: (352) 691-8865 · locallawncare352@gmail.com
+-->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lawn Care in Gainesville, FL | Local Lawn Care of Gainesville</title>
+<meta name="description" content="Dependable lawn care by a Gainesville-based crew — Haile Plantation, Duckpond, Turkey Creek and more. Call (352) 691-8865 for a free quote." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@500;600;700&family=Mulish:wght@400;600;700&display=swap" rel="stylesheet" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Local Lawn Care of Gainesville",
+  "telephone": "(352) 691-8865",
+  "email": "locallawncare352@gmail.com",
+  "address": { "@type": "PostalAddress", "addressLocality": "Gainesville", "addressRegion": "FL", "addressCountry": "US" },
+  "areaServed": "Gainesville, FL",
+  "description": "Lawn mowing and yard maintenance across Gainesville, Florida neighborhoods."
+}
+</script>
+<style>
+  :root {
+    --blue-700: #1D5FA8;   /* honest blue — primary brand */
+    --blue-800: #174C87;
+    --blue-50:  #EFF5FB;
+    --blue-100: #DCE9F6;
+    --green-600: #2E8F4A;  /* leaf green — CTA / accent ONLY */
+    --green-700: #257A3D;
+    --green-50:  #EAF5EE;
+    --ink: #1C2B3A;
+    --ink-soft: #56687A;
+    --paper: #FFFFFF;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Mulish', 'Segoe UI', Arial, sans-serif;
+    color: var(--ink); background: var(--paper); font-size: 16px; line-height: 1.65;
+  }
+  h1, h2, h3 { font-family: 'Lexend', 'Segoe UI', sans-serif; font-weight: 600; line-height: 1.18; color: var(--ink); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+    outline: 3px solid var(--green-600); outline-offset: 2px;
+  }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 1.25rem; }
+  section { padding: 3.4rem 0; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+    background: var(--green-600); color: #fff; text-decoration: none; cursor: pointer;
+    font-family: 'Lexend', sans-serif; font-weight: 600; font-size: 1rem;
+    padding: .85rem 1.6rem; border: 0; border-radius: 8px; transition: background .2s ease;
+  }
+  .btn:hover { background: var(--green-700); }
+  .btn--line { background: transparent; color: var(--blue-700); border: 2px solid var(--blue-100); transition: border-color .2s, background .2s; }
+  .btn--line:hover { background: var(--blue-50); border-color: var(--blue-700); }
+  .kicker {
+    font-family: 'Lexend', sans-serif; font-weight: 600; font-size: .8rem; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--blue-700); display: block; margin-bottom: .5rem;
+  }
+  .sec-head { font-size: clamp(1.6rem, 3.4vw, 2.2rem); margin-bottom: .5rem; }
+
+  /* NAV */
+  .nav { position: sticky; top: 0; z-index: 50; background: var(--paper); border-bottom: 1px solid var(--blue-100); }
+  .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  .logo { display: flex; align-items: center; gap: .55rem; text-decoration: none; color: var(--ink); font-family: 'Lexend', sans-serif; font-weight: 700; font-size: 1.02rem; }
+  .logo svg { flex: none; }
+  .logo span { color: var(--blue-700); }
+  .nav-links { display: flex; gap: 1.3rem; align-items: center; }
+  .nav-links a { color: var(--ink); text-decoration: none; font-weight: 700; font-size: .92rem; transition: color .2s; }
+  .nav-links a:hover { color: var(--blue-700); }
+  .nav-call { background: var(--green-600); color: #fff !important; border-radius: 8px; padding: .5rem 1rem; font-family: 'Lexend', sans-serif; transition: background .2s; }
+  .nav-call:hover { background: var(--green-700); }
+  @media (max-width: 780px) { .nav-links a:not(.nav-call) { display: none; } }
+
+  /* HERO */
+  .hero { background: linear-gradient(180deg, var(--blue-50) 0%, var(--paper) 100%); padding: 4rem 0 3.6rem; }
+  .hero .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 2.6rem; align-items: center; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: .45rem; background: var(--paper); border: 1px solid var(--blue-100);
+    border-radius: 999px; padding: .35rem .85rem; font-size: .82rem; font-weight: 700; color: var(--blue-700); margin-bottom: 1rem;
+  }
+  .hero h1 { font-size: clamp(2rem, 4.8vw, 3rem); margin-bottom: .9rem; }
+  .hero h1 span { color: var(--blue-700); }
+  .hero p.sub { font-size: 1.06rem; color: var(--ink-soft); max-width: 30rem; margin-bottom: 1.5rem; }
+  .hero-ctas { display: flex; flex-wrap: wrap; gap: .8rem; }
+  .hero-note { margin-top: .9rem; font-size: .88rem; color: var(--ink-soft); }
+
+  /* SIGNATURE ELEMENT: neighborhood coverage finder */
+  .hoods {
+    background: var(--paper); border: 1px solid var(--blue-100); border-radius: 14px;
+    padding: 1.5rem 1.4rem 1.3rem; box-shadow: 0 12px 30px rgba(29,95,168,.1);
+  }
+  .hoods h2 { font-size: 1.15rem; margin-bottom: .3rem; }
+  .hoods > p { font-size: .88rem; color: var(--ink-soft); margin-bottom: .9rem; }
+  .hood-search {
+    width: 100%; padding: .7rem .9rem; border: 2px solid var(--blue-100); border-radius: 8px;
+    font: inherit; color: var(--ink); margin-bottom: .9rem;
+  }
+  .hood-search:focus { border-color: var(--blue-700); outline: none; }
+  .chips { display: flex; flex-wrap: wrap; gap: .45rem; }
+  .chip {
+    font-size: .82rem; font-weight: 700; color: var(--blue-800); background: var(--blue-50);
+    border: 1px solid var(--blue-100); border-radius: 999px; padding: .3rem .75rem;
+    transition: opacity .2s, background .2s, border-color .2s;
+  }
+  .chip--hit { background: var(--green-50); border-color: var(--green-600); color: var(--green-700); }
+  .chip--dim { opacity: .25; }
+  .hood-result { margin-top: .8rem; font-size: .88rem; font-weight: 700; min-height: 1.4em; }
+  .hood-result.ok { color: var(--green-700); }
+  .hood-result.maybe { color: var(--blue-800); }
+  .hood-result a { color: inherit; }
+
+  /* STATS */
+  .stats { background: var(--blue-700); color: #fff; padding: 2rem 0; }
+  .stats .wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.4rem; text-align: center; }
+  .stat b { display: block; font-family: 'Lexend', sans-serif; font-weight: 700; font-size: 1.9rem; }
+  .stat span { font-size: .84rem; font-weight: 700; color: var(--blue-100); }
+
+  /* SERVICES */
+  .svc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; margin-top: 1.7rem; }
+  .svc { border: 1px solid var(--blue-100); border-radius: 12px; padding: 1.4rem 1.3rem; transition: border-color .2s, box-shadow .2s; }
+  .svc:hover { border-color: var(--blue-700); box-shadow: 0 6px 18px rgba(29,95,168,.08); }
+  .svc svg { width: 30px; height: 30px; stroke: var(--blue-700); margin-bottom: .6rem; }
+  .svc h3 { font-size: 1.02rem; margin-bottom: .3rem; }
+  .svc p { font-size: .92rem; color: var(--ink-soft); }
+
+  /* HOW */
+  .how { background: var(--blue-50); }
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.1rem; margin-top: 1.7rem; }
+  .step { background: var(--paper); border: 1px solid var(--blue-100); border-radius: 12px; padding: 1.4rem 1.3rem; }
+  .step b { font-family: 'Lexend', sans-serif; font-weight: 700; color: var(--blue-700); font-size: 1.4rem; display: block; margin-bottom: .4rem; }
+  .step h3 { font-size: 1rem; margin-bottom: .3rem; }
+  .step p { font-size: .9rem; color: var(--ink-soft); }
+
+  /* WHY */
+  .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.1rem; margin-top: 1.7rem; }
+  .why-card { display: flex; gap: .8rem; align-items: flex-start; border: 1px solid var(--blue-100); border-radius: 12px; padding: 1.2rem 1.1rem; }
+  .why-card svg { flex: none; width: 26px; height: 26px; stroke: var(--green-600); margin-top: .1rem; }
+  .why-card b { color: var(--ink); }
+  .why-card p { font-size: .9rem; color: var(--ink-soft); }
+  .promise {
+    margin-top: 1.5rem; background: var(--blue-50); border-left: 4px solid var(--blue-700); border-radius: 0 10px 10px 0;
+    padding: 1.3rem 1.4rem; font-size: 1rem;
+  }
+  .promise strong { color: var(--blue-800); }
+
+  /* GALLERY */
+  .gal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1.7rem; }
+  .tile { height: 180px; position: relative; overflow: hidden; border-radius: 12px; }
+  .tile figcaption {
+    position: absolute; left: 0; right: 0; bottom: 0; background: rgba(23,76,135,.88); color: #fff;
+    font-size: .8rem; font-weight: 700; padding: .4rem .7rem;
+  }
+  /* PLACEHOLDER photo tiles — replace with real job photos */
+  .tile--1 { background: linear-gradient(140deg, #2E8F4A 0%, #1D5FA8 120%); }
+  .tile--2 { background: linear-gradient(140deg, #174C87 0%, #2E8F4A 130%); }
+  .tile--3 { background: linear-gradient(140deg, #57A86B 0%, #174C87 120%); }
+  .tile--4 { background: linear-gradient(140deg, #1D5FA8 0%, #6FBF83 140%); }
+
+  /* TESTIMONIALS */
+  .quotes { background: var(--blue-50); }
+  .quotes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.1rem; margin-top: 1.7rem; }
+  .quote { background: var(--paper); border: 1px solid var(--blue-100); border-radius: 12px; padding: 1.3rem 1.2rem; }
+  .quote .strs { color: var(--green-600); letter-spacing: .16em; font-size: .85rem; margin-bottom: .5rem; }
+  .quote p { font-size: .93rem; margin-bottom: .7rem; }
+  .quote b { font-size: .85rem; color: var(--blue-800); }
+  .quote span { display: block; font-size: .8rem; color: var(--ink-soft); }
+
+  /* ABOUT */
+  .about p { max-width: 46rem; margin-top: .6rem; }
+
+  /* CTA BANNER */
+  .banner { background: var(--green-600); }
+  .banner .wrap { display: flex; flex-wrap: wrap; gap: 1.2rem; align-items: center; justify-content: space-between; }
+  .banner h2 { color: #fff; font-size: clamp(1.4rem, 3vw, 2rem); }
+  .banner .btn { background: #fff; color: var(--green-700); }
+  .banner .btn:hover { background: var(--blue-50); }
+
+  /* CONTACT */
+  .contact .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 2.4rem; }
+  .c-info { display: grid; gap: 1rem; margin-top: 1.1rem; font-size: .96rem; }
+  .c-info b { display: block; font-size: .76rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); }
+  .c-info a { color: var(--blue-800); font-weight: 700; text-decoration: none; }
+  .c-info a:hover { text-decoration: underline; }
+  /* NOTE: form is non-functional in this mockup — wire to a form handler at launch */
+  form { display: grid; gap: .8rem; margin-top: 1.1rem; }
+  label { font-size: .82rem; font-weight: 700; color: var(--blue-800); }
+  input, textarea { width: 100%; padding: .7rem .85rem; border: 1px solid var(--blue-100); border-radius: 8px; font: inherit; color: var(--ink); background: #fff; }
+  .contact .btn { width: 100%; }
+
+  /* FOOTER */
+  footer { background: var(--blue-800); color: var(--blue-100); padding: 2rem 0; font-size: .88rem; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; }
+  footer a { color: #fff; text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  /* MOBILE CALL BAR */
+  .callbar { display: none; position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; background: var(--green-600); text-align: center; padding: .85rem; }
+  .callbar a { color: #fff; font-family: 'Lexend', sans-serif; font-weight: 600; font-size: 1.02rem; text-decoration: none; }
+
+  @media (max-width: 780px) {
+    .hero .wrap, .contact .wrap { grid-template-columns: 1fr; }
+    .callbar { display: block; }
+    body { padding-bottom: 56px; }
+    section { padding: 2.5rem 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Local Lawn Care of Gainesville home">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21c4.5-3.4 8-7 8-11a8 8 0 1 0-16 0c0 4 3.5 7.6 8 11z" fill="#1D5FA8"/><path d="M9.5 11.5c.8-2.4 1.6-4 2.5-5.2.9 1.2 1.7 2.8 2.5 5.2M8.5 13.5h7" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+      Local Lawn Care <span>&nbsp;of Gainesville</span>
+    </a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#areas">Where We Mow</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-call" href="tel:+13526918865">(352) 691-8865</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="hero-badge">📍 Based in Gainesville — not a franchise</span>
+      <h1>The lawn crew from <span>your side of town</span>.</h1>
+      <p class="sub">We only mow Gainesville. Your quote comes from someone who knows your neighborhood, your grass, and your summer rain schedule.</p>
+      <div class="hero-ctas">
+        <a class="btn" href="#contact">Get a Free Quote</a>
+        <a class="btn btn--line" href="tel:+13526918865">Call (352) 691-8865</a>
+      </div>
+      <p class="hero-note">Straight answers, flat prices, no contracts.</p>
+    </div>
+
+    <!-- SIGNATURE ELEMENT: neighborhood coverage finder -->
+    <div class="hoods" id="areas" aria-label="Neighborhoods we serve">
+      <h2>Do we mow your neighborhood?</h2>
+      <p>Start typing yours — or scan the list. If it's green, we're already on your street every week.</p>
+      <input class="hood-search" id="hood-input" type="text" placeholder="Try &quot;Haile&quot; or &quot;Duckpond&quot;…" aria-label="Search for your neighborhood" />
+      <div class="chips" id="chips">
+        <!-- PLACEHOLDER: confirm covered neighborhoods with client -->
+        <span class="chip">Haile Plantation</span>
+        <span class="chip">Duckpond</span>
+        <span class="chip">Turkey Creek</span>
+        <span class="chip">Millhopper</span>
+        <span class="chip">Suburban Heights</span>
+        <span class="chip">Blues Creek</span>
+        <span class="chip">Hunters Crossing</span>
+        <span class="chip">Oakmont</span>
+        <span class="chip">Jonesville</span>
+        <span class="chip">Tioga</span>
+        <span class="chip">Sugarfoot</span>
+        <span class="chip">Kanapaha</span>
+      </div>
+      <p class="hood-result" id="hood-result" aria-live="polite"></p>
+    </div>
+  </div>
+</header>
+
+<section class="stats" aria-label="Quick facts">
+  <div class="wrap">
+    <!-- PLACEHOLDER: confirm real numbers with client -->
+    <div class="stat"><b>100%</b><span>Gainesville — that's it</span></div>
+    <div class="stat"><b>12</b><span>Neighborhoods on the route</span></div>
+    <div class="stat"><b>48 hr</b><span>Quote turnaround</span></div>
+    <div class="stat"><b>0</b><span>Contracts required</span></div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <span class="kicker">Services</span>
+    <h2 class="sec-head">Straightforward lawn care</h2>
+    <div class="svc-grid">
+      <div class="svc">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 18h18M6 18c1-5 2.5-8.5 6-11 3.5 2.5 5 6 6 11"/></svg>
+        <h3>Weekly Mowing</h3>
+        <p>Cut, edged, trimmed, and blown clean — on the same day each week, all season.</p>
+      </div>
+      <div class="svc">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 20 20 4M14 4h6v6"/></svg>
+        <h3>Edging &amp; Detail</h3>
+        <p>Driveways, sidewalks, and beds finished with clean lines every single visit.</p>
+      </div>
+      <div class="svc">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 3v7m0 0c-2.5 0-5 2-5 5 0 2.5 2 5 5 6 3-1 5-3.5 5-6 0-3-2.5-5-5-5z"/></svg>
+        <h3>Shrub Trimming</h3>
+        <p>Hedges and shrubs kept neat and healthy — trimmed on the schedule that suits the plant.</p>
+      </div>
+      <div class="svc">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 14c3-1 5-4 6-8 1 4 3 7 6 8M6 20h12M12 14v6"/></svg>
+        <h3>Seasonal Cleanups</h3>
+        <p>Leaves, storm debris, and overgrowth cleared out so the yard starts fresh.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how">
+  <div class="wrap">
+    <span class="kicker">How it works</span>
+    <h2 class="sec-head">Three honest steps</h2>
+    <div class="steps">
+      <div class="step"><b>1</b><h3>Tell us where you are</h3><p>Call or email with your address. If you're in our neighborhoods, we'll quote it within 48 hours.</p></div>
+      <div class="step"><b>2</b><h3>Get a flat price</h3><p>One number for the visit or the month. It's the same number in August as in April.</p></div>
+      <div class="step"><b>3</b><h3>We keep showing up</h3><p>Same crew, same day each week. No contracts holding you — just work worth keeping.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="kicker">Why local matters</span>
+    <h2 class="sec-head">Hyper-local is a feature, not a slogan</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 22c4-3 8-6.5 8-11a8 8 0 1 0-16 0c0 4.5 4 8 8 11z"/><circle cx="12" cy="11" r="3"/></svg>
+        <div><b>Tight routes, on-time visits</b><p>We're never coming from across the county. Your crew is minutes away, so your day is your day.</p></div>
+      </div>
+      <div class="why-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V6l-8-4z"/><path d="m9 12 2 2 4-4"/></svg>
+        <div><b>We know Florida grass</b><p>St. Augustine, bahia, zoysia — each cut at the height that keeps it alive through August.</p></div>
+      </div>
+      <div class="why-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M17 3a2.8 2.8 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg>
+        <div><b>Flat, written quotes</b><p>Your price in writing before we start. No surprise fuel fees, no seasonal creep.</p></div>
+      </div>
+      <div class="why-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <div><b>Neighbors, literally</b><p>Odds are we already mow on your street. Ask the house with the sharpest lawn.</p></div>
+      </div>
+    </div>
+    <p class="promise"><strong>Our promise:</strong> if a visit ever isn't up to standard, call us within 24 hours and we'll re-do it free. No contracts means we have to earn next week — every week. <!-- PLACEHOLDER: confirm guarantee wording with client --></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="kicker">Recent work</span>
+    <h2 class="sec-head">Lawns around town</h2>
+    <div class="gal-grid">
+      <!-- PLACEHOLDER: swap gradient tiles for real job photos -->
+      <figure class="tile tile--1"><figcaption>Weekly service — Haile Plantation</figcaption></figure>
+      <figure class="tile tile--2"><figcaption>Historic yard — Duckpond</figcaption></figure>
+      <figure class="tile tile--3"><figcaption>Acre lot — Turkey Creek</figcaption></figure>
+      <figure class="tile tile--4"><figcaption>Corner lot refresh — Millhopper</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="quotes">
+  <div class="wrap">
+    <span class="kicker">Reviews</span>
+    <h2 class="sec-head">What neighbors say</h2>
+    <div class="quotes-grid">
+      <!-- PLACEHOLDER testimonials: replace with real reviews -->
+      <div class="quote">
+        <div class="strs" aria-label="5 stars">★★★★★</div>
+        <p>"They mow four houses on our street, so they're here the same morning every week. It just works."</p>
+        <b>Carol H.</b><span>Suburban Heights</span>
+      </div>
+      <div class="quote">
+        <div class="strs" aria-label="5 stars">★★★★★</div>
+        <p>"Quoted in a day, started that Friday, and the price hasn't moved in two seasons."</p>
+        <b>Nate B.</b><span>Turkey Creek</span>
+      </div>
+      <div class="quote">
+        <div class="strs" aria-label="5 stars">★★★★★</div>
+        <p>"Our old service was always 'on the way.' These guys live ten minutes away and it shows."</p>
+        <b>Grace L.</b><span>Duckpond</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap">
+    <span class="kicker">About us</span>
+    <h2 class="sec-head">Gainesville's lawn crew, full stop</h2>
+    <!-- PLACEHOLDER: confirm story details with client -->
+    <p>Local Lawn Care of Gainesville does one thing in one town: dependable lawn care across Gainesville's neighborhoods — from the oaks of Duckpond to the acre lots of Turkey Creek. No franchise playbook, no out-of-town crews, no upsells. Just the same trucks you already see around town, keeping the route sharp week after week.</p>
+  </div>
+</section>
+
+<section class="banner">
+  <div class="wrap">
+    <h2>Get a flat quote from the crew down the street.</h2>
+    <a class="btn" href="#contact">Request My Quote</a>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div>
+      <span class="kicker">Contact</span>
+      <h2 class="sec-head">Quotes within 48 hours</h2>
+      <div class="c-info">
+        <div><b>Phone</b><a href="tel:+13526918865">(352) 691-8865</a></div>
+        <div><b>Email</b><a href="mailto:locallawncare352@gmail.com">locallawncare352@gmail.com</a></div>
+        <div><b>Hours</b>Mon–Sat 7am–6pm <!-- PLACEHOLDER: confirm hours --></div>
+        <div><b>Service area</b>Gainesville, FL — see the neighborhood list above. Close but not listed? Ask anyway.</div>
+      </div>
+    </div>
+    <div>
+      <!-- NOTE: form is non-functional in this mockup -->
+      <form aria-label="Request a quote">
+        <div><label for="f-name">Name</label><input id="f-name" type="text" autocomplete="name" /></div>
+        <div><label for="f-phone">Phone</label><input id="f-phone" type="tel" autocomplete="tel" /></div>
+        <div><label for="f-hood">Neighborhood</label><input id="f-hood" type="text" placeholder="e.g. Haile Plantation" /></div>
+        <div><label for="f-msg">What does your lawn need?</label><textarea id="f-msg" rows="4"></textarea></div>
+        <button class="btn" type="submit">Get My Free Quote</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Local Lawn Care of Gainesville · <a href="tel:+13526918865">(352) 691-8865</a> · <a href="mailto:locallawncare352@gmail.com">locallawncare352@gmail.com</a></span>
+    <span><a href="#services">Services</a> · <a href="#areas">Where We Mow</a> · <a href="#contact">Contact</a></span>
+  </div>
+</footer>
+
+<div class="callbar"><a href="tel:+13526918865">🌱 Call Local Lawn Care — (352) 691-8865</a></div>
+
+<script>
+  // Neighborhood finder: filter chips as the visitor types
+  (function () {
+    var input = document.getElementById('hood-input');
+    var chips = Array.prototype.slice.call(document.querySelectorAll('#chips .chip'));
+    var result = document.getElementById('hood-result');
+    if (!input) return;
+    input.addEventListener('input', function () {
+      var q = input.value.trim().toLowerCase();
+      if (!q) {
+        chips.forEach(function (c) { c.classList.remove('chip--hit', 'chip--dim'); });
+        result.textContent = '';
+        result.className = 'hood-result';
+        return;
+      }
+      var hits = 0;
+      chips.forEach(function (c) {
+        var match = c.textContent.toLowerCase().indexOf(q) !== -1;
+        c.classList.toggle('chip--hit', match);
+        c.classList.toggle('chip--dim', !match);
+        if (match) hits++;
+      });
+      if (hits > 0) {
+        result.textContent = '✓ Yes — we mow there every week.';
+        result.className = 'hood-result ok';
+      } else {
+        result.innerHTML = 'Not on the list yet — but close counts. <a href="tel:+13526918865">Call and ask.</a>';
+        result.className = 'hood-result maybe';
+      }
+    });
+  })();
+</script>
+
+</body>
+</html>
