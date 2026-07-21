@@ -17,3 +17,21 @@ Before designing a new mockup's palette, typography, and style, use the **ui-ux-
 3. Add a card in index.html's `#work` grid before the "Your business here" card: `<img src="portfolio/thumbs/{slug}.png">` in `.thumb`, name, industry · city, badge `Concept` (or `badge--live` for paying clients).
 
 Preview via the `site` launch config (`python -m http.server 8735`) — file:// tabs are unreliable in the Browser pane.
+
+## Sending a mockup to a lead
+
+**After building a mockup, run `scripts/new-mockup.sh {slug} {path-to-file}` to get a sendable live link.** This is the default next step after every mockup build — send the link, not the `.html` file as an attachment.
+
+```
+./scripts/new-mockup.sh bossman-landscaping bossman-landscaping-mockup.html
+```
+
+It copies the mockup to `mockups/{slug}/index.html`, inserts `<meta name="robots" content="noindex">` so cold-lead previews stay out of Google, commits, pushes to `main`, and prints the link:
+
+```
+https://rileypmcg.github.io/Site-Spark/mockups/{slug}/
+```
+
+GitHub Pages takes ~1 minute to build before the URL resolves. Re-running with the same slug updates the existing preview in place, so the link you already sent stays valid.
+
+`mockups/` is for cold leads who haven't converted; `portfolio/` stays for won/signed clients. The script only ever writes to `mockups/` — wiring a mockup into the portfolio grid is still the separate manual step above, done once a lead signs.
