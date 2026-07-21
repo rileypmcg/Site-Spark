@@ -1,0 +1,13 @@
+# This repo is PUBLIC and served by GitHub Pages — everything committed here is
+# downloadable by anyone. The lead tracker holds lead names, phone numbers and
+# emails, so it must never land in here. These patterns are a safety net in case
+# a copy is ever dropped into the repo by mistake.
+*lead-tracker*.xlsx
+*lead-tracker*.csv
+tracker.md
+~$*
+
+# Excel/OS scratch
+*.tmp
+Thumbs.db
+.DS_Store
