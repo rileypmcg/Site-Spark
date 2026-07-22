@@ -61,6 +61,62 @@ dest="$dest_dir/index.html"
 mkdir -p "$dest_dir"
 cp "$src" "$dest"
 
+# Strip HTML comments. Source mockups carry build notes — pitch angles, "confirm
+# real numbers with client", owner phone numbers — and the published copy is a
+# URL we hand to that very lead, who can read it with View Source. The notes stay
+# in the source file; they just never ship.
+awk '
+  {
+    rest = $0; out = ""; had = 0
+    while (1) {
+      if (incom) {
+        p = index(rest, "-->")
+        if (p == 0) { rest = ""; break }
+        rest = substr(rest, p + 3); incom = 0; had = 1
+      } else {
+        p = index(rest, "<!--")
+        if (p == 0) { out = out rest; break }
+        out = out substr(rest, 1, p - 1)
+        rest = substr(rest, p + 4); incom = 1; had = 1
+      }
+    }
+    # Drop lines that held only a comment; keep genuinely blank source lines.
+    if (had && out ~ /^[ \t]*$/) next
+    print out
+  }
+' "$dest" > "$dest.tmp" && mv "$dest.tmp" "$dest"
+
+# Same treatment for /* */ comments inside <style> — they carry notes like
+# "PLACEHOLDER photo tiles, replace with real job photos". Scoped to <style> on
+# purpose: script bodies hold no build notes, and // would eat the // in URLs.
+awk '
+  {
+    orig = $0
+    if (instyle || incom) {
+      rest = orig; out = ""; had = 0
+      while (1) {
+        if (incom) {
+          p = index(rest, "*/")
+          if (p == 0) { rest = ""; break }
+          rest = substr(rest, p + 2); incom = 0; had = 1
+        } else {
+          p = index(rest, "/*")
+          if (p == 0) { out = out rest; break }
+          out = out substr(rest, 1, p - 1)
+          rest = substr(rest, p + 2); incom = 1; had = 1
+        }
+      }
+      if (tolower(orig) ~ /<\/style>/) instyle = 0
+      if (had && out ~ /^[ \t]*$/) next
+      print out
+      next
+    }
+    if (tolower(orig) ~ /<style[ >]/) instyle = 1
+    if (tolower(orig) ~ /<\/style>/) instyle = 0
+    print orig
+  }
+' "$dest" > "$dest.tmp" && mv "$dest.tmp" "$dest"
+
 # Add <meta name="robots" content="noindex"> unless a robots meta is already
 # there — these are private previews for one lead, not pages we want indexed.
 if grep -qi '<meta[^>]*name=["'"'"']\?robots' "$dest"; then
