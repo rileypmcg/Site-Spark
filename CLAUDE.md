@@ -34,4 +34,6 @@ https://rileypmcg.github.io/Site-Spark/mockups/{slug}/
 
 GitHub Pages takes ~1 minute to build before the URL resolves. Re-running with the same slug updates the existing preview in place, so the link you already sent stays valid.
 
+The script also strips build comments — HTML comments everywhere, `/* */` inside `<style>` — from the published copy only. Leave pitch angles, `PLACEHOLDER: confirm real numbers`, and owner contact notes in the source mockup as freely as you like; they never reach the URL the lead opens. `<script>` is left alone deliberately (no notes live there, and `//` appears in URLs).
+
 `mockups/` is for cold leads who haven't converted; `portfolio/` stays for won/signed clients. The script only ever writes to `mockups/` — wiring a mockup into the portfolio grid is still the separate manual step above, done once a lead signs.
