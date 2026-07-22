@@ -2,10 +2,8 @@
 <html lang="en">
 <head>
 <meta name="robots" content="noindex" />
-<!--
-  MOCKUP: BossMan Landscaping LLC — Gainesville, FL
-  Owner: Marvin Foster · (352) 275-3038 · NO EMAIL ON FILE — outreach by text/call only.
--->
+
+
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Landscaping in Gainesville, FL | BossMan Landscaping LLC</title>
@@ -27,13 +25,13 @@
 </script>
 <style>
   :root {
-    --black-950: #0B0A07;  /* boss black — primary brand */
+    --black-950: #0B0A07;  
     --black-900: #14120D;
     --black-800: #1E1B14;
-    --stone-400: #A79E8C;  /* warm stone — secondary brand */
+    --stone-400: #A79E8C;  
     --stone-200: #D8D2C6;
     --stone-50:  #F7F5F0;
-    --gold-500: #D2A72B;   /* gold — CTA / accent ONLY */
+    --gold-500: #D2A72B;   
     --gold-400: #E4BC45;
     --ink: #191712;
     --ink-soft: #6B6455;
@@ -67,7 +65,6 @@
   }
   .sec-head { font-size: clamp(2rem, 4.2vw, 2.9rem); color: var(--black-950); margin-bottom: .5rem; }
 
-  /* NAV */
   .nav { position: sticky; top: 0; z-index: 50; background: var(--black-950); border-bottom: 1px solid rgba(210,167,43,.35); }
   .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
   .logo { display: flex; align-items: center; gap: .6rem; text-decoration: none; }
@@ -80,7 +77,6 @@
   .nav-call:hover { background: var(--gold-400); }
   @media (max-width: 780px) { .nav-links a:not(.nav-call) { display: none; } }
 
-  /* HERO */
   .hero {
     background:
       radial-gradient(70rem 30rem at 85% 115%, rgba(210,167,43,.16), transparent 60%),
@@ -98,7 +94,6 @@
   .hero-ctas { display: flex; flex-wrap: wrap; gap: .9rem; }
   .hero-note { margin-top: 1rem; font-size: .88rem; color: var(--stone-400); }
 
-  /* SIGNATURE ELEMENT: The BossMan Standard checklist */
   .standard {
     background: var(--black-900); border: 1px solid rgba(210,167,43,.4);
     padding: 1.6rem 1.5rem 1.4rem; position: relative;
@@ -124,13 +119,11 @@
     .std-list li { opacity: 1; transform: none; transition: none; }
   }
 
-  /* STATS */
   .stats { background: var(--gold-500); padding: 2.1rem 0; }
   .stats .wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.4rem; text-align: center; }
   .stat b { display: block; font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; color: var(--black-950); }
   .stat span { font-size: .82rem; font-weight: 800; color: var(--black-900); letter-spacing: .04em; }
 
-  /* SERVICES */
   .svc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-top: 1.8rem; }
   .svc {
     background: #fff; border: 1px solid var(--stone-200); padding: 1.5rem 1.4rem;
@@ -141,7 +134,6 @@
   .svc h3 { font-size: 1.35rem; color: var(--black-950); margin-bottom: .3rem; }
   .svc p { font-size: .92rem; color: var(--ink-soft); }
 
-  /* PROCESS */
   .process { background: var(--black-950); color: #fff; }
   .process .sec-head { color: #fff; }
   .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.2rem; margin-top: 1.8rem; }
@@ -150,7 +142,6 @@
   .step h3 { font-size: 1.3rem; margin-bottom: .35rem; }
   .step p { font-size: .9rem; color: var(--stone-400); }
 
-  /* WHY / GUARANTEE */
   .why .wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: 2.6rem; align-items: start; }
   .why-list { display: grid; gap: 1.1rem; margin-top: 1.4rem; }
   .why-item { display: flex; gap: .85rem; align-items: flex-start; }
@@ -166,7 +157,6 @@
   .guarantee p { font-size: .95rem; }
   .guarantee strong { color: #fff; }
 
-  /* GALLERY */
   .gallery { background: #fff; }
   .gal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; margin-top: 1.8rem; }
   .tile { height: 200px; position: relative; overflow: hidden; }
@@ -174,13 +164,11 @@
     position: absolute; left: 0; right: 0; bottom: 0; background: rgba(11,10,7,.85); color: var(--stone-200);
     font-size: .8rem; font-weight: 600; padding: .45rem .7rem;
   }
-  /* PLACEHOLDER photo tiles — replace with real job photos */
   .tile--1 { background: linear-gradient(140deg, #1E1B14 0%, #3A4A2E 60%, #D2A72B 140%); }
   .tile--2 { background: linear-gradient(140deg, #2C3A22 0%, #1E1B14 55%, #A79E8C 130%); }
   .tile--3 { background: linear-gradient(140deg, #14120D 0%, #46552F 70%, #E4BC45 150%); }
   .tile--4 { background: linear-gradient(140deg, #3A4A2E 0%, #14120D 65%, #D8D2C6 160%); }
 
-  /* TESTIMONIALS */
   .quotes { background: var(--stone-50); }
   .quotes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.2rem; margin-top: 1.8rem; }
   .quote { background: #fff; border: 1px solid var(--stone-200); border-bottom: 3px solid var(--gold-500); padding: 1.4rem 1.3rem; }
@@ -189,10 +177,8 @@
   .quote b { font-size: .85rem; color: var(--black-950); }
   .quote span { display: block; font-size: .8rem; color: var(--ink-soft); }
 
-  /* ABOUT */
   .about .wrap { display: grid; grid-template-columns: .85fr 1.15fr; gap: 2.5rem; align-items: center; }
   .portrait { height: 300px; position: relative; overflow: hidden; background: linear-gradient(155deg, #1E1B14 0%, #46552F 80%, #D2A72B 170%); }
-  /* PLACEHOLDER portrait — replace with a real photo of Marvin */
   .portrait figcaption {
     position: absolute; left: 0; right: 0; bottom: 0; background: rgba(11,10,7,.85); color: var(--stone-200);
     padding: .5rem .9rem; font-size: .82rem; font-weight: 700;
@@ -200,32 +186,27 @@
   .about p { margin-top: .7rem; }
   .about p + p { margin-top: .9rem; }
 
-  /* CTA BANNER */
   .banner { background: var(--black-950); padding: 3rem 0; border-top: 3px solid var(--gold-500); border-bottom: 3px solid var(--gold-500); }
   .banner .wrap { display: flex; flex-wrap: wrap; gap: 1.2rem; align-items: center; justify-content: space-between; }
   .banner h2 { color: #fff; font-size: clamp(1.8rem, 3.6vw, 2.6rem); }
   .banner h2 span { color: var(--gold-500); }
 
-  /* CONTACT */
   .contact .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
   .c-info { display: grid; gap: 1rem; margin-top: 1.2rem; font-size: .96rem; }
   .c-info b { display: block; font-size: .74rem; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-soft); }
   .c-info a { color: var(--black-950); font-weight: 800; text-decoration: none; }
   .c-info a:hover { text-decoration: underline; }
   .text-first { background: #fff; border: 1px solid var(--stone-200); border-left: 4px solid var(--gold-500); padding: 1.1rem 1.2rem; font-size: .92rem; margin-top: 1.2rem; }
-  /* NOTE: form is non-functional in this mockup — wire to a form handler at launch */
   form { display: grid; gap: .8rem; margin-top: 1.2rem; }
   label { font-size: .8rem; font-weight: 800; color: var(--black-950); letter-spacing: .03em; }
   input, textarea { width: 100%; padding: .7rem .85rem; border: 1px solid var(--stone-200); font: inherit; background: #fff; color: var(--ink); }
   .contact .btn { width: 100%; }
 
-  /* FOOTER */
   footer { background: var(--black-950); color: var(--stone-400); padding: 2.2rem 0; font-size: .88rem; }
   footer .wrap { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; }
   footer a { color: var(--stone-200); text-decoration: none; }
   footer a:hover { color: #fff; }
 
-  /* MOBILE CALL BAR */
   .callbar { display: none; position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; background: var(--gold-500); text-align: center; padding: .85rem; }
   .callbar a { color: var(--black-950); font-family: 'Bebas Neue', sans-serif; letter-spacing: .08em; font-size: 1.15rem; text-decoration: none; }
 
@@ -271,7 +252,6 @@
       <p class="hero-note">Call or text — quotes within 24 hours.</p>
     </div>
 
-    <!-- SIGNATURE ELEMENT: The BossMan Standard checklist -->
     <div class="standard" id="standard" aria-label="The BossMan Standard — included every visit">
       <h2>The BossMan <span>Standard</span></h2>
       <p>Checked off on every visit. Not sometimes — every time.</p>
@@ -290,7 +270,6 @@
 
 <section class="stats" aria-label="Track record">
   <div class="wrap">
-    <!-- PLACEHOLDER: confirm real numbers with Marvin -->
     <div class="stat"><b>10 yrs</b><span>Running Gainesville yards</span></div>
     <div class="stat"><b>6-pt</b><span>Standard on every visit</span></div>
     <div class="stat"><b>24 hr</b><span>Quote turnaround</span></div>
@@ -373,7 +352,6 @@
       <h3>The BossMan <span>Guarantee</span></h3>
       <p><strong>If any point of the Standard gets missed, tell us within 24 hours — we come back and fix it free.</strong></p>
       <p style="margin-top:.8rem">No arguing, no "next visit." That's what the name on the truck means.</p>
-      <!-- PLACEHOLDER: confirm guarantee wording with Marvin -->
     </div>
   </div>
 </section>
@@ -383,7 +361,6 @@
     <span class="kicker">The work</span>
     <h2 class="sec-head">Yards that carry the name</h2>
     <div class="gal-grid">
-      <!-- PLACEHOLDER: swap gradient tiles for real job photos -->
       <figure class="tile tile--1"><figcaption>Full-service lawn — Hunters Crossing</figcaption></figure>
       <figure class="tile tile--2"><figcaption>Bed redesign &amp; mulch — Haile Plantation</figcaption></figure>
       <figure class="tile tile--3"><figcaption>Commercial grounds — Butler Plaza area</figcaption></figure>
@@ -397,7 +374,6 @@
     <span class="kicker">Reviews</span>
     <h2 class="sec-head">Word travels down the street</h2>
     <div class="quotes-grid">
-      <!-- PLACEHOLDER testimonials: replace with real reviews -->
       <div class="quote">
         <div class="strs" aria-label="5 stars">★★★★★</div>
         <p>"Three services in five years, and BossMan is the first one that looks the same in week 40 as it did in week 1."</p>
@@ -420,13 +396,11 @@
 <section class="about">
   <div class="wrap">
     <figure class="portrait">
-      <!-- PLACEHOLDER: real photo of Marvin Foster -->
       <figcaption>Marvin Foster — owner, BossMan Landscaping</figcaption>
     </figure>
     <div>
       <span class="kicker">The man behind the name</span>
       <h2 class="sec-head">Why "BossMan"</h2>
-      <!-- PLACEHOLDER: confirm story details with Marvin -->
       <p>The nickname came first — from customers who noticed Marvin ran every job like he owned the property. The company came after, built on one idea: a yard should be handled so completely that the owner never has to think about it.</p>
       <p>Today BossMan Landscaping keeps lawns sharp from Hunters Crossing to Haile Plantation, with the same six-point standard on a quarter-acre lot as on a commercial plaza.</p>
     </div>
@@ -447,13 +421,12 @@
       <h2 class="sec-head">Get your flat-rate quote</h2>
       <div class="c-info">
         <div><b>Call or text</b><a href="tel:+13522753038">(352) 275-3038</a></div>
-        <div><b>Hours</b>Mon–Sat 7am–6pm <!-- PLACEHOLDER: confirm hours --></div>
+        <div><b>Hours</b>Mon–Sat 7am–6pm </div>
         <div><b>Service area</b>Gainesville — Hunters Crossing, Blues Creek, Haile Plantation, Millhopper, NW &amp; SW Gainesville</div>
       </div>
       <p class="text-first"><b>Fastest response:</b> text your address and "quote" to <a href="sms:+13522753038" style="color:var(--black-950);font-weight:800">(352) 275-3038</a> — Marvin will drive by and text a number within 24 hours.</p>
     </div>
     <div>
-      <!-- NOTE: form is non-functional in this mockup -->
       <form aria-label="Request a quote">
         <div><label for="f-name">Name</label><input id="f-name" type="text" autocomplete="name" /></div>
         <div><label for="f-phone">Phone (for a text back)</label><input id="f-phone" type="tel" autocomplete="tel" /></div>
