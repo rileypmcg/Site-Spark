@@ -2,11 +2,9 @@
 <html lang="en">
 <head>
 <meta name="robots" content="noindex" />
-<!--
-  MOCKUP: All Pro Lawn & Tree Service — Gainesville, FL
-  Pitch angle: their existing site is broken/blocked — this is the "we fixed what's broken" replacement.
-  (Keep that framing in the outreach note, not in customer-facing copy.)
--->
+
+
+
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Tree Service &amp; Lawn Care in Gainesville, FL | All Pro Lawn &amp; Tree Service</title>
@@ -28,14 +26,14 @@
 </script>
 <style>
   :root {
-    --pine-950: #0D241C;   /* deep pine — hero / footer */
-    --pine-900: #143229;   /* primary brand */
+    --pine-950: #0D241C;   
+    --pine-900: #143229;   
     --pine-800: #1C4234;
     --pine-100: #D9E7DF;
     --pine-50:  #F1F6F3;
-    --bark-600: #57503F;   /* bark brown — secondary brand */
+    --bark-600: #57503F;   
     --bark-100: #E9E4D8;
-    --orange-600: #F4640A; /* safety orange — CTA ONLY */
+    --orange-600: #F4640A; 
     --orange-700: #D95608;
     --ink: #1E2B25;
     --ink-soft: #55655D;
@@ -81,7 +79,6 @@
   .sec-head { font-size: clamp(1.7rem, 3.5vw, 2.4rem); color: var(--pine-900); margin-bottom: .5rem; }
   section { padding: 3.5rem 0; }
 
-  /* NAV */
   .nav {
     position: sticky; top: 0; z-index: 50;
     background: var(--pine-950); border-bottom: 3px solid var(--orange-600);
@@ -102,7 +99,6 @@
   .nav-call:hover { background: var(--orange-700); }
   @media (max-width: 780px) { .nav-links a:not(.nav-call) { display: none; } }
 
-  /* HERO */
   .hero {
     background:
       linear-gradient(160deg, rgba(13,36,28,.94) 0%, rgba(20,50,41,.9) 55%, rgba(28,66,52,.88) 100%),
@@ -123,7 +119,6 @@
   .hero-note { margin-top: 1rem; font-size: .88rem; color: var(--pine-100); }
   .hero-note a { color: #fff; font-weight: 700; text-decoration: none; border-bottom: 1px solid var(--orange-600); }
 
-  /* SIGNATURE: weekly crew availability board */
   .board {
     background: var(--paper); color: var(--ink); padding: 1.4rem 1.4rem 1.2rem;
     border-top: 5px solid var(--orange-600); box-shadow: 0 18px 45px rgba(0,0,0,.35);
@@ -153,13 +148,11 @@
   .board-storm b { color: var(--pine-900); }
   .board-storm a { color: var(--pine-900); font-weight: 700; }
 
-  /* STATS */
   .stats { background: var(--pine-900); color: #fff; padding: 2.2rem 0; }
   .stats .wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; text-align: center; }
   .stat b { display: block; font-family: 'Oswald', sans-serif; font-size: 2rem; color: var(--orange-600); }
   .stat span { font-size: .85rem; color: var(--pine-100); font-weight: 600; }
 
-  /* SERVICES */
   .services { background: var(--paper); }
   .svc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-top: 1.8rem; }
   .svc {
@@ -171,7 +164,6 @@
   .svc h3 { font-size: 1.05rem; color: var(--pine-900); margin-bottom: .35rem; }
   .svc p { font-size: .92rem; color: var(--ink-soft); }
 
-  /* PROCESS */
   .process { background: var(--bark-100); }
   .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; margin-top: 1.8rem; }
   .step { background: #fff; padding: 1.4rem 1.3rem; border-bottom: 4px solid var(--orange-600); }
@@ -179,7 +171,6 @@
   .step h3 { font-size: 1.02rem; color: var(--pine-900); margin-bottom: .3rem; }
   .step p { font-size: .9rem; color: var(--ink-soft); }
 
-  /* WHY */
   .why .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start; }
   .why-list { display: grid; gap: 1rem; margin-top: 1.4rem; }
   .why-item { display: flex; gap: .8rem; align-items: flex-start; }
@@ -193,7 +184,6 @@
   .guarantee p { color: var(--pine-100); font-size: .95rem; }
   .guarantee strong { color: #fff; }
 
-  /* GALLERY */
   .gallery { background: var(--pine-50); }
   .gal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; margin-top: 1.8rem; }
   .tile { height: 200px; position: relative; overflow: hidden; }
@@ -201,13 +191,11 @@
     position: absolute; left: 0; right: 0; bottom: 0; background: rgba(13,36,28,.85); color: #fff;
     font-size: .8rem; font-weight: 600; padding: .45rem .7rem;
   }
-  /* PLACEHOLDER photo tiles — replace with real job photos */
   .tile--1 { background: linear-gradient(135deg, #1C4234, #2E5B47 60%, #57503F); }
   .tile--2 { background: linear-gradient(135deg, #57503F, #7A6F55 55%, #1C4234); }
   .tile--3 { background: linear-gradient(135deg, #143229, #1C4234 45%, #7A6F55); }
   .tile--4 { background: linear-gradient(135deg, #2E5B47, #143229 65%, #0D241C); }
 
-  /* TESTIMONIALS */
   .quotes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.2rem; margin-top: 1.8rem; }
   .quote { border: 1px solid var(--pine-100); padding: 1.4rem 1.3rem; background: #fff; }
   .quote .strs { color: var(--orange-600); letter-spacing: .18em; font-size: .85rem; margin-bottom: .6rem; }
@@ -215,24 +203,20 @@
   .quote b { font-size: .85rem; color: var(--pine-900); }
   .quote span { font-size: .8rem; color: var(--ink-soft); display: block; }
 
-  /* ABOUT */
   .about { background: var(--bark-100); }
   .about p { max-width: 46rem; color: var(--ink); margin-top: .6rem; }
 
-  /* CTA BANNER */
   .banner { background: var(--orange-600); padding: 2.6rem 0; }
   .banner .wrap { display: flex; flex-wrap: wrap; gap: 1.2rem; align-items: center; justify-content: space-between; }
   .banner h2 { color: #fff; font-size: clamp(1.5rem, 3vw, 2.1rem); }
   .banner .btn { background: var(--pine-950); }
   .banner .btn:hover { background: var(--pine-900); }
 
-  /* CONTACT */
   .contact .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
   .c-info { display: grid; gap: 1rem; margin-top: 1.2rem; font-size: .96rem; }
   .c-info a { color: var(--pine-900); font-weight: 700; text-decoration: none; }
   .c-info a:hover { text-decoration: underline; }
   .c-info b { display: block; font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); }
-  /* NOTE: form is non-functional in this mockup — wire to a form handler at launch */
   form { display: grid; gap: .8rem; margin-top: 1.2rem; }
   label { font-size: .82rem; font-weight: 700; color: var(--pine-900); }
   input, textarea, select {
@@ -240,13 +224,11 @@
   }
   .contact .btn { width: 100%; }
 
-  /* FOOTER */
   footer { background: var(--pine-950); color: var(--pine-100); padding: 2.2rem 0; font-size: .88rem; }
   footer .wrap { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; }
   footer a { color: #fff; text-decoration: none; }
   footer a:hover { text-decoration: underline; }
 
-  /* MOBILE CALL BAR */
   .callbar {
     display: none; position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
     background: var(--orange-600); text-align: center; padding: .85rem;
@@ -296,11 +278,9 @@
       <p class="hero-note">Storm damage? We answer nights and weekends — <a href="tel:+13522140101">call the crew line</a>.</p>
     </div>
 
-    <!-- SIGNATURE ELEMENT: weekly crew availability board -->
     <div class="board" aria-label="Crew availability this week">
       <h2>Crew availability <span class="wk">This week</span></h2>
       <div class="board-grid" id="board">
-        <!-- PLACEHOLDER: slot counts are illustrative — confirm real scheduling with All Pro -->
         <div class="day day--open" data-day="1"><b>Mon</b><span>2 slots</span></div>
         <div class="day day--tight" data-day="2"><b>Tue</b><span>1 slot</span></div>
         <div class="day day--open" data-day="3"><b>Wed</b><span>3 slots</span></div>
@@ -316,7 +296,6 @@
 
 <section class="stats" aria-label="Track record">
   <div class="wrap">
-    <!-- PLACEHOLDER: confirm real numbers with client -->
     <div class="stat"><b>15+</b><span>Years in the trees</span></div>
     <div class="stat"><b>2,400+</b><span>Jobs completed</span></div>
     <div class="stat"><b>24 hr</b><span>Estimate turnaround</span></div>
@@ -399,7 +378,6 @@
       <h3>The All Pro Promise</h3>
       <p><strong>If we leave your property in worse shape than we found it, we make it right — on our dime.</strong></p>
       <p style="margin-top:.8rem">That covers ruts in the lawn, dinged fences, and debris left behind. It's why most of our work comes from the same streets, year after year.</p>
-      <!-- PLACEHOLDER: confirm guarantee wording with client -->
     </div>
   </div>
 </section>
@@ -409,7 +387,6 @@
     <span class="kicker">Recent work</span>
     <h2 class="sec-head">Jobs done around Gainesville</h2>
     <div class="gal-grid">
-      <!-- PLACEHOLDER: swap gradient tiles for real job photos -->
       <figure class="tile tile--1"><figcaption>Oak removal — NW 39th Ave</figcaption></figure>
       <figure class="tile tile--2"><figcaption>Storm cleanup — Haile Plantation</figcaption></figure>
       <figure class="tile tile--3"><figcaption>Crown reduction — Duckpond</figcaption></figure>
@@ -423,7 +400,6 @@
     <span class="kicker">Word around town</span>
     <h2 class="sec-head">What customers say</h2>
     <div class="quotes-grid">
-      <!-- PLACEHOLDER testimonials: replace with real reviews -->
       <div class="quote">
         <div class="strs" aria-label="5 stars">★★★★★</div>
         <p>"A huge laurel oak came down on our fence line in a storm. They were out the next morning and you can't tell it ever happened."</p>
@@ -447,7 +423,6 @@
   <div class="wrap">
     <span class="kicker">About us</span>
     <h2 class="sec-head">Gainesville's whole-property crew</h2>
-    <!-- PLACEHOLDER: confirm story/years with client -->
     <p>All Pro Lawn &amp; Tree Service has been climbing, cutting, and mowing across Gainesville for over 15 years — from Haile Plantation to Millhopper, Jonesville to Duckpond. We're the crew people call when the job is too big, too high, or too close to the house for guesswork. Same faces, same trucks, same standard — whether it's a 60-foot removal or Tuesday's mow.</p>
   </div>
 </section>
@@ -467,12 +442,11 @@
       <div class="c-info">
         <div><b>Phone</b><a href="tel:+13522140101">(352) 214-0101</a></div>
         <div><b>Email</b><a href="mailto:info@allprolawntree.com">info@allprolawntree.com</a></div>
-        <div><b>Hours</b>Mon–Sat 7am–6pm · Storm response 24/7 <!-- PLACEHOLDER: confirm hours --></div>
+        <div><b>Hours</b>Mon–Sat 7am–6pm · Storm response 24/7 </div>
         <div><b>Service area</b>Gainesville, Jonesville, Newberry, Alachua, Micanopy &amp; surrounding Alachua County</div>
       </div>
     </div>
     <div>
-      <!-- NOTE: form is non-functional in this mockup -->
       <form aria-label="Request an estimate">
         <div><label for="f-name">Name</label><input id="f-name" type="text" autocomplete="name" /></div>
         <div><label for="f-phone">Phone</label><input id="f-phone" type="tel" autocomplete="tel" /></div>
