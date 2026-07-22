@@ -2,10 +2,8 @@
 <html lang="en">
 <head>
 <meta name="robots" content="noindex" />
-<!--
-  MOCKUP: Local Lawn Care of Gainesville — Gainesville, FL
-  Contact: (352) 691-8865 · locallawncare352@gmail.com
--->
+
+
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Lawn Care in Gainesville, FL | Local Lawn Care of Gainesville</title>
@@ -27,11 +25,11 @@
 </script>
 <style>
   :root {
-    --blue-700: #1D5FA8;   /* honest blue — primary brand */
+    --blue-700: #1D5FA8;   
     --blue-800: #174C87;
     --blue-50:  #EFF5FB;
     --blue-100: #DCE9F6;
-    --green-600: #2E8F4A;  /* leaf green — CTA / accent ONLY */
+    --green-600: #2E8F4A;  
     --green-700: #257A3D;
     --green-50:  #EAF5EE;
     --ink: #1C2B3A;
@@ -65,7 +63,6 @@
   }
   .sec-head { font-size: clamp(1.6rem, 3.4vw, 2.2rem); margin-bottom: .5rem; }
 
-  /* NAV */
   .nav { position: sticky; top: 0; z-index: 50; background: var(--paper); border-bottom: 1px solid var(--blue-100); }
   .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
   .logo { display: flex; align-items: center; gap: .55rem; text-decoration: none; color: var(--ink); font-family: 'Lexend', sans-serif; font-weight: 700; font-size: 1.02rem; }
@@ -78,7 +75,6 @@
   .nav-call:hover { background: var(--green-700); }
   @media (max-width: 780px) { .nav-links a:not(.nav-call) { display: none; } }
 
-  /* HERO */
   .hero { background: linear-gradient(180deg, var(--blue-50) 0%, var(--paper) 100%); padding: 4rem 0 3.6rem; }
   .hero .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 2.6rem; align-items: center; }
   .hero-badge {
@@ -91,7 +87,6 @@
   .hero-ctas { display: flex; flex-wrap: wrap; gap: .8rem; }
   .hero-note { margin-top: .9rem; font-size: .88rem; color: var(--ink-soft); }
 
-  /* SIGNATURE ELEMENT: neighborhood coverage finder */
   .hoods {
     background: var(--paper); border: 1px solid var(--blue-100); border-radius: 14px;
     padding: 1.5rem 1.4rem 1.3rem; box-shadow: 0 12px 30px rgba(29,95,168,.1);
@@ -116,13 +111,11 @@
   .hood-result.maybe { color: var(--blue-800); }
   .hood-result a { color: inherit; }
 
-  /* STATS */
   .stats { background: var(--blue-700); color: #fff; padding: 2rem 0; }
   .stats .wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.4rem; text-align: center; }
   .stat b { display: block; font-family: 'Lexend', sans-serif; font-weight: 700; font-size: 1.9rem; }
   .stat span { font-size: .84rem; font-weight: 700; color: var(--blue-100); }
 
-  /* SERVICES */
   .svc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; margin-top: 1.7rem; }
   .svc { border: 1px solid var(--blue-100); border-radius: 12px; padding: 1.4rem 1.3rem; transition: border-color .2s, box-shadow .2s; }
   .svc:hover { border-color: var(--blue-700); box-shadow: 0 6px 18px rgba(29,95,168,.08); }
@@ -130,7 +123,6 @@
   .svc h3 { font-size: 1.02rem; margin-bottom: .3rem; }
   .svc p { font-size: .92rem; color: var(--ink-soft); }
 
-  /* HOW */
   .how { background: var(--blue-50); }
   .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.1rem; margin-top: 1.7rem; }
   .step { background: var(--paper); border: 1px solid var(--blue-100); border-radius: 12px; padding: 1.4rem 1.3rem; }
@@ -138,7 +130,6 @@
   .step h3 { font-size: 1rem; margin-bottom: .3rem; }
   .step p { font-size: .9rem; color: var(--ink-soft); }
 
-  /* WHY */
   .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.1rem; margin-top: 1.7rem; }
   .why-card { display: flex; gap: .8rem; align-items: flex-start; border: 1px solid var(--blue-100); border-radius: 12px; padding: 1.2rem 1.1rem; }
   .why-card svg { flex: none; width: 26px; height: 26px; stroke: var(--green-600); margin-top: .1rem; }
@@ -150,20 +141,17 @@
   }
   .promise strong { color: var(--blue-800); }
 
-  /* GALLERY */
   .gal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1.7rem; }
   .tile { height: 180px; position: relative; overflow: hidden; border-radius: 12px; }
   .tile figcaption {
     position: absolute; left: 0; right: 0; bottom: 0; background: rgba(23,76,135,.88); color: #fff;
     font-size: .8rem; font-weight: 700; padding: .4rem .7rem;
   }
-  /* PLACEHOLDER photo tiles — replace with real job photos */
   .tile--1 { background: linear-gradient(140deg, #2E8F4A 0%, #1D5FA8 120%); }
   .tile--2 { background: linear-gradient(140deg, #174C87 0%, #2E8F4A 130%); }
   .tile--3 { background: linear-gradient(140deg, #57A86B 0%, #174C87 120%); }
   .tile--4 { background: linear-gradient(140deg, #1D5FA8 0%, #6FBF83 140%); }
 
-  /* TESTIMONIALS */
   .quotes { background: var(--blue-50); }
   .quotes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.1rem; margin-top: 1.7rem; }
   .quote { background: var(--paper); border: 1px solid var(--blue-100); border-radius: 12px; padding: 1.3rem 1.2rem; }
@@ -172,35 +160,29 @@
   .quote b { font-size: .85rem; color: var(--blue-800); }
   .quote span { display: block; font-size: .8rem; color: var(--ink-soft); }
 
-  /* ABOUT */
   .about p { max-width: 46rem; margin-top: .6rem; }
 
-  /* CTA BANNER */
   .banner { background: var(--green-600); }
   .banner .wrap { display: flex; flex-wrap: wrap; gap: 1.2rem; align-items: center; justify-content: space-between; }
   .banner h2 { color: #fff; font-size: clamp(1.4rem, 3vw, 2rem); }
   .banner .btn { background: #fff; color: var(--green-700); }
   .banner .btn:hover { background: var(--blue-50); }
 
-  /* CONTACT */
   .contact .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 2.4rem; }
   .c-info { display: grid; gap: 1rem; margin-top: 1.1rem; font-size: .96rem; }
   .c-info b { display: block; font-size: .76rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); }
   .c-info a { color: var(--blue-800); font-weight: 700; text-decoration: none; }
   .c-info a:hover { text-decoration: underline; }
-  /* NOTE: form is non-functional in this mockup — wire to a form handler at launch */
   form { display: grid; gap: .8rem; margin-top: 1.1rem; }
   label { font-size: .82rem; font-weight: 700; color: var(--blue-800); }
   input, textarea { width: 100%; padding: .7rem .85rem; border: 1px solid var(--blue-100); border-radius: 8px; font: inherit; color: var(--ink); background: #fff; }
   .contact .btn { width: 100%; }
 
-  /* FOOTER */
   footer { background: var(--blue-800); color: var(--blue-100); padding: 2rem 0; font-size: .88rem; }
   footer .wrap { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; }
   footer a { color: #fff; text-decoration: none; }
   footer a:hover { text-decoration: underline; }
 
-  /* MOBILE CALL BAR */
   .callbar { display: none; position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; background: var(--green-600); text-align: center; padding: .85rem; }
   .callbar a { color: #fff; font-family: 'Lexend', sans-serif; font-weight: 600; font-size: 1.02rem; text-decoration: none; }
 
@@ -246,13 +228,11 @@
       <p class="hero-note">Straight answers, flat prices, no contracts.</p>
     </div>
 
-    <!-- SIGNATURE ELEMENT: neighborhood coverage finder -->
     <div class="hoods" id="areas" aria-label="Neighborhoods we serve">
       <h2>Do we mow your neighborhood?</h2>
       <p>Start typing yours — or scan the list. If it's green, we're already on your street every week.</p>
       <input class="hood-search" id="hood-input" type="text" placeholder="Try &quot;Haile&quot; or &quot;Duckpond&quot;…" aria-label="Search for your neighborhood" />
       <div class="chips" id="chips">
-        <!-- PLACEHOLDER: confirm covered neighborhoods with client -->
         <span class="chip">Haile Plantation</span>
         <span class="chip">Duckpond</span>
         <span class="chip">Turkey Creek</span>
@@ -273,7 +253,6 @@
 
 <section class="stats" aria-label="Quick facts">
   <div class="wrap">
-    <!-- PLACEHOLDER: confirm real numbers with client -->
     <div class="stat"><b>100%</b><span>Gainesville — that's it</span></div>
     <div class="stat"><b>12</b><span>Neighborhoods on the route</span></div>
     <div class="stat"><b>48 hr</b><span>Quote turnaround</span></div>
@@ -344,7 +323,7 @@
         <div><b>Neighbors, literally</b><p>Odds are we already mow on your street. Ask the house with the sharpest lawn.</p></div>
       </div>
     </div>
-    <p class="promise"><strong>Our promise:</strong> if a visit ever isn't up to standard, call us within 24 hours and we'll re-do it free. No contracts means we have to earn next week — every week. <!-- PLACEHOLDER: confirm guarantee wording with client --></p>
+    <p class="promise"><strong>Our promise:</strong> if a visit ever isn't up to standard, call us within 24 hours and we'll re-do it free. No contracts means we have to earn next week — every week. </p>
   </div>
 </section>
 
@@ -353,7 +332,6 @@
     <span class="kicker">Recent work</span>
     <h2 class="sec-head">Lawns around town</h2>
     <div class="gal-grid">
-      <!-- PLACEHOLDER: swap gradient tiles for real job photos -->
       <figure class="tile tile--1"><figcaption>Weekly service — Haile Plantation</figcaption></figure>
       <figure class="tile tile--2"><figcaption>Historic yard — Duckpond</figcaption></figure>
       <figure class="tile tile--3"><figcaption>Acre lot — Turkey Creek</figcaption></figure>
@@ -367,7 +345,6 @@
     <span class="kicker">Reviews</span>
     <h2 class="sec-head">What neighbors say</h2>
     <div class="quotes-grid">
-      <!-- PLACEHOLDER testimonials: replace with real reviews -->
       <div class="quote">
         <div class="strs" aria-label="5 stars">★★★★★</div>
         <p>"They mow four houses on our street, so they're here the same morning every week. It just works."</p>
@@ -391,7 +368,6 @@
   <div class="wrap">
     <span class="kicker">About us</span>
     <h2 class="sec-head">Gainesville's lawn crew, full stop</h2>
-    <!-- PLACEHOLDER: confirm story details with client -->
     <p>Local Lawn Care of Gainesville does one thing in one town: dependable lawn care across Gainesville's neighborhoods — from the oaks of Duckpond to the acre lots of Turkey Creek. No franchise playbook, no out-of-town crews, no upsells. Just the same trucks you already see around town, keeping the route sharp week after week.</p>
   </div>
 </section>
@@ -411,12 +387,11 @@
       <div class="c-info">
         <div><b>Phone</b><a href="tel:+13526918865">(352) 691-8865</a></div>
         <div><b>Email</b><a href="mailto:locallawncare352@gmail.com">locallawncare352@gmail.com</a></div>
-        <div><b>Hours</b>Mon–Sat 7am–6pm <!-- PLACEHOLDER: confirm hours --></div>
+        <div><b>Hours</b>Mon–Sat 7am–6pm </div>
         <div><b>Service area</b>Gainesville, FL — see the neighborhood list above. Close but not listed? Ask anyway.</div>
       </div>
     </div>
     <div>
-      <!-- NOTE: form is non-functional in this mockup -->
       <form aria-label="Request a quote">
         <div><label for="f-name">Name</label><input id="f-name" type="text" autocomplete="name" /></div>
         <div><label for="f-phone">Phone</label><input id="f-phone" type="tel" autocomplete="tel" /></div>
