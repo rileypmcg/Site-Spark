@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ============================================================= -->
+  <!-- PLACEHOLDER: Roast-n-Toast Cafe is an UNCONFIRMED PROSPECT.   -->
+  <!-- Every business fact below — name detail, address, phone,      -->
+  <!-- hours, owner names, founding story, menu items, prices,       -->
+  <!-- ratings and testimonials — is INVENTED. Confirm all of it     -->
+  <!-- with the client before this goes anywhere near production.    -->
+  <!-- PLACEHOLDER: every photo on this page is temporary Unsplash   -->
+  <!-- stock — replace with the cafe's real photography before use.  -->
+  <!-- ============================================================= -->
+
+  <meta name="description" content="Roast-n-Toast Cafe — a rustic neighborhood coffee house with beans roasted in-house and thick-cut, golden toast. Sunny patio, free WiFi, dog-friendly. Open daily on Foundry Street. (555) 018-2470." />
+  <title>Coffee Shop &amp; Cafe on Foundry Street | Roast-n-Toast Cafe</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- PLACEHOLDER: NAP + hours in this schema block are all invented -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "Roast-n-Toast Cafe",
+    "description": "Rustic neighborhood coffee house roasting small-batch beans in-house and serving thick-cut artisan toast, light breakfast and brunch. Patio seating, free WiFi, dog-friendly.",
+    "telephone": "+1-555-018-2470",
+    "email": "hello@roastntoast.cafe",
+    "servesCuisine": ["Coffee", "Toast", "Breakfast", "Brunch", "Pastries"],
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "128 Foundry Street",
+      "addressLocality": "Riverton",
+      "addressRegion": "OH",
+      "postalCode": "45001",
+      "addressCountry": "US"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "06:30", "closes": "18:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "06:30", "closes": "20:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "07:00", "closes": "20:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "07:00", "closes": "17:00" }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ─── Design tokens ──────────────────────────────────────────
+       Rustic-industrial cafe: exposed-wood browns, kraft/cream
+       backgrounds, terracotta-rust accent, warm black. Two brand
+       colours (espresso + cream) + one CTA accent (rust). ---------- */
+    :root {
+      --cream:        #F3E9D8;   /* page background */
+      --kraft:        #E8D8BC;   /* paper accent band */
+      --kraft-deep:   #DCC7A3;
+      --ink:          #241A12;   /* warm black */
+      --espresso:     #3B2A1D;   /* brand dark */
+      --wood:         #7B5330;   /* mid wood tone */
+      --wood-soft:    #A97C4E;
+      --rust:         #B04A24;   /* CTA accent */
+      --rust-deep:    #8E3A1A;
+      --rust-soft:    #C87A4B;
+      --sage:         #6E6B45;   /* sparing secondary */
+      --text:         #2A2018;
+      --muted:        #5E4C39;
+      --line:         rgba(59, 42, 29, .16);
+      --shadow:       0 18px 44px -22px rgba(36, 26, 18, .55);
+      --shadow-sm:    0 8px 22px -14px rgba(36, 26, 18, .5);
+      --radius:       14px;
+      --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+      --font-body:    'Work Sans', 'Segoe UI', system-ui, sans-serif;
+      --font-hand:    'Caveat', 'Segoe Script', cursive;
+      --maxw:         1160px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      font-size: 1.04rem;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--cream);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    /* subtle film grain over everything — rustic, very low opacity */
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      pointer-events: none;
+      opacity: .05;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.06; color: var(--ink); font-weight: 700; letter-spacing: -.01em; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--rust); outline-offset: 3px; border-radius: 6px; }
+
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 1.5rem; }
+    section { position: relative; }
+
+    .kicker {
+      display: inline-flex; align-items: center; gap: .5rem;
+      font-family: var(--font-hand);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--rust);
+      margin-bottom: .35rem;
+      line-height: 1;
+    }
+    .kicker::before {
+      content: ""; width: 30px; height: 2px; background: var(--rust-soft); display: inline-block;
+    }
+    .eyebrow {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-weight: 700; font-size: .74rem; letter-spacing: .22em; text-transform: uppercase;
+      color: var(--wood);
+      margin-bottom: 1rem;
+    }
+    .sec-head { font-size: clamp(2.1rem, 5.2vw, 3.4rem); font-weight: 900; margin-bottom: .7rem; }
+    .sec-sub  { color: var(--muted); max-width: 60ch; font-size: 1.1rem; }
+    .center   { text-align: center; }
+    .center .kicker { justify-content: center; }
+    .center .sec-sub { margin-left: auto; margin-right: auto; }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+      font-family: var(--font-body); font-weight: 700; font-size: 1rem;
+      padding: .95rem 1.75rem; min-height: 50px;
+      border-radius: 999px; border: 0; cursor: pointer; text-decoration: none;
+      background: var(--rust); color: #FFF6EE;
+      box-shadow: var(--shadow-sm);
+      transition: transform .18s ease, background .18s ease, box-shadow .18s ease;
+    }
+    .btn:hover { background: var(--rust-deep); transform: translateY(-2px); }
+    .btn:active { transform: translateY(0); }
+    .btn--ghost {
+      background: transparent; color: var(--ink);
+      border: 2px solid var(--wood); box-shadow: none; padding: calc(.95rem - 2px) calc(1.75rem - 2px);
+    }
+    .btn--ghost:hover { background: rgba(123, 83, 48, .1); color: var(--ink); }
+    .btn--light { background: var(--cream); color: var(--espresso); }
+    .btn--light:hover { background: #fff; }
+    .btn svg { flex: none; }
+
+    /* ─── Header ─────────────────────────────────────────────── */
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      transition: background .3s ease, box-shadow .3s ease, border-color .3s;
+      border-bottom: 1px solid transparent;
+    }
+    header.scrolled {
+      background: rgba(243, 233, 216, .92);
+      backdrop-filter: blur(10px);
+      border-bottom-color: var(--line);
+      box-shadow: 0 6px 24px -18px rgba(36,26,18,.6);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; max-width: var(--maxw); margin: 0 auto; padding: .85rem 1.5rem; }
+    .logo { display: flex; align-items: center; gap: .6rem; font-family: var(--font-display); font-weight: 900; font-size: 1.4rem; text-decoration: none; color: #fff; transition: color .3s; letter-spacing: -.02em; }
+    header.scrolled .logo { color: var(--ink); }
+    .logo .mark { flex: none; width: 40px; height: 40px; border-radius: 11px; background: var(--rust); display: grid; place-items: center; color: #FFF6EE; box-shadow: inset 0 0 0 2px rgba(255,255,255,.18); }
+    .logo .mark svg { width: 22px; height: 22px; }
+    .logo b { font-weight: 900; }
+    .logo span { font-family: var(--font-hand); font-size: 1.05rem; color: var(--rust-soft); font-weight: 700; margin-left: -.15rem; }
+    header.scrolled .logo span { color: var(--rust); }
+
+    .nav-links { display: flex; align-items: center; gap: 1.7rem; list-style: none; }
+    .nav-links a { font-weight: 600; font-size: .96rem; text-decoration: none; color: #fff; transition: color .2s; }
+    header.scrolled .nav-links a { color: var(--text); }
+    .nav-links a:hover { color: var(--rust-soft); }
+    header.scrolled .nav-links a:hover { color: var(--rust); }
+    .nav-cta {
+      display: inline-flex; align-items: center; gap: .45rem;
+      font-weight: 700; font-size: .92rem; text-decoration: none;
+      background: var(--rust); color: #FFF6EE;
+      padding: .55rem 1.15rem; border-radius: 999px; white-space: nowrap;
+      transition: background .2s, transform .2s;
+    }
+    .nav-cta:hover { background: var(--rust-deep); transform: translateY(-1px); }
+    .nav-toggle { display: none; background: none; border: 0; cursor: pointer; padding: .4rem; }
+    .nav-toggle span { display: block; width: 26px; height: 2.5px; background: #fff; border-radius: 2px; margin: 5px 0; transition: .3s; }
+    header.scrolled .nav-toggle span { background: var(--ink); }
+
+    /* ─── Hero (full-bleed photo carousel) ───────────────────── */
+    .hero { position: relative; min-height: 100svh; display: flex; align-items: flex-end; color: #FBEFE0; padding: 7rem 0 4.5rem; isolation: isolate; }
+    .hero-slides { position: absolute; inset: 0; z-index: -2; }
+    .hero-slide {
+      position: absolute; inset: 0; background-size: cover; background-position: center;
+      opacity: 0; transition: opacity 1.4s ease; transform: scale(1.04);
+    }
+    /* only the visible slide animates — cheaper to paint */
+    .hero-slide.active { opacity: 1; animation: kenburns 18s ease-out both; }
+    @keyframes kenburns { from { transform: scale(1.02); } to { transform: scale(1.12); } }
+    .hero::before {
+      content: ""; position: absolute; inset: 0; z-index: -1;
+      background:
+        linear-gradient(180deg, rgba(20,13,8,.55) 0%, rgba(20,13,8,.15) 32%, rgba(20,13,8,.35) 62%, rgba(20,13,8,.86) 100%);
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.35fr .9fr; gap: 2rem; align-items: end; width: 100%; }
+    .hero-stamp {
+      font-family: var(--font-hand); font-weight: 700; font-size: 1.55rem; color: var(--rust-soft);
+      display: inline-flex; align-items: center; gap: .55rem; margin-bottom: .6rem;
+    }
+    .hero-stamp::before { content: ""; width: 34px; height: 2px; background: currentColor; }
+    .hero h1 { font-size: clamp(2.7rem, 7vw, 5rem); font-weight: 900; color: #FFF7EC; text-shadow: 0 2px 30px rgba(0,0,0,.35); margin-bottom: 1.1rem; }
+    .hero h1 em { font-style: italic; color: var(--rust-soft); }
+    .hero-sub { font-size: clamp(1.05rem, 2vw, 1.28rem); color: #F2E4D3; max-width: 44ch; margin-bottom: 1.8rem; line-height: 1.6; }
+    .hero-ctas { display: flex; flex-wrap: wrap; gap: .9rem; margin-bottom: 1.7rem; }
+    .hero-trust { display: flex; flex-wrap: wrap; gap: .55rem 1.4rem; align-items: center; font-size: .92rem; font-weight: 600; color: #F0E2D0; }
+    .hero-trust span { display: inline-flex; align-items: center; gap: .45rem; }
+    .hero-trust .star { color: #F2B450; }
+    .hero-trust .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--rust-soft); }
+
+    /* carousel controls */
+    .hero-dots { position: absolute; bottom: 1.6rem; right: 1.7rem; display: flex; gap: .5rem; z-index: 2; }
+    .hero-dots button { width: 30px; height: 5px; border: 0; border-radius: 3px; background: rgba(255,255,255,.4); cursor: pointer; padding: 0; transition: background .3s; }
+    .hero-dots button.active { background: #FBEFE0; }
+
+    /* ─── Quick info strip ───────────────────────────────────── */
+    .quickbar { background: var(--espresso); color: #EDDFCB; }
+    .quickbar .wrap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(255,255,255,.08); border-radius: 0; padding: 0; max-width: none; }
+    .qb-item { background: var(--espresso); display: flex; align-items: center; gap: .8rem; padding: 1.15rem clamp(1rem, 3vw, 2.2rem); }
+    .qb-item svg { flex: none; color: var(--rust-soft); }
+    .qb-item .lbl { font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; color: var(--wood-soft); font-weight: 700; }
+    .qb-item .val { font-weight: 600; font-size: .98rem; color: #F4E8D6; line-height: 1.25; }
+    .qb-item a.val { text-decoration: none; }
+    .qb-item a.val:hover { color: #fff; }
+    /* live open/now pill (signature element, mini) */
+    .live { display: inline-flex; align-items: center; gap: .45rem; font-weight: 700; font-size: .95rem; }
+    .live .pulse { width: 9px; height: 9px; border-radius: 50%; background: #8CB369; position: relative; }
+    .live .pulse::after { content: ""; position: absolute; inset: -4px; border-radius: 50%; border: 2px solid #8CB369; opacity: .6; animation: ring 1.8s ease-out infinite; }
+    .live.closed .pulse, .live.closed .pulse::after { background: #C77; border-color: #C77; }
+    @keyframes ring { to { transform: scale(2); opacity: 0; } }
+
+    /* ─── Section shells ─────────────────────────────────────── */
+    .band { padding: clamp(3.8rem, 8vw, 6.5rem) 0; }
+    .band--kraft { background: var(--kraft); }
+    .band--kraft::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .4;
+      background-image: radial-gradient(rgba(123,83,48,.10) 1px, transparent 1px); background-size: 22px 22px;
+    }
+    .band--espresso { background: var(--espresso); color: #EBDCC7; }
+    .band--espresso .sec-head, .band--espresso h3 { color: #FDF3E4; }
+    .band--espresso .sec-sub { color: #CDB79C; }
+
+    /* ─── Menu (The Roast & The Toast) ───────────────────────── */
+    .menu-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 1.4rem; margin-bottom: 2.6rem; }
+    .menu-banner { position: relative; border-radius: var(--radius); overflow: hidden; height: clamp(150px, 26vw, 230px); margin-bottom: 3rem; box-shadow: var(--shadow); }
+    .menu-banner img { width: 100%; height: 100%; object-fit: cover; }
+    .menu-banner .tag {
+      position: absolute; left: 1.2rem; bottom: 1.1rem; font-family: var(--font-hand); font-weight: 700;
+      font-size: 1.7rem; color: #fff; text-shadow: 0 2px 12px rgba(0,0,0,.5);
+    }
+    .menu-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .menu-col > .col-title { display: flex; align-items: baseline; gap: .7rem; margin-bottom: 1.3rem; }
+    .menu-col > .col-title h3 { font-size: 1.9rem; font-weight: 900; }
+    .menu-col > .col-title span { font-family: var(--font-hand); color: var(--rust); font-size: 1.3rem; font-weight: 700; }
+    .m-card {
+      display: grid; grid-template-columns: 96px 1fr; gap: 1.1rem; align-items: center;
+      background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: .8rem;
+      margin-bottom: 1rem; box-shadow: var(--shadow-sm); transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .m-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+    .m-card img { width: 96px; height: 96px; object-fit: cover; border-radius: 10px; }
+    .m-card .m-top { display: flex; align-items: baseline; justify-content: space-between; gap: .6rem; }
+    .m-card h4 { font-size: 1.16rem; font-weight: 700; }
+    .m-card .price { font-family: var(--font-display); font-weight: 700; color: var(--rust); font-size: 1.1rem; white-space: nowrap; }
+    .m-card p { font-size: .92rem; color: var(--muted); line-height: 1.5; margin-top: .15rem; }
+    .menu-note { margin-top: 2.2rem; font-family: var(--font-hand); font-size: 1.35rem; color: var(--wood); text-align: center; }
+
+    /* ─── Story / About ──────────────────────────────────────── */
+    .story-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+    .story-copy p { margin-bottom: 1.1rem; color: var(--text); font-size: 1.08rem; }
+    .story-copy p.lead { font-family: var(--font-display); font-size: 1.5rem; line-height: 1.35; color: var(--espresso); font-weight: 500; font-style: italic; }
+    .story-sign { font-family: var(--font-hand); font-size: 1.9rem; color: var(--rust); font-weight: 700; margin-top: .4rem; }
+    .story-photos { position: relative; }
+    .story-photos .main { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); aspect-ratio: 4/5; }
+    .story-photos .main img { width: 100%; height: 100%; object-fit: cover; }
+    .story-photos .inset {
+      position: absolute; bottom: -1.6rem; left: -1.6rem; width: 44%; border-radius: 12px; overflow: hidden;
+      border: 6px solid var(--cream); box-shadow: var(--shadow); aspect-ratio: 1; background: var(--cream);
+    }
+    .story-photos .inset img { width: 100%; height: 100%; object-fit: cover; }
+    .story-photos .badge {
+      position: absolute; top: -1.3rem; right: -.6rem; width: 108px; height: 108px; border-radius: 50%;
+      background: var(--rust); color: #FFF3E7; display: grid; place-items: center; text-align: center;
+      font-family: var(--font-hand); font-weight: 700; font-size: 1.15rem; line-height: 1.05; transform: rotate(9deg);
+      box-shadow: var(--shadow); padding: .5rem;
+    }
+
+    /* ─── Gallery mosaic (peek inside) ───────────────────────── */
+    .mosaic { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 200px; gap: 1rem; }
+    .mosaic figure { position: relative; overflow: hidden; border-radius: var(--radius); box-shadow: var(--shadow-sm); }
+    .mosaic img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+    .mosaic figure:hover img { transform: scale(1.07); }
+    .mosaic figcaption {
+      position: absolute; left: 0; right: 0; bottom: 0; padding: 1.4rem .9rem .7rem; color: #fff; font-weight: 600; font-size: .9rem;
+      background: linear-gradient(transparent, rgba(20,13,8,.75)); opacity: 0; transform: translateY(8px); transition: .3s;
+    }
+    .mosaic figure:hover figcaption { opacity: 1; transform: translateY(0); }
+    .m-wide { grid-column: span 2; }
+    .m-tall { grid-row: span 2; }
+
+    /* ─── Amenities strip ────────────────────────────────────── */
+    .amenities { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1rem; }
+    .amenity { text-align: center; padding: .5rem; }
+    .amenity .ico { width: 52px; height: 52px; margin: 0 auto .7rem; border-radius: 14px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); display: grid; place-items: center; color: var(--rust-soft); }
+    .amenity .ico svg { width: 26px; height: 26px; }
+    .amenity h4 { font-size: 1rem; color: #FDF3E4; font-family: var(--font-body); font-weight: 700; }
+    .amenity p { font-size: .82rem; color: #C4AE93; margin-top: .1rem; }
+
+    /* ─── Testimonials ───────────────────────────────────────── */
+    .quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
+    .quote { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 1.8rem; box-shadow: var(--shadow-sm); position: relative; }
+    .quote .stars { color: #E0932B; letter-spacing: 2px; font-size: 1rem; margin-bottom: .7rem; }
+    .quote p { font-family: var(--font-display); font-size: 1.18rem; line-height: 1.5; color: var(--espresso); font-weight: 500; margin-bottom: 1.1rem; }
+    .quote .who { display: flex; align-items: center; gap: .7rem; }
+    .quote .av { width: 40px; height: 40px; border-radius: 50%; background: var(--kraft-deep); color: var(--espresso); display: grid; place-items: center; font-weight: 700; font-family: var(--font-display); }
+    .quote .who b { display: block; font-size: .95rem; }
+    .quote .who small { color: var(--muted); }
+
+    /* ─── Visit / contact ────────────────────────────────────── */
+    .visit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.6rem, 4vw, 3rem); align-items: start; }
+    .info-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+    .info-photo { height: 190px; position: relative; }
+    .info-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .info-photo .status-chip {
+      position: absolute; top: 1rem; left: 1rem; background: rgba(36,26,18,.82); color: #fff; padding: .5rem .95rem; border-radius: 999px; backdrop-filter: blur(4px);
+    }
+    .info-body { padding: 1.6rem; }
+    .info-row { display: flex; gap: .9rem; padding: .95rem 0; border-bottom: 1px dashed var(--line); }
+    .info-row:last-child { border-bottom: 0; }
+    .info-row svg { flex: none; color: var(--rust); margin-top: .15rem; }
+    .info-row .k { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--wood); font-weight: 700; }
+    .info-row .v { font-weight: 500; }
+    .info-row a.v { text-decoration: none; color: var(--espresso); }
+    .info-row a.v:hover { color: var(--rust); }
+    .hours-list { list-style: none; margin-top: .3rem; font-size: .96rem; }
+    .hours-list li { display: flex; justify-content: space-between; gap: 1rem; padding: .15rem 0; max-width: 260px; }
+    .hours-list li.today { font-weight: 700; color: var(--rust); }
+    .hours-list li.today::after { content: " • today"; font-family: var(--font-hand); font-weight: 700; }
+
+    .form-card { background: var(--kraft); border: 1px solid var(--kraft-deep); border-radius: var(--radius); padding: 1.7rem; }
+    .form-card h3 { font-size: 1.5rem; margin-bottom: .3rem; }
+    .form-card p.sub { color: var(--muted); font-size: .96rem; margin-bottom: 1.2rem; }
+    .field { margin-bottom: .9rem; }
+    .field label { display: block; font-size: .82rem; font-weight: 700; color: var(--espresso); margin-bottom: .3rem; letter-spacing: .02em; }
+    .field input, .field textarea, .field select {
+      width: 100%; font-family: inherit; font-size: 1rem; color: var(--text);
+      background: #FFFDF9; border: 1.5px solid var(--kraft-deep); border-radius: 10px; padding: .7rem .85rem;
+    }
+    .field input:focus, .field textarea:focus, .field select:focus { outline: none; border-color: var(--rust); box-shadow: 0 0 0 3px rgba(176,74,36,.15); }
+    .field textarea { resize: vertical; min-height: 90px; }
+    .form-note { font-size: .8rem; color: var(--muted); margin-top: .7rem; }
+
+    /* ─── CTA banner ─────────────────────────────────────────── */
+    .cta-banner { background: var(--rust); color: #FFF3E7; text-align: center; padding: clamp(3rem, 6vw, 4.5rem) 0; position: relative; overflow: hidden; }
+    .cta-banner::before {
+      content: ""; position: absolute; inset: 0; opacity: .12; pointer-events: none;
+      background-image: repeating-linear-gradient(115deg, rgba(0,0,0,.5) 0 2px, transparent 2px 26px);
+    }
+    .cta-banner h2 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 900; color: #FFF7EC; margin-bottom: .6rem; position: relative; }
+    .cta-banner .hand { font-family: var(--font-hand); font-size: 1.7rem; color: #FBD9B8; display: block; margin-bottom: .3rem; }
+    .cta-banner p { max-width: 46ch; margin: 0 auto 1.6rem; color: #FCE6D4; position: relative; }
+    .cta-banner .btn { position: relative; }
+
+    /* ─── Footer ─────────────────────────────────────────────── */
+    footer.site { background: var(--ink); color: #C9B79E; padding-top: 3.4rem; position: relative; }
+    footer.site::before {
+      content: ""; position: absolute; top: 0; left: 0; right: 0; height: 7px;
+      background: repeating-linear-gradient(90deg, #5b3d22 0 22px, #6d4a2a 22px 40px, #4a3019 40px 66px);
+      opacity: .9;
+    }
+    .foot-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 2rem; padding-bottom: 2.4rem; }
+    .foot-brand .logo { color: #FBEFE0; margin-bottom: .9rem; }
+    .foot-brand p { font-size: .95rem; max-width: 34ch; }
+    .foot-col h5 { color: #FBEFE0; font-family: var(--font-body); font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; margin-bottom: .9rem; }
+    .foot-col a, .foot-col span { display: block; text-decoration: none; color: #C9B79E; font-size: .95rem; padding: .22rem 0; }
+    .foot-col a:hover { color: var(--rust-soft); }
+    .foot-bottom { border-top: 1px solid rgba(255,255,255,.1); padding: 1.3rem 0; display: flex; flex-wrap: wrap; gap: .6rem 1.2rem; justify-content: space-between; align-items: center; font-size: .84rem; }
+    .foot-bottom .credit { color: #9C8A72; }
+    .foot-bottom .credit a { color: var(--rust-soft); text-decoration: none; }
+
+    /* ─── Responsive (single breakpoint) ─────────────────────── */
+    @media (max-width: 820px) {
+      .nav-links, .nav > .nav-cta { display: none; }
+      .nav-toggle { display: block; }
+      .nav.open .nav-links {
+        display: flex; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 0;
+        background: var(--cream); padding: .5rem 1.5rem 1.2rem; box-shadow: var(--shadow); border-bottom: 1px solid var(--line);
+      }
+      .nav.open .nav-links a { color: var(--text); padding: .85rem 0; border-bottom: 1px solid var(--line); width: 100%; }
+      .nav.open .nav-links li:last-child { margin-top: .6rem; }
+      .nav.open .nav-links .nav-cta { display: inline-flex; color: #FFF6EE; }
+
+      .hero { min-height: 92svh; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .quickbar .wrap { grid-template-columns: 1fr 1fr; }
+      .menu-cols { grid-template-columns: 1fr; }
+      .story-grid { grid-template-columns: 1fr; }
+      .story-photos { max-width: 460px; margin: 0 auto 1rem; }
+      .story-photos .inset { width: 40%; }
+      .mosaic { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 170px; }
+      .m-wide { grid-column: span 2; }
+      .m-tall { grid-row: span 1; }
+      .amenities { grid-template-columns: repeat(3, 1fr); }
+      .quotes { grid-template-columns: 1fr; }
+      .visit-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 460px) {
+      .quickbar .wrap { grid-template-columns: 1fr; }
+      .amenities { grid-template-columns: repeat(2, 1fr); }
+      .m-card { grid-template-columns: 74px 1fr; }
+      .m-card img { width: 74px; height: 74px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+      .hero-slide { animation: none; transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ HEADER ══════════════════════════════════════════════ -->
+  <header id="site-header">
+    <nav class="nav" id="nav">
+      <a class="logo" href="#home" aria-label="Roast-n-Toast Cafe home">
+        <span class="mark" aria-hidden="true">
+          <!-- coffee + toast mark -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h11v5a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path d="M15 9h2a2.5 2.5 0 0 1 0 5h-2"/><path d="M7 4.5c0-.8.6-.8.6-1.5M11 4.5c0-.8.6-.8.6-1.5"/></svg>
+        </span>
+        <span><b>Roast</b><span>-n-</span><b>Toast</b></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#visit">Visit</a></li>
+        <li><a class="nav-cta" href="#visit">Find Us</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ══ 1 · HERO (full-bleed rotating photography) ══════════ -->
+    <section class="hero" id="home">
+      <!-- PLACEHOLDER: hero carousel photos are Unsplash stock — swap for real interior/exterior shots -->
+      <div class="hero-slides" aria-hidden="true">
+        <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=1920&q=75')"></div>
+        <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?auto=format&fit=crop&w=1920&q=75')"></div>
+        <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1525610553991-2bede1a236e2?auto=format&fit=crop&w=1920&q=75')"></div>
+      </div>
+
+      <div class="wrap hero-grid">
+        <div>
+          <span class="hero-stamp">Roasted out back · Est. 2019</span> <!-- PLACEHOLDER founding year -->
+          <h1>Slow-roasted mornings, <em>golden-buttered</em> afternoons.</h1>
+          <p class="hero-sub">Roast-n-Toast is the corner cafe where the beans are roasted in-house, the toast comes thick-cut and warm, and there's always a seat with your name on it.</p>
+          <div class="hero-ctas">
+            <a class="btn" href="#menu">See the menu</a>
+            <a class="btn btn--ghost" href="#visit" style="color:#FBEFE0;border-color:rgba(255,255,255,.6)">Hours &amp; directions</a>
+          </div>
+          <div class="hero-trust">
+            <span><span class="star">★</span> 4.9 · 312 neighbors</span> <!-- PLACEHOLDER rating -->
+            <span><span class="dot"></span> Roasted in-house</span>
+            <span><span class="dot"></span> Dog-friendly patio</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-dots" role="tablist" aria-label="Hero photos">
+        <button class="active" data-i="0" aria-label="Photo 1"></button>
+        <button data-i="1" aria-label="Photo 2"></button>
+        <button data-i="2" aria-label="Photo 3"></button>
+      </div>
+    </section>
+
+    <!-- ══ 2 · QUICK INFO STRIP (store-info + live open status) ═ -->
+    <section class="quickbar" aria-label="At a glance">
+      <div class="wrap">
+        <!-- PLACEHOLDER: address, phone and hours all invented -->
+        <div class="qb-item">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div><div class="lbl">Find us</div><div class="val">128 Foundry Street, Riverton</div></div>
+        </div>
+        <div class="qb-item">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+          <div><div class="lbl">Call ahead</div><a class="val" href="tel:+15550182470">(555) 018-2470</a></div>
+        </div>
+        <div class="qb-item">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <div><div class="lbl">Right now</div><div class="val live" id="live-status"><span class="pulse"></span><span id="live-text">Checking hours…</span></div></div>
+        </div>
+        <div class="qb-item">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>
+          <div><div class="lbl">Directions</div><a class="val" href="#visit">Get directions →</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 3 · MENU (The Roast & The Toast) ════════════════════ -->
+    <section class="band" id="menu">
+      <div class="wrap">
+        <div class="menu-head">
+          <div>
+            <span class="kicker">The roast &amp; the toast</span>
+            <h2 class="sec-head">Two things, done properly.</h2>
+          </div>
+          <p class="sec-sub">Beans roasted in small batches out back, and bread cut thick and griddled to order. <!-- PLACEHOLDER: menu items & prices invented -->Everything's made slow on purpose.</p>
+        </div>
+
+        <div class="menu-banner">
+          <img src="https://images.unsplash.com/photo-1507133750040-4a8f57021571?auto=format&fit=crop&w=1600&q=75" alt="Two lattes with rosetta latte art resting on a rustic wooden board" loading="lazy" />
+          <span class="tag">from the counter, this morning</span>
+        </div>
+
+        <div class="menu-cols">
+          <!-- THE ROAST -->
+          <div class="menu-col">
+            <div class="col-title"><h3>The Roast</h3><span>from the bar</span></div>
+
+            <article class="m-card">
+              <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=300&q=70" alt="Tall glass of dark cold brew coffee over ice" loading="lazy" />
+              <div>
+                <div class="m-top"><h4>Slow-Drip Cold Brew</h4><span class="price">$4.75</span></div>
+                <p>Steeped 18 hours for a smooth, low-acid cup. Over ice, or on nitro. <!-- PLACEHOLDER --></p>
+              </div>
+            </article>
+
+            <article class="m-card">
+              <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=300&q=70" alt="Barista pouring steamed milk into a latte" loading="lazy" />
+              <div>
+                <div class="m-top"><h4>Maple Oat Latte</h4><span class="price">$5.25</span></div>
+                <p>House espresso, local maple, silky oat milk. Our most-ordered pour. <!-- PLACEHOLDER --></p>
+              </div>
+            </article>
+
+            <article class="m-card">
+              <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=300&q=70" alt="Hand pour-over coffee dripping into a glass carafe" loading="lazy" />
+              <div>
+                <div class="m-top"><h4>Pour-Over of the Day</h4><span class="price">$4.50</span></div>
+                <p>Ask what's on — a rotating single-origin, brewed one cup at a time. <!-- PLACEHOLDER --></p>
+              </div>
+            </article>
+          </div>
+
+          <!-- THE TOAST -->
+          <div class="menu-col">
+            <div class="col-title"><h3>The Toast</h3><span>from the kitchen</span></div>
+
+            <article class="m-card">
+              <img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=300&q=70" alt="Thick stack of golden toast topped with banana and blueberries" loading="lazy" />
+              <div>
+                <div class="m-top"><h4>The Golden Hour</h4><span class="price">$8.50</span></div>
+                <p>Thick-cut brioche, honey butter, banana, blueberry &amp; a dust of cinnamon. <!-- PLACEHOLDER --></p>
+              </div>
+            </article>
+
+            <article class="m-card">
+              <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=300&q=70" alt="Toasted bread topped with tomato, greens and herbs" loading="lazy" />
+              <div>
+                <div class="m-top"><h4>Vine Tomato &amp; Ricotta</h4><span class="price">$9.00</span></div>
+                <p>Sourdough, whipped ricotta, blistered tomatoes, basil, olive oil. <!-- PLACEHOLDER --></p>
+              </div>
+            </article>
+
+            <article class="m-card">
+              <img src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?auto=format&fit=crop&w=300&q=70" alt="Weekend brunch spread of small plates shared on a table" loading="lazy" />
+              <div>
+                <div class="m-top"><h4>Weekend Brunch Board</h4><span class="price">$14</span></div>
+                <p>Toast flight, soft egg, seasonal jam &amp; fruit — made for sharing. Sat &amp; Sun. <!-- PLACEHOLDER --></p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <p class="menu-note">…plus fresh-baked cookies &amp; scones till they're gone.</p>
+      </div>
+    </section>
+
+    <!-- ══ 4 · STORY / ABOUT (editorial, community-hub) ════════ -->
+    <section class="band band--kraft" id="story">
+      <div class="wrap story-grid">
+        <div class="story-copy">
+          <span class="kicker">Our corner</span>
+          <h2 class="sec-head">The old hardware store, reborn as the neighborhood's living room.</h2>
+          <!-- PLACEHOLDER: founders, dates and founding story all invented -->
+          <p class="lead">In 2019, Nora &amp; Eli Hartman took the keys to a 1920s hardware store on Foundry Street — pressed-tin ceiling, worn plank floors and all — and never quite finished tearing out the old shelving. They liked the way it held a room together.</p>
+          <p>They put a small-batch roaster where the paint counter used to be, a griddle where the register once sat, and started pulling shots for whoever wandered in. Word got around the way it does in a good neighborhood — slowly, then all at once.</p>
+          <p>Today the same regulars turn up before sunrise for the first pour, students camp out by the windows, and the patio fills with dogs and strollers by mid-morning. It's less a coffee shop than a place the whole block happens to share.</p>
+          <div class="story-sign">— Nora &amp; Eli</div>
+        </div>
+        <div class="story-photos">
+          <!-- PLACEHOLDER: Unsplash stock — replace with real photos of the owners & space -->
+          <div class="main"><img src="https://images.unsplash.com/photo-1533777419517-3e4017e2e15a?auto=format&fit=crop&w=900&q=75" alt="Friends laughing together over drinks at a warm cafe table" loading="lazy" /></div>
+          <div class="inset"><img src="https://images.unsplash.com/photo-1524350876685-274059332603?auto=format&fit=crop&w=500&q=75" alt="Fresh-roasted coffee beans spilling from a burlap sack" loading="lazy" /></div>
+          <div class="badge" aria-hidden="true">roasted<br>in-house<br>daily</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 5 · GALLERY (take a peek inside) ════════════════════ -->
+    <section class="band" id="gallery">
+      <div class="wrap">
+        <div class="center" style="margin-bottom:2.6rem">
+          <span class="kicker">Take a peek inside</span>
+          <h2 class="sec-head">Come see the place.</h2>
+          <p class="sec-sub">Wood, plants, good light and the smell of something baking. <!-- PLACEHOLDER: Unsplash stock — swap for real photos -->It photographs nicely, but it's better in person.</p>
+        </div>
+        <div class="mosaic">
+          <figure class="m-wide m-tall">
+            <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1100&q=75" alt="Sunlit plant-filled cafe patio with a moka pot on the table" loading="lazy" />
+            <figcaption>The greenhouse patio</figcaption>
+          </figure>
+          <figure>
+            <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=700&q=75" alt="Cafe interior full of hanging and potted plants with cozy seating" loading="lazy" />
+            <figcaption>Plenty of green</figcaption>
+          </figure>
+          <figure>
+            <img src="https://images.unsplash.com/photo-1511081692775-05d0f180a065?auto=format&fit=crop&w=700&q=75" alt="Cafe counter and pastry case ready for the morning" loading="lazy" />
+            <figcaption>The counter</figcaption>
+          </figure>
+          <figure class="m-wide">
+            <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=1100&q=75" alt="Overhead view of friends sharing plates of food at a table" loading="lazy" />
+            <figcaption>Better shared</figcaption>
+          </figure>
+          <figure>
+            <img src="https://images.unsplash.com/photo-1534040385115-33dcb3acba5b?auto=format&fit=crop&w=700&q=75" alt="Coffee and a notebook on a wooden table by a sunny window" loading="lazy" />
+            <figcaption>A seat by the window</figcaption>
+          </figure>
+          <figure>
+            <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=700&q=75" alt="Overhead arrangement of many coffee cups on a rustic wood surface" loading="lazy" />
+            <figcaption>Cupping table</figcaption>
+          </figure>
+          <figure class="m-wide">
+            <img src="https://images.unsplash.com/photo-1528698827591-e19ccd7bc23d?auto=format&fit=crop&w=1100&q=75" alt="Cafe storefront exterior with a bicycle parked and chalkboard signs" loading="lazy" />
+            <figcaption>128 Foundry Street</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 6 · AMENITIES ═══════════════════════════════════════ -->
+    <section class="band band--espresso" aria-label="What to expect">
+      <div class="wrap">
+        <div class="center" style="margin-bottom:2.6rem">
+          <span class="eyebrow">Come as you are</span>
+          <h2 class="sec-head">Stay five minutes or all afternoon.</h2>
+        </div>
+        <!-- PLACEHOLDER: amenities assumed — confirm which apply -->
+        <div class="amenities">
+          <div class="amenity">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18v-6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v6"/><path d="M4 18h16"/><path d="M6 10V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v3"/><path d="M6 18v2M18 18v2"/></svg></div>
+            <h4>Comfy seating</h4><p>Lounge &amp; counter</p>
+          </div>
+          <div class="amenity">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5a10 10 0 0 1 14 0"/><path d="M8.5 15.5a5 5 0 0 1 7 0"/><path d="M2 9a15 15 0 0 1 20 0"/><circle cx="12" cy="19" r="1"/></svg></div>
+            <h4>Fast free WiFi</h4><p>Outlets at most tables</p>
+          </div>
+          <div class="amenity">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M12 8c4 0 7-2 7-5-4 0-7 2-7 5z"/><path d="M12 11C8 11 5 9 5 6c4 0 7 2 7 5z"/></svg></div>
+            <h4>Sunny patio</h4><p>Seasonal, out front</p>
+          </div>
+          <div class="amenity">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="20" cy="15" r="2"/><path d="M9 10a5 5 0 0 0-5 5c0 2 1 3 3 3s2-1 4-1 3 1 4-1a5 5 0 0 0-6-6z"/></svg></div>
+            <h4>Dog-friendly</h4><p>Patio pups welcome</p>
+          </div>
+          <div class="amenity">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h11v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path d="M15 9h2a2.5 2.5 0 0 1 0 5h-2"/><path d="M7 4.5c0-.8.6-.8.6-1.5M11 4.5c0-.8.6-.8.6-1.5"/></svg></div>
+            <h4>Roasted here</h4><p>Beans by the bag</p>
+          </div>
+          <div class="amenity">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="8" rx="2"/><path d="M6 11V7a4 4 0 0 1 8 0"/><path d="M7 19v2M17 19v2"/></svg></div>
+            <h4>Easy parking</h4><p>Street &amp; lot behind</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 7 · TESTIMONIALS ════════════════════════════════════ -->
+    <section class="band band--kraft" aria-label="Reviews">
+      <div class="wrap">
+        <div class="center" style="margin-bottom:2.6rem">
+          <span class="kicker">Regulars say it best</span>
+          <h2 class="sec-head">Loved by the block.</h2>
+        </div>
+        <!-- PLACEHOLDER: all testimonials invented — replace with real reviews -->
+        <div class="quotes">
+          <div class="quote">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p>"The maple oat latte and a slice of the Golden Hour toast is my whole personality now. It just feels like somebody's warm kitchen."</p>
+            <div class="who"><div class="av">M</div><div><b>Maya R.</b><small>Foundry District</small></div></div>
+          </div>
+          <div class="quote">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p>"I come for the pour-over, I stay because they know my name and my dog's name. You can taste that the beans are roasted right there."</p>
+            <div class="who"><div class="av">D</div><div><b>Devon &amp; Biscuit</b><small>Millbrook</small></div></div>
+          </div>
+          <div class="quote">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p>"Best patio in Riverton, hands down. Great WiFi, unhurried staff, and the weekend brunch board is worth setting an alarm for."</p>
+            <div class="who"><div class="av">P</div><div><b>Priya S.</b><small>Old Town</small></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 8 · VISIT / CONTACT (store info + live status + form) ═ -->
+    <section class="band" id="visit">
+      <div class="wrap">
+        <div class="center" style="margin-bottom:2.6rem">
+          <span class="kicker">Come find your seat</span>
+          <h2 class="sec-head">Visit the cafe.</h2>
+          <p class="sec-sub">On the corner of Foundry &amp; 3rd, with the striped awning and the bicycle out front. <!-- PLACEHOLDER address --></p>
+        </div>
+
+        <div class="visit-grid">
+          <!-- store-info card -->
+          <div class="info-card">
+            <div class="info-photo">
+              <!-- PLACEHOLDER: Unsplash stock storefront — replace with real exterior -->
+              <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=1000&q=75" alt="Warm cafe storefront with outdoor seating on a historic street" loading="lazy" />
+              <div class="status-chip live" id="live-status-2"><span class="pulse"></span><span id="live-text-2">Checking hours…</span></div>
+            </div>
+            <div class="info-body">
+              <!-- PLACEHOLDER: NAP + hours invented -->
+              <div class="info-row">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <div><div class="k">Address</div><a class="v" href="https://maps.google.com/?q=128+Foundry+Street+Riverton" target="_blank" rel="noopener">128 Foundry Street, Riverton, OH 45001</a></div>
+              </div>
+              <div class="info-row">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+                <div><div class="k">Phone</div><a class="v" href="tel:+15550182470">(555) 018-2470</a></div>
+              </div>
+              <div class="info-row">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 4v16"/></svg>
+                <div style="flex:1">
+                  <div class="k">Hours</div>
+                  <ul class="hours-list" id="hours-list">
+                    <li data-day="1"><span>Mon – Thu</span><span>6:30a – 6:00p</span></li>
+                    <li data-day="5"><span>Friday</span><span>6:30a – 8:00p</span></li>
+                    <li data-day="6"><span>Saturday</span><span>7:00a – 8:00p</span></li>
+                    <li data-day="0"><span>Sunday</span><span>7:00a – 5:00p</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- contact form (non-functional in mockup) -->
+          <div class="form-card">
+            <h3>Say hello</h3>
+            <p class="sub">Booking the back room, planning a catering order, or just want to tell us the toast changed your life? Drop a note.</p>
+            <!-- PLACEHOLDER: form is a visual mockup only — not wired to a backend/email yet -->
+            <form onsubmit="event.preventDefault(); this.querySelector('.form-note').textContent='Thanks! (This is a mockup — the form isn\'t connected yet.)';">
+              <div class="field">
+                <label for="n">Name</label>
+                <input id="n" type="text" placeholder="Your name" autocomplete="name" />
+              </div>
+              <div class="field">
+                <label for="e">Email</label>
+                <input id="e" type="email" placeholder="you@email.com" autocomplete="email" />
+              </div>
+              <div class="field">
+                <label for="t">What's up?</label>
+                <select id="t">
+                  <option>General hello</option>
+                  <option>Catering / large order</option>
+                  <option>Book the back room</option>
+                  <option>Wholesale beans</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="m">Message</label>
+                <textarea id="m" placeholder="Tell us a little more…"></textarea>
+              </div>
+              <button class="btn" type="submit" style="width:100%">Send it over</button>
+              <p class="form-note" aria-live="polite">We usually reply within a day.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 9 · CTA BANNER ══════════════════════════════════════ -->
+    <section class="cta-banner">
+      <div class="wrap">
+        <span class="hand">your table's getting cold</span>
+        <h2>Pull up a chair.</h2>
+        <p>Swing by Foundry Street for a cup that was roasted this week and toast that's still warm. No reservation, no rush.</p>
+        <a class="btn btn--light" href="https://maps.google.com/?q=128+Foundry+Street+Riverton" target="_blank" rel="noopener">Get directions →</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ══ FOOTER ══════════════════════════════════════════════ -->
+  <footer class="site">
+    <div class="wrap foot-grid">
+      <div class="foot-brand">
+        <a class="logo" href="#home">
+          <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h11v5a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path d="M15 9h2a2.5 2.5 0 0 1 0 5h-2"/><path d="M7 4.5c0-.8.6-.8.6-1.5M11 4.5c0-.8.6-.8.6-1.5"/></svg></span>
+          <span><b>Roast</b><span>-n-</span><b>Toast</b></span>
+        </a>
+        <p>A rustic little coffee house on Foundry Street — small-batch roast, thick-cut toast, and a seat with your name on it.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Wander</h5>
+        <a href="#menu">Menu</a>
+        <a href="#story">Our Story</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#visit">Visit &amp; Hours</a>
+      </div>
+      <div class="foot-col">
+        <h5>Find us</h5>
+        <!-- PLACEHOLDER NAP -->
+        <span>128 Foundry Street</span>
+        <span>Riverton, OH 45001</span>
+        <a href="tel:+15550182470">(555) 018-2470</a>
+        <a href="mailto:hello@roastntoast.cafe">hello@roastntoast.cafe</a>
+      </div>
+    </div>
+    <div class="wrap foot-bottom">
+      <span>© <span id="yr">2026</span> Roast-n-Toast Cafe · <!-- PLACEHOLDER: all details invented -->Concept mockup</span>
+      <span class="credit">Website by <a href="#">Site Spark</a></span>
+    </div>
+  </footer>
+
+  <script>
+    // ── Scroll-aware header ────────────────────────────────────
+    var header = document.getElementById('site-header');
+    var onScroll = function () { header.classList.toggle('scrolled', window.scrollY > 40); };
+    onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
+
+    // ── Mobile nav ─────────────────────────────────────────────
+    var nav = document.getElementById('nav');
+    var toggle = document.getElementById('nav-toggle');
+    toggle.addEventListener('click', function () {
+      var open = nav.classList.toggle('open');
+      // once the menu is open the header needs a solid bg to read against
+      if (open) header.classList.add('scrolled');
+      else onScroll();
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.querySelectorAll('.nav-links a').forEach(function (a) {
+      a.addEventListener('click', function () { nav.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); onScroll(); });
+    });
+
+    // ── Hero photo carousel ────────────────────────────────────
+    (function () {
+      var slides = Array.prototype.slice.call(document.querySelectorAll('.hero-slide'));
+      var dots = Array.prototype.slice.call(document.querySelectorAll('.hero-dots button'));
+      if (slides.length < 2) return;
+      var i = 0, timer;
+      var go = function (n) {
+        slides[i].classList.remove('active'); dots[i].classList.remove('active');
+        i = (n + slides.length) % slides.length;
+        slides[i].classList.add('active'); dots[i].classList.add('active');
+      };
+      var play = function () { timer = setInterval(function () { go(i + 1); }, 5000); };
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      dots.forEach(function (d) {
+        d.addEventListener('click', function () { clearInterval(timer); go(+d.dataset.i); if (!reduce) play(); });
+      });
+      if (!reduce) play();
+    })();
+
+    // ── Signature element: live "Open now" status ──────────────
+    // PLACEHOLDER hours (local time). Ranges in minutes-from-midnight.
+    (function () {
+      var HOURS = {           // 0 = Sun … 6 = Sat
+        0: [7 * 60, 17 * 60],
+        1: [6 * 60 + 30, 18 * 60],
+        2: [6 * 60 + 30, 18 * 60],
+        3: [6 * 60 + 30, 18 * 60],
+        4: [6 * 60 + 30, 18 * 60],
+        5: [6 * 60 + 30, 20 * 60],
+        6: [7 * 60, 20 * 60]
+      };
+      var fmt = function (mins) {
+        var h = Math.floor(mins / 60), m = mins % 60;
+        var ap = h >= 12 ? 'pm' : 'am'; var h12 = h % 12; if (h12 === 0) h12 = 12;
+        return h12 + (m ? ':' + (m < 10 ? '0' + m : m) : '') + ap;
+      };
+      var render = function () {
+        var now = new Date();
+        var day = now.getDay(), mins = now.getHours() * 60 + now.getMinutes();
+        var todic = HOURS[day], open = false, msg = '';
+        if (todic && mins >= todic[0] && mins < todic[1]) {
+          open = true;
+          var left = todic[1] - mins;
+          msg = left <= 60 ? 'Closing at ' + fmt(todic[1]) : 'Open now · till ' + fmt(todic[1]);
+        } else {
+          // find next opening
+          var nextMsg = 'Closed';
+          if (todic && mins < todic[0]) {
+            nextMsg = 'Opens ' + fmt(todic[0]);
+          } else {
+            for (var d = 1; d <= 7; d++) {
+              var nd = (day + d) % 7;
+              if (HOURS[nd]) {
+                var names = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+                nextMsg = 'Opens ' + (d === 1 ? 'tomorrow' : names[nd]) + ' ' + fmt(HOURS[nd][0]);
+                break;
+              }
+            }
+          }
+          msg = nextMsg;
+        }
+        [['live-status', 'live-text'], ['live-status-2', 'live-text-2']].forEach(function (pair) {
+          var box = document.getElementById(pair[0]); var txt = document.getElementById(pair[1]);
+          if (!box) return;
+          box.classList.toggle('closed', !open);
+          txt.textContent = msg;
+        });
+      };
+      render();
+      setInterval(render, 60000);
+
+      // highlight today's row in the hours list
+      var day = new Date().getDay();
+      document.querySelectorAll('#hours-list li').forEach(function (li) {
+        var d = li.getAttribute('data-day');
+        // Mon–Thu share one row (data-day="1")
+        var match = (+d === day) || (d === '1' && day >= 1 && day <= 4);
+        if (match) li.classList.add('today');
+      });
+    })();
+
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
